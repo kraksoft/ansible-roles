@@ -1,0 +1,14 @@
+---
+php_composer_path: /usr/local/bin/composer
+php_configs:
+  apache: false
+  cli: false
+  common: false
+  environment: false
+  project: false
+php_configs_path: ../../files/php/configs/
+php_modules:
+  - php5-cli
+  - php5-common
+php_phpunit_path: /usr/local/bin/phpunit
+php_tools: []

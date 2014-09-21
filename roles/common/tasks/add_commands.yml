@@ -1,0 +1,9 @@
+---
+- name: add commands
+  copy: >
+    dest="{{ common_remote_path }}{{ item }}"
+    group=root
+    mode="0755"
+    owner=root
+    src="{{ common_commands_path }}{{ item }}"
+  with_items: common_commands

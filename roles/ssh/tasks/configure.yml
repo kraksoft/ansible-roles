@@ -1,0 +1,27 @@
+---
+- name: create users
+  user: >
+    createhome=yes
+    name={{ item.name }}
+    state=present
+  with_items: ssh_users
+
+- name: add authorized keys
+  authorized_key: >
+    key="{{ lookup('file', ssh_keys_path + item.1) }}"
+    state=present
+    user={{ item.0.name }}
+  with_subelements:
+    - ssh_users
+    - keys
+
+- name: prepare environment with a scripts
+  copy: >
+    dest="/home/{{ item.0.name }}"
+    group="{{ item.0.name }}"
+    mode="0644"
+    owner="{{ item.0.name }}"
+    src="{{ ssh_scripts_path }}{{ item.1 }}"
+  with_nested:
+    - ssh_users
+    - ssh_scripts

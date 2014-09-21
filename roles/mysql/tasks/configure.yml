@@ -1,0 +1,47 @@
+---
+- name: copy config
+  template: >
+    dest="/etc/mysql/conf.d/{{ mysql_config }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ mysql_config_path }}{{ mysql_config }}"
+  notify: restart mysql
+  when: mysql_config != false
+
+- name: check if databases are created
+  command: >
+    /usr/bin/mysql {{ _prefix }} --batch --skip-column-names -e "SHOW DATABASES LIKE '{{ item.name }}';"
+  changed_when: false
+  register: _databases
+  with_items: mysql_databases
+
+- name: create databases
+  command: >
+    /usr/bin/mysql {{ _prefix }} -e "CREATE DATABASE {{ item.item.name }};"
+  when: item.stdout == ""
+  with_items: _databases.results
+
+- name: check if users are created
+  command: >
+    /usr/bin/mysql {{ _prefix }} --batch --skip-column-names -e "SELECT DISTINCT User FROM mysql.user WHERE User LIKE '{{ item.1.name }}';"
+  changed_when: false
+  register: _users
+  with_subelements:
+    - mysql_databases
+    - users
+
+- name: create users
+  command: >
+    /usr/bin/mysql {{ _prefix }} -e "GRANT USAGE ON *.* TO '{{ item.item.1.name }}'@'{{ mysql_login_host }}' IDENTIFIED BY '{{ item.item.1.password }}';"
+  notify: flush privileges
+  when: item.stdout == ""
+  with_items: _users.results
+
+- name: create privileges
+  command: >
+    /usr/bin/mysql {{ _prefix }} -e "GRANT {{ item.item.1.priv }} ON {{ item.item.0.name }}.* TO '{{ item.item.1.name }}'@'{{ mysql_login_host }}';"
+  notify: flush privileges
+  when: item.stdout == ""
+  with_items: _users.results

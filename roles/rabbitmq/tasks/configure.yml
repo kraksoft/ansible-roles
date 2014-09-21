@@ -1,0 +1,36 @@
+---
+- name: check if vhosts are created
+  shell: >
+    /usr/sbin/rabbitmqctl list_vhosts -q | /bin/grep "^{{ item.name }}" || /bin/true
+  changed_when: false
+  register: _vhosts
+  with_items: rabbitmq_vhosts
+
+- name: create vhosts
+  command: >
+    /usr/sbin/rabbitmqctl add_vhost {{ item.item.name }}
+  when: item.stdout == ""
+  with_items: _vhosts.results
+
+- name: check if users are created
+  shell: >
+    /usr/sbin/rabbitmqctl list_users -q | /bin/grep "^{{ item.1.name }}" || /bin/true
+  changed_when: false
+  register: _users
+  with_subelements:
+    - rabbitmq_vhosts
+    - users
+
+- name: create users
+  command: >
+    /usr/sbin/rabbitmqctl add_user {{ item.item.1.name }} {{ item.item.1.password }}
+  notify: restart rabbitmq
+  when: item.stdout == ""
+  with_items: _users.results
+
+- name: create privileges
+  command: >
+    /usr/sbin/rabbitmqctl set_permissions -p {{ item.item.0.name }} {{ item.item.1.name }} {{ item.item.1.priv }}
+  notify: restart rabbitmq
+  when: item.stdout == ""
+  with_items: _users.results

@@ -1,0 +1,16 @@
+---
+- name: add gpg key
+  apt_key: >
+    id=89DF5277
+    keyserver=hkp://keys.gnupg.net
+    state=present
+  when: ansible_distribution == "Debian"
+
+- name: add sources for apt
+  lineinfile: >
+    dest=/etc/apt/sources.list
+    line="{{ item }}"
+    regexp="^(.*){{ item }}"
+    state=present
+  notify: update apt cache
+  with_items: common_sources_repositories

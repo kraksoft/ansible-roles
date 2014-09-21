@@ -1,0 +1,5 @@
+---
+ssh_keys_path: ../../files/ssh/keys/
+ssh_scripts: {}
+ssh_scripts_path: ../../files/ssh/scripts/
+ssh_users: []

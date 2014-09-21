@@ -1,0 +1,13 @@
+---
+- name: install composer
+  shell: >
+    /usr/bin/curl -sS https://getcomposer.org/installer | /usr/bin/php &&
+    /bin/mv composer.phar {{ php_composer_path }}
+    creates="{{ php_composer_path }}"
+
+- name: allow everyone for selfupdate
+  file: >
+    group=root
+    mode="0777"
+    owner=root
+    path={{ php_composer_path }}

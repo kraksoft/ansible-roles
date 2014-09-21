@@ -1,0 +1,34 @@
+---
+- name: add line to .bashrc
+  lineinfile: >
+    dest=/home/vagrant/.bashrc
+    insertafter=EOF
+    line="cd /vagrant"
+    state=present
+
+- name: check if dir for website is created
+  stat: >
+    path="{{ virtualization_folder }}"
+  register: _stat
+  when: virtualization_folder != false
+
+- name: create dir for website
+  file: >
+    group=root
+    mode="0755"
+    owner=root
+    path="{{ virtualization_folder }}"
+    recurse=yes
+    state=directory
+  when: _stat is defined and (_stat.stat.lnk_source is not defined or _stat.stat.lnk_source != "/vagrant")
+
+- name: create symlinks to website
+  file: >
+    dest="{{ virtualization_folder }}"
+    force=yes
+    group=root
+    mode="0755"
+    owner=root
+    src=/vagrant
+    state=link
+  when: _stat is defined and (_stat.stat.lnk_source is not defined or _stat.stat.lnk_source != "/vagrant")

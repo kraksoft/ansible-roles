@@ -1,0 +1,48 @@
+---
+- name: add lines to global profile
+  lineinfile: >
+    create=yes
+    dest=/etc/profile.d/symfony.sh
+    group=root
+    insertafter=EOF
+    line="{{ item }}"
+    mode="0644"
+    owner=root
+    state=present
+  with_items: symfony_settings
+
+- name: install bash completion
+  shell: >
+    /usr/bin/curl -sS https://raw.githubusercontent.com/KnpLabs/symfony2-autocomplete/master/symfony2-autocomplete.bash -o symfony2-autocomplete.bash &&
+    /bin/mv symfony2-autocomplete.bash /etc/bash_completion.d/symfony2
+    creates=/etc/bash_completion.d/symfony2
+
+- name: set file permissions
+  file: >
+    group=root
+    mode="0644"
+    owner=root
+    path=/etc/bash_completion.d/symfony2
+
+- name: add service to init.d
+  template: >
+    dest="/etc/init.d/{{ symfony_service }}"
+    group=root
+    mode="0755"
+    owner=root
+    src="{{ symfony_service_path }}{{ symfony_service }}"
+
+- name: run update-rc.d defaults
+  command: >
+    /usr/sbin/update-rc.d {{ symfony_service }} defaults
+  changed_when: false
+
+- name: run update-rc.d enable
+  command: >
+    /usr/sbin/update-rc.d {{ symfony_service }} enable
+  changed_when: false
+
+- name: run init.d
+  command: >
+    /etc/init.d/{{ symfony_service }}
+  changed_when: false

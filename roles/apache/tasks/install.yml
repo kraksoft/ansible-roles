@@ -1,0 +1,20 @@
+---
+- name: install service
+  apt: >
+    force=yes
+    pkg=apache2
+    state=present
+  notify: restart apache
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=apache2
+    state=started
+
+- name: enable modules
+  apache2_module: >
+    name="{{ item }}"
+    state=present
+  notify: restart apache
+  with_items: apache_modules

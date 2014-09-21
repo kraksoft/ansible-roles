@@ -1,0 +1,13 @@
+---
+- name: install service
+  apt: >
+    force=yes
+    pkg=rabbitmq-server
+    state=present
+  notify: restart rabbitmq
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=rabbitmq-server
+    state=started

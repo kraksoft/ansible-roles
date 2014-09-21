@@ -1,0 +1,8 @@
+---
+rabbitmq_login_host: localhost
+rabbitmq_login_password: guest
+rabbitmq_login_user: guest
+rabbitmq_plugins: []
+#  - rabbitmq_management
+rabbitmq_rabbitmqadmin_path: /usr/local/bin/rabbitmqadmin
+rabbitmq_vhosts: []

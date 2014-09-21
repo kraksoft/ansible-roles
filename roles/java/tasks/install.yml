@@ -1,0 +1,33 @@
+---
+- name: add gpg key
+  apt_key: >
+    id=EEA14886
+    keyserver=hkp://keyserver.ubuntu.com:80
+    state=present
+
+- name: set debconf variables
+  debconf: >
+    name=oracle-java8-installer
+    question=shared/accepted-oracle-license-v1-1
+    value=true
+    vtype=select
+  changed_when: false
+
+- name: add repositories
+  apt_repository: >
+    repo="deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main"
+    state=present
+    update_cache=yes
+
+- name: install package
+  apt: >
+    force=yes
+    pkg=oracle-java8-installer
+    state=present
+
+- name: enable modules
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: java_modules

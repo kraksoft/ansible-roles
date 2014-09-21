@@ -1,0 +1,39 @@
+---
+- name: insert lines to begin of common crontab
+  lineinfile: >
+    create=yes
+    dest="/var/spool/cron/crontabs/{{ cron_lines_user }}"
+    group=crontab
+    insertafter=BOF
+    line="{{ item }}"
+    mode="0600"
+    owner="{{ cron_lines_user }}"
+    state=present
+    validate="crontab -u {{ cron_lines_user }} %s"
+  notify: restart cron
+  with_items: cron_lines_bof
+
+- name: insert lines to end of common crontab
+  lineinfile: >
+    create=yes
+    dest="/var/spool/cron/crontabs/{{ cron_lines_user }}"
+    group=crontab
+    insertafter=EOF
+    line="{{ item }}"
+    mode="0600"
+    owner="{{ cron_lines_user }}"
+    state=present
+    validate="crontab -u {{ cron_lines_user }} %s"
+  notify: restart cron
+  with_items: cron_lines_eof
+
+- name: copy crontabs
+  template: >
+    dest="/var/spool/cron/crontabs/{{ item.key }}"
+    force=yes
+    group=crontab
+    mode="0600"
+    owner="{{ item.key }}"
+    src="{{ cron_crontabs_path }}{{ item.value }}"
+  notify: restart cron
+  with_dict: cron_crontabs

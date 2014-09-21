@@ -1,0 +1,10 @@
+---
+- name: "refresh and clear apt-get database for group '{{ group }}'"
+  gather_facts: false
+  hosts: "{{ group }}"
+  roles:
+    -
+      role: refresh
+    -
+      role: clear
+  sudo: true

@@ -1,0 +1,22 @@
+---
+- name: "prepare '{{ env }}' environment for project 'project'"
+  gather_facts: true
+  hosts: "project_{{ env }}"
+  tasks:
+    # simple task to ensure, that required parameters are set
+    - name: check if required parameters are defined
+      assert:
+        that:
+          - "env is defined"
+
+- include: roles/_project/base.yml
+
+- include: roles/_project/tools.yml
+
+- include: roles/_project/services.yml
+
+- include: roles/_project/env_dev.yml
+
+- include: roles/_project/env_stage.yml
+
+- include: roles/_project/env_prod.yml

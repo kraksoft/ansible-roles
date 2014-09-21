@@ -1,0 +1,32 @@
+---
+- name: add gpg key
+  apt_key: >
+    state=present
+    url="https://download.newrelic.com/548C16BF.gpg"
+
+- name: add repository
+  apt_repository: >
+    repo="deb http://apt.newrelic.com/debian/ newrelic non-free"
+    state=present
+    update_cache=yes
+
+- name: install service
+  apt: >
+    force=yes
+    pkg=newrelic-sysmond
+    state=present
+  notify: restart newrelic
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=newrelic-sysmond
+    state=started
+
+- name: enable modules
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  notify: restart newrelic-apache
+  with_items: newrelic_modules

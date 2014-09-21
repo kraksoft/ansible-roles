@@ -1,0 +1,9 @@
+---
+cron_crontabs: {}
+cron_crontabs_path: ../../files/cron/crontabs/
+cron_lines_bof: []
+#  - MAILTO=\"\"
+#  - PATH=$HOME/bin:$PATH
+#  - SHELL=/bin/sh
+cron_lines_eof: []
+cron_lines_user: root

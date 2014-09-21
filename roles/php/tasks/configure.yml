@@ -1,0 +1,139 @@
+---
+- name: create dir for config files
+  file: >
+    group=root
+    mode="0755"
+    owner=root
+    path=/etc/php5/common
+    state=directory
+
+- name: check if new version of default config is copied
+  stat: >
+    path=/etc/php5/apache2/php.ini
+  register: _stat
+
+- name: copy default config
+  command: >
+    /bin/cp -f /etc/php5/apache2/php.ini /etc/php5/common/php.ini
+  when: _stat.stat.lnk_source is not defined or _stat.stat.lnk_source != "/etc/php5/common/php.ini"
+
+- name: set file permissions
+  file: >
+    group=root
+    mode="0644"
+    owner=root
+    path=/etc/php5/common/php.ini
+
+- name: create symlinks to default config
+  file: >
+    dest="/etc/php5/{{ item }}/php.ini"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src=/etc/php5/common/php.ini
+    state=link
+  notify: restart php-apache
+  with_items:
+    - apache2
+    - cli
+
+- name: copy common config
+  template: >
+    dest="/etc/php5/common/{{ php_configs.common }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ php_configs_path }}{{ php_configs.common }}"
+  notify: restart php-apache
+  when: php_configs.common != false
+
+- name: create symlinks to common config
+  file: >
+    dest="/etc/php5/{{ item }}/conf.d/{{ php_configs.common }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="/etc/php5/common/{{ php_configs.common }}"
+    state=link
+  notify: restart php-apache
+  when: php_configs.common != false
+  with_items:
+    - apache2
+    - cli
+
+- name: copy custom apache config
+  template: >
+    dest="/etc/php5/apache2/conf.d/{{ php_configs.apache }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ php_configs_path }}{{ php_configs.apache }}"
+  notify: restart php-apache
+  when: php_configs.apache != false
+
+- name: copy custom cli config
+  template: >
+    dest="/etc/php5/cli/conf.d/{{ php_configs.cli }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ php_configs_path }}{{ php_configs.cli }}"
+  notify: restart php-apache
+  when: php_configs.cli != false
+
+- name: copy environment config
+  template: >
+    dest="/etc/php5/common/{{ php_configs.environment }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ php_configs_path }}{{ php_configs.environment }}"
+  notify: restart php-apache
+  when: php_configs.environment != false
+
+- name: create symlinks to environment config
+  file: >
+    dest="/etc/php5/{{ item }}/conf.d/{{ php_configs.environment }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="/etc/php5/common/{{ php_configs.environment }}"
+    state=link
+  notify: restart php-apache
+  when: php_configs.environment != false
+  with_items:
+    - apache2
+    - cli
+
+- name: copy project config
+  template: >
+    dest="/etc/php5/common/{{ php_configs.project }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ php_configs_path }}{{ php_configs.project }}"
+  notify: restart php-apache
+  when: php_configs.project != false
+
+- name: create symlinks to project config
+  file: >
+    dest="/etc/php5/{{ item }}/conf.d/{{ php_configs.project }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="/etc/php5/common/{{ php_configs.project }}"
+    state=link
+  notify: restart php-apache
+  when: php_configs.project != false
+  with_items:
+    - apache2
+    - cli

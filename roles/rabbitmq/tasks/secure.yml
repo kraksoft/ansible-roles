@@ -1,0 +1,6 @@
+---
+- name: change password for guest user
+  command: >
+    /usr/sbin/rabbitmqctl change_password {{ rabbitmq_login_user }} {{ rabbitmq_login_password }}
+  changed_when: false
+  when: rabbitmq_login_password != "guest"

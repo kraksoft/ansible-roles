@@ -1,0 +1,9 @@
+---
+common_commands: {}
+common_commands_path: ../../files/common/commands/
+common_locales_name: en_US.UTF-8
+common_remote_path: /usr/local/bin/
+common_required_packages:
+  - curl
+  - python-software-properties
+  - software-properties-common

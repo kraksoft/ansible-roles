@@ -1,0 +1,10 @@
+---
+- name: restart mysql
+  service: >
+    name=mysql
+    state=restarted
+
+- name: flush privileges
+  command: >
+    /usr/bin/mysql {{ _prefix }} -e "FLUSH PRIVILEGES;"
+  changed_when: false

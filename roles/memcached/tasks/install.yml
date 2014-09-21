@@ -1,0 +1,13 @@
+---
+- name: install service
+  apt: >
+    force=yes
+    pkg=memcached
+    state=present
+  notify: restart memcached
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=memcached
+    state=started

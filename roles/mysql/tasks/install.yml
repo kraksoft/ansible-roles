@@ -1,0 +1,31 @@
+---
+- name: add debian repository
+  apt_repository: >
+    repo="deb http://packages.dotdeb.org wheezy all"
+    state=present
+    update_cache=yes
+  when: ansible_distribution == "Debian"
+
+- name: set debconf variables
+  debconf: >
+    name=mysql-server
+    question="{{ item }}"
+    value="{{ mysql_login_password }}"
+    vtype=password
+  changed_when: false
+  with_items:
+    - mysql-server/root_password
+    - mysql-server/root_password_again
+
+- name: install service
+  apt: >
+    force=yes
+    pkg=mysql-server-5.6
+    state=present
+  notify: restart mysql
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=mysql
+    state=started

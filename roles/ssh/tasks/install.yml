@@ -1,0 +1,13 @@
+---
+- name: install service
+  apt: >
+    force=yes
+    pkg=openssh-server
+    state=present
+  notify: restart ssh
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=ssh
+    state=started

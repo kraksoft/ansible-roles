@@ -1,0 +1,31 @@
+---
+- name: "add '{{ key }}' gpg key"
+  apt_key: >
+    state=present
+    url="{{ key }}"
+
+- name: "add '{{ repo }}' repository"
+  apt_repository: >
+    repo="{{ repo }}"
+    state=present
+    update_cache=yes
+
+- name: "install '{{ name }}' pre-packages"
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: pre
+
+- name: "install '{{ name }}' package"
+  apt: >
+    force=yes
+    pkg="{{ name }}"
+    state=present
+
+- name: "install '{{ name }}' post-packages"
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: post

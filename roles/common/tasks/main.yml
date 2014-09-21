@@ -1,0 +1,10 @@
+---
+- include: include_vars.yml
+
+#- include: set_locales.yml
+
+- include: add_sources.yml
+
+- include: install_required.yml
+
+- include: add_commands.yml

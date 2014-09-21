@@ -1,0 +1,4 @@
+---
+symfony_service: false
+symfony_service_path: ../../files/symfony/service/
+symfony_settings: []
