@@ -27,3 +27,9 @@
     state=present
   notify: restart php-apache
   with_items: php_modules
+
+- name: enable php module in apache
+  apache2_module: >
+    name=php5
+    state=present
+  notify: restart php-apache
