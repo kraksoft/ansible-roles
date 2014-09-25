@@ -2,7 +2,9 @@
 - name: create users
   user: >
     createhome=yes
+    generate_ssh_key=yes
     name={{ item.name }}
+    shell=/bin/bash
     state=present
   with_items: ssh_users
 

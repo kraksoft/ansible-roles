@@ -8,7 +8,9 @@ _darcs
 .monotone
 .svn
 
-
 # Junk
 .DS_Store
 Thumbs.db
+
+# PhpStorm
+.idea
