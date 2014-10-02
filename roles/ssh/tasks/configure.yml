@@ -17,13 +17,13 @@
     - ssh_users
     - keys
 
-- name: prepare environment with a scripts
+- name: prepare environment with files
   copy: >
     dest="/home/{{ item.0.name }}"
     group="{{ item.0.name }}"
     mode="0644"
     owner="{{ item.0.name }}"
-    src="{{ ssh_scripts_path }}{{ item.1 }}"
+    src="{{ ssh_files_path }}{{ item.1 }}"
   with_nested:
     - ssh_users
-    - ssh_scripts
+    - ssh_files
