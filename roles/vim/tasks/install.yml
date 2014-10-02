@@ -1,0 +1,6 @@
+---
+- name: install package
+  apt: >
+    force=yes
+    pkg=vim
+    state=present

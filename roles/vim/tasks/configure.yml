@@ -1,0 +1,10 @@
+---
+- name: copy config
+  template: >
+    dest="/etc/vim/{{ vim_config }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ vim_config_path }}{{ vim_config }}"
+  when: vim_config != false
