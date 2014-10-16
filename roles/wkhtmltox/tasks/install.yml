@@ -1,0 +1,7 @@
+---
+- name: install package
+  apt: >
+    default_release="{{ wkhtmltox_target }}"
+    force=yes
+    pkg=wkhtmltopdf
+    state=present
