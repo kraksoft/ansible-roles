@@ -1,7 +1,14 @@
 ---
-- name: install package
-  apt: >
-    default_release="{{ wkhtmltox_target }}"
-    force=yes
-    pkg=wkhtmltopdf
-    state=present
+- name: install wkhtmltox
+  shell: >
+    /usr/bin/curl -L -sS {{ wkhtmltox_url }} -o wkhtmltox.deb &&
+    /usr/bin/dpkg -i wkhtmltox.deb
+    creates="{{ wkhtmltox_wkhtmltopdf_path }}"
+  when: wkhtmltox_url != false
+
+- name: allow everyone for execute
+  file: >
+    group=root
+    mode="0755"
+    owner=root
+    path="{{ wkhtmltox_wkhtmltopdf_path }}"
