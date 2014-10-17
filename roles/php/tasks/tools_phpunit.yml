@@ -10,4 +10,4 @@
     group=root
     mode="0777"
     owner=root
-    path={{ php_phpunit_path }}
+    path="{{ php_phpunit_path }}"
