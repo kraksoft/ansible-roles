@@ -21,7 +21,7 @@
     group=root
     mode="0755"
     owner=root
-    path={{ rabbitmq_rabbitmqadmin_path }}
+    path="{{ rabbitmq_rabbitmqadmin_path }}"
 
 - name: install bash completion
   shell: >
