@@ -1,0 +1,20 @@
+---
+- name: add repository
+  apt_repository: >
+    repo=ppa:noobslab/themes
+    state=present
+    update_cache=yes
+
+- name: install pre-packages
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: macbuntu_pre_packages
+
+- name: install packages
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: macbuntu_packages
