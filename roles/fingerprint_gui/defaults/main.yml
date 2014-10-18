@@ -1,0 +1,4 @@
+---
+fingerprint_gui_post_packages:
+  - libbsapi
+  - policykit-1-fingerprint-gui

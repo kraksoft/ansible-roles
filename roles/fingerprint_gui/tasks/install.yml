@@ -1,0 +1,19 @@
+---
+- name: add repository
+  apt_repository: >
+    repo=ppa:fingerprint/fingerprint-gui
+    state=present
+    update_cache=yes
+
+- name: install package
+  apt: >
+    force=yes
+    pkg=fingerprint-gui
+    state=present
+
+- name: install post-packages
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: fingerprint_gui_post_packages
