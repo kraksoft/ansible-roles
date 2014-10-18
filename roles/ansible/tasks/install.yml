@@ -1,0 +1,12 @@
+---
+- name: add repository
+  apt_repository: >
+    repo=ppa:ansible/ansible
+    state=present
+    update_cache=yes
+
+- name: install package
+  apt: >
+    force=yes
+    pkg=ansible
+    state=present
