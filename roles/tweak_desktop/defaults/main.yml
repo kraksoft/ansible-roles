@@ -1,0 +1,4 @@
+---
+tweak_desktop_ufw_packages:
+  - ufw
+  - gufw
