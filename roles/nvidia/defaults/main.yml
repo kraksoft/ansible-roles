@@ -1,0 +1,4 @@
+---
+nvidia_packages:
+  - nvidia-331
+  - nvidia-settings
