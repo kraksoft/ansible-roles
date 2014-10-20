@@ -1,5 +1,5 @@
 ---
-- name: install composer
+- name: install tool
   shell: >
     /usr/bin/curl -sS https://getcomposer.org/installer | /usr/bin/php &&
     /bin/mv composer.phar {{ php_composer_path }}

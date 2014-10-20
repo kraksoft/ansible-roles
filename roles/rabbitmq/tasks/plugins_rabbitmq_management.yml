@@ -5,12 +5,12 @@
   changed_when: false
   register: _plugin
 
-- name: enable rabbitmq_management
+- name: enable plugin
   command: >
     /usr/sbin/rabbitmq-plugins enable rabbitmq_management
   when: _plugin.stdout == ""
 
-- name: install rabbitmqadmin
+- name: install tool
   shell: >
     /usr/bin/curl -sS https://raw.githubusercontent.com/rabbitmq/rabbitmq-management/master/bin/rabbitmqadmin -o rabbitmqadmin &&
     /bin/mv rabbitmqadmin {{ rabbitmq_rabbitmqadmin_path }}
