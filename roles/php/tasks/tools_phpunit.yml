@@ -1,5 +1,5 @@
 ---
-- name: install phpunit
+- name: install tool
   shell: >
     /usr/bin/curl -sS https://phar.phpunit.de/phpunit.phar -o phpunit.phar &&
     /bin/mv phpunit.phar {{ php_phpunit_path }}
