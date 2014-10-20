@@ -1,15 +1,17 @@
 ---
-- name: install wkhtmltox
+- name: install pre-packages
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  when: wkhtmltox_url != false
+  with_items: wkhtmltox_pre_packages
+
+- name: install tool
   shell: >
     /usr/bin/curl -L -sS {{ wkhtmltox_url }} -o wkhtmltox.deb &&
     /usr/bin/dpkg -i wkhtmltox.deb
     creates="{{ wkhtmltox_wkhtmltopdf_path }}"
-  when: wkhtmltox_url != false
-
-- name: install all dependencies
-  command: >
-    /usr/bin/apt-get -f install
-  changed_when: false
   when: wkhtmltox_url != false
 
 - name: allow everyone for execute
@@ -18,3 +20,4 @@
     mode="0755"
     owner=root
     path="{{ wkhtmltox_wkhtmltopdf_path }}"
+  when: wkhtmltox_url != false
