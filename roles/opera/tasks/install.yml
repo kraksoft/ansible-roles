@@ -1,0 +1,17 @@
+---
+- name: add gpg key
+  apt_key: >
+    state=present
+    url="http://deb.opera.com/archive.key"
+
+- name: add repository
+  apt_repository: >
+    repo="deb http://deb.opera.com/opera/ stable non-free"
+    state=present
+    update_cache=yes
+
+- name: install package
+  apt: >
+    force=yes
+    pkg=opera
+    state=present
