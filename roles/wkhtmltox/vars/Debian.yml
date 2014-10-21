@@ -1,2 +1,15 @@
 ---
+wkhtmltox_pre_packages:
+  - fontconfig
+  - libc6
+  - libfontconfig1
+  - libfreetype6
+  - libjpeg8
+  - libpng12-0
+  - libssl1.0.0
+  - libstdc++6
+  - libx11-6
+  - libxext6
+  - libxrender1
+  - zlib1g
 wkhtmltox_url: http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-wheezy-amd64.deb
