@@ -1,0 +1,18 @@
+# SCM
+.arch-params
+.bzr
+CVS
+_darcs
+.git
+.hg
+.monotone
+.svn
+
+
+# Junk
+.DS_Store
+Thumbs.db
+
+
+# IDE
+.idea
