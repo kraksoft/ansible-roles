@@ -1,0 +1,6 @@
+---
+- include: bluetooth.yml
+  when: "'bluetooth' in tweak_fixes"
+
+- include: brightness.yml
+  when: "'brightness' in tweak_fixes"

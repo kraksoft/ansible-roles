@@ -1,7 +1,0 @@
----
-- name: install packages
-  apt: >
-    force=yes
-    pkg="{{ item }}"
-    state=present
-  with_items: tweak_desktop_ufw_packages

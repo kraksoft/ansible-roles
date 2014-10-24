@@ -1,0 +1,12 @@
+---
+- name: fix bluetooth
+  lineinfile: >
+    create=yes
+    dest=/etc/rc.local
+    group=root
+    insertbefore="^exit 0"
+    line="rfkill block bluetooth"
+    mode="0755"
+    owner=root
+    regexp="^rfkill block bluetooth"
+    state=present

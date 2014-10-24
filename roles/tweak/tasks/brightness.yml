@@ -1,0 +1,12 @@
+---
+- name: fix brightness
+  lineinfile: >
+    create=yes
+    dest=/etc/rc.local
+    group=root
+    insertbefore="^exit 0"
+    line="echo 10 > /sys/class/backlight/acpi_video0/brightness"
+    mode="0755"
+    owner=root
+    regexp="^echo 10 \> \/sys\/class\/backlight\/acpi_video0\/brightness"
+    state=present
