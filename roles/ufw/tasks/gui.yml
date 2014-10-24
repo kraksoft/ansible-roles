@@ -1,0 +1,7 @@
+---
+- name: install gui
+  apt: >
+    force=yes
+    pkg=gufw
+    state=present
+  when: ufw_gui_enabled != false

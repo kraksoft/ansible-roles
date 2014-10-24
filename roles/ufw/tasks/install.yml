@@ -1,0 +1,13 @@
+---
+- name: install service
+  apt: >
+    force=yes
+    pkg=ufw
+    state=present
+  notify: restart ufw
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=ufw
+    state=started
