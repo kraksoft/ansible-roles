@@ -6,4 +6,5 @@ cron_lines_bof: []
 #  - PATH=$HOME/bin:$PATH
 #  - SHELL=/bin/sh
 cron_lines_eof: []
+#  - 59 23 31 12 6 /command
 cron_lines_user: root
