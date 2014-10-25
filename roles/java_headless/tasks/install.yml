@@ -2,5 +2,5 @@
 - name: install package
   apt: >
     force=yes
-    pkg=openjdk-7-jre-headless
+    pkg="{{ java_headless_package }}"
     state=present
