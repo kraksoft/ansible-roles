@@ -26,23 +26,27 @@
 
 - name: add service to init.d
   template: >
-    dest="/etc/init.d/{{ symfony_service }}"
+    dest="/etc/init.d/{{ item }}"
     group=root
     mode="0755"
     owner=root
-    src="{{ symfony_service_path }}{{ symfony_service }}"
+    src="{{ symfony_service_path }}{{ item }}"
+  with_items: symfony_services
 
 - name: run update-rc.d defaults
   command: >
-    /usr/sbin/update-rc.d {{ symfony_service }} defaults
+    /usr/sbin/update-rc.d {{ item }} defaults
   changed_when: false
+  with_items: symfony_services
 
 - name: run update-rc.d enable
   command: >
-    /usr/sbin/update-rc.d {{ symfony_service }} enable
+    /usr/sbin/update-rc.d {{ item }} enable
   changed_when: false
+  with_items: symfony_services
 
 - name: run init.d
   command: >
-    /etc/init.d/{{ symfony_service }}
+    /etc/init.d/{{ item }}
   changed_when: false
+  with_items: symfony_services
