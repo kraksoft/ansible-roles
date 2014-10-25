@@ -1,0 +1,12 @@
+---
+- name: add beta repository
+  apt_repository: >
+    repo="deb http://deb.opera.com/opera-beta/ stable non-free"
+    state=present
+    update_cache=yes
+
+- name: install beta package
+  apt: >
+    force=yes
+    pkg=opera-beta
+    state=present

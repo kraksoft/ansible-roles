@@ -1,2 +1,5 @@
 ---
 - include: install.yml
+
+- include: beta.yml
+  when: opera_beta_enabled != false
