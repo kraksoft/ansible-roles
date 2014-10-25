@@ -1,17 +1,10 @@
 ---
-- name: add debian repository
+- name: add repository
   apt_repository: >
-    repo="deb http://packages.dotdeb.org wheezy-php55 all"
+    repo="{{ php_repository }}"
     state=present
     update_cache=yes
-  when: ansible_distribution == "Debian"
-
-- name: add ubuntu repository
-  apt_repository: >
-    repo=ppa:ondrej/php5
-    state=present
-    update_cache=yes
-  when: ansible_distribution == "Ubuntu"
+  when: php_repository != false
 
 - name: install package
   apt: >
