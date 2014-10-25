@@ -1,4 +1,10 @@
 ---
+- name: add gpg key
+  apt_key: >
+    state=present
+    url="http://www.dotdeb.org/dotdeb.gpg"
+  when: ansible_distribution == "Debian"
+
 - name: add repository
   apt_repository: >
     repo="{{ php_repository }}"
