@@ -1,7 +1,9 @@
 ---
-mysql_config: false
-mysql_config_path: ../../files/mysql/config/
+mysql_configs: []
+#  - common.cnf
+mysql_configs_path: ../../files/mysql/configs/
 mysql_databases: []
 mysql_login_host: localhost
 mysql_login_password: ~
 mysql_login_user: root
+mysql_version: 5.6

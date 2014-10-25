@@ -20,7 +20,7 @@
 - name: install service
   apt: >
     force=yes
-    pkg=mysql-server-5.6
+    pkg="mysql-server-{{ mysql_version }}"
     state=present
   notify: restart mysql
 

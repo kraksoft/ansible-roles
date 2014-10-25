@@ -1,14 +1,14 @@
 ---
-- name: copy config
+- name: copy configs
   template: >
-    dest="/etc/mysql/conf.d/{{ mysql_config }}"
+    dest="/etc/mysql/conf.d/{{ item }}"
     force=yes
     group=root
     mode="0644"
     owner=root
-    src="{{ mysql_config_path }}{{ mysql_config }}"
+    src="{{ mysql_configs_path }}{{ item }}"
   notify: restart mysql
-  when: mysql_config != false
+  with_items: mysql_configs
 
 - name: check if databases are created
   command: >
