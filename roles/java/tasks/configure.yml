@@ -1,0 +1,6 @@
+---
+- name: set default version
+  apt: >
+    force=yes
+    pkg="oracle-java{{ java_version }}-set-default"
+    state=present

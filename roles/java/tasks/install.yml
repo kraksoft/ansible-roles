@@ -7,7 +7,7 @@
 
 - name: set debconf variables
   debconf: >
-    name=oracle-java8-installer
+    name="oracle-java{{ java_version }}-installer"
     question=shared/accepted-oracle-license-v1-1
     value=true
     vtype=select
@@ -22,12 +22,5 @@
 - name: install package
   apt: >
     force=yes
-    pkg=oracle-java8-installer
+    pkg="oracle-java{{ java_version }}-installer"
     state=present
-
-- name: enable modules
-  apt: >
-    force=yes
-    pkg="{{ item }}"
-    state=present
-  with_items: java_modules
