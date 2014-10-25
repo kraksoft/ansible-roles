@@ -1,2 +1,2 @@
 ---
-java_headless_package: default-jre-headless
+java_headless_package: openjdk-7-jre-headless
