@@ -1,0 +1,5 @@
+---
+- name: delete file
+  file: >
+    path=/etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
+    state=absent
