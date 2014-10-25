@@ -1,5 +1,14 @@
 ---
-common_commands: {}
+common_commands: []
+#common_commands:
+#  - clr
+#  - l
+#  - mounts
+#  - o
+#  - oo
+#  - p
+#  - paths
+#  - pp
 common_commands_path: ../../files/common/commands/
 common_locales_name: en_US.UTF-8
 common_remote_path: /usr/local/bin/
