@@ -15,9 +15,10 @@
 
 - name: add repositories
   apt_repository: >
-    repo="deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main"
+    repo="{{ java_repository }}"
     state=present
     update_cache=yes
+  when: java_repository != false
 
 - name: install package
   apt: >
