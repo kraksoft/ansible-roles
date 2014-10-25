@@ -1,0 +1,10 @@
+---
+ansible_configs_path: ../../files/ansible/configs/
+ansible_users: []
+#ansible_users:
+#  - name: user
+#    group: group
+#    home: /home/user
+#    configs:
+#      - .ansible.cfg
+#      - .ansible_vault
