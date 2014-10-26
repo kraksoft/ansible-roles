@@ -1,5 +1,5 @@
 ---
-- name: copy config
+- name: copy config files
   template: >
     dest="/etc/vim/{{ item }}"
     force=yes

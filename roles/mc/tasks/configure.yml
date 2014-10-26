@@ -1,5 +1,5 @@
 ---
-- name: copy files
+- name: copy config files
   copy: >
     dest="{{ item.0.home }}"
     group="{{ item.0.group }}"
