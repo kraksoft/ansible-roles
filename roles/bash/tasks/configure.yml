@@ -1,11 +1,11 @@
 ---
-- name: copy config files
+- name: copy scripts
   copy: >
     dest="{{ item.0.home }}"
     group="{{ item.0.group }}"
     mode="0644"
     owner="{{ item.0.name }}"
-    src="{{ bash_configs_path }}{{ item.1 }}"
+    src="{{ bash_files_path }}{{ item.1 }}"
   with_subelements:
     - bash_users
-    - configs
+    - scripts

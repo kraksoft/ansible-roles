@@ -45,7 +45,7 @@
     group=root
     mode="0644"
     owner=root
-    src="{{ php_configs_path }}{{ php_configs.common }}"
+    src="{{ php_files_path }}{{ php_configs.common }}"
   notify: restart php-apache
   when: php_configs.common != false
 
@@ -71,7 +71,7 @@
     group=root
     mode="0644"
     owner=root
-    src="{{ php_configs_path }}{{ php_configs.apache }}"
+    src="{{ php_files_path }}{{ php_configs.apache }}"
   notify: restart php-apache
   when: php_configs.apache != false
 
@@ -82,7 +82,7 @@
     group=root
     mode="0644"
     owner=root
-    src="{{ php_configs_path }}{{ php_configs.cli }}"
+    src="{{ php_files_path }}{{ php_configs.cli }}"
   notify: restart php-apache
   when: php_configs.cli != false
 
@@ -93,7 +93,7 @@
     group=root
     mode="0644"
     owner=root
-    src="{{ php_configs_path }}{{ php_configs.environment }}"
+    src="{{ php_files_path }}{{ php_configs.environment }}"
   notify: restart php-apache
   when: php_configs.environment != false
 
@@ -119,7 +119,7 @@
     group=root
     mode="0644"
     owner=root
-    src="{{ php_configs_path }}{{ php_configs.project }}"
+    src="{{ php_files_path }}{{ php_configs.project }}"
   notify: restart php-apache
   when: php_configs.project != false
 

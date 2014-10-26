@@ -8,7 +8,7 @@ common_commands: []
 #  - p
 #  - paths
 #  - pp
-common_commands_path: ../../files/common/commands/
+common_files_path: ../../files/common/
 common_locales_name: en_US.UTF-8
 common_remote_path: /usr/local/bin/
 common_required_packages:

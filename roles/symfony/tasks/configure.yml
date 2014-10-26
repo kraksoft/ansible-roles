@@ -30,7 +30,7 @@
     group=root
     mode="0755"
     owner=root
-    src="{{ symfony_service_path }}{{ item }}"
+    src="{{ symfony_files_path }}{{ item }}"
   with_items: symfony_services
 
 - name: run update-rc.d defaults

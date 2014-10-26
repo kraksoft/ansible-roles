@@ -1,8 +1,8 @@
 ---
 mysql_configs: []
 #  - common.cnf
-mysql_configs_path: ../../files/mysql/configs/
 mysql_databases: []
+mysql_files_path: ../../files/mysql/
 mysql_login_host: localhost
 mysql_login_password: ~
 mysql_login_user: root

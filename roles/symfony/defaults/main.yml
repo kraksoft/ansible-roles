@@ -1,4 +1,4 @@
 ---
+symfony_files_path: ../../files/symfony/
 symfony_services: []
-symfony_services_path: ../../files/symfony/services/
 symfony_settings: []

@@ -1,6 +1,6 @@
 ---
 cron_crontabs: {}
-cron_crontabs_path: ../../files/cron/crontabs/
+cron_files_path: ../../files/cron/
 cron_lines_bof: []
 #  - MAILTO=\"\"
 #  - PATH=$HOME/bin:$PATH

@@ -12,7 +12,7 @@
 
 - name: add authorized keys
   authorized_key: >
-    key="{{ lookup('file', ssh_keys_path + item.1) }}"
+    key="{{ lookup('file', ssh_files_path + item.1) }}"
     state=present
     user="{{ item.0.name }}"
   with_subelements:

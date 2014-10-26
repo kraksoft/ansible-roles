@@ -6,7 +6,7 @@ php_configs:
   common: false
   environment: false
   project: false
-php_configs_path: ../../files/php/configs/
+php_files_path: ../../files/php/
 php_modules:
   - php5-cli
   - php5-common

@@ -6,7 +6,7 @@
     group=root
     mode="0644"
     owner=root
-    src="{{ mysql_configs_path }}{{ item }}"
+    src="{{ mysql_files_path }}{{ item }}"
   notify: restart mysql
   with_items: mysql_configs
 

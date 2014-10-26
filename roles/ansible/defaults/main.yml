@@ -1,5 +1,5 @@
 ---
-ansible_configs_path: ../../files/ansible/configs/
+ansible_files_path: ../../files/ansible/
 ansible_users: []
 #  - name: user
 #    group: group

@@ -6,7 +6,7 @@
     group=root
     mode="0644"
     owner=root
-    src="{{ apache_sites_path }}{{ item }}"
+    src="{{ apache_files_path }}{{ item }}"
   notify: restart apache
   with_items: apache_sites_enabled
 

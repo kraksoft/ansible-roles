@@ -34,6 +34,6 @@
     group=crontab
     mode="0600"
     owner="{{ item.key }}"
-    src="{{ cron_crontabs_path }}{{ item.value }}"
+    src="{{ cron_files_path }}{{ item.value }}"
   notify: restart cron
   with_dict: cron_crontabs

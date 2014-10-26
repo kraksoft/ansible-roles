@@ -1,5 +1,5 @@
 ---
-git_configs_path: ../../files/git/configs/
+git_files_path: ../../files/git/
 git_users: []
 #  - name: user
 #    group: group

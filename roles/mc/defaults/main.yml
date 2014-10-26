@@ -1,5 +1,5 @@
 ---
-mc_configs_path: ../../files/mc/configs/
+mc_files_path: ../../files/mc/
 mc_users: []
 #  - name: user
 #    group: group

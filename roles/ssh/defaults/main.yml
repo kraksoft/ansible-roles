@@ -1,5 +1,5 @@
 ---
-ssh_keys_path: ../../files/ssh/keys/
+ssh_files_path: ../../files/ssh/
 ssh_users: []
 #  - name: user
 #    group: group
