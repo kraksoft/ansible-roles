@@ -1,0 +1,44 @@
+---
+- name: ask for permission
+  pause: >
+    prompt="Press 'ENTER', if you are ready to upgrade system?"
+  when: prompt|bool == true
+
+- name: run apt update
+  apt: >
+    cache_valid_time="{{ refresh_cache_valid_time }}"
+    force=yes
+    update_cache=yes
+  tags:
+    - update
+
+- name: run apt upgrade
+  apt: >
+    force=yes
+    upgrade=yes
+  tags:
+    - upgrade
+
+- name: run apt dist-upgrade
+  apt: >
+    force=yes
+    upgrade=dist
+  register: _apt_dist_upgrade
+  tags:
+    - dist-upgrade
+
+- name: reboot remote host
+  command: >
+    /sbin/reboot
+  when: _apt_dist_upgrade.changed == true and reboot|bool == true
+
+- name: wait for ssh to come back on remote host
+  wait_for: >
+    delay="{{ refresh_delay }}"
+    host="{{ inventory_hostname }}"
+    port="{{ refresh_port }}"
+    state=started
+    timeout="{{ refresh_timeout }}"
+  delegate_to: "{{ refresh_delegate }}"
+  sudo: false
+  when: _apt_dist_upgrade.changed == true and reboot|bool == true

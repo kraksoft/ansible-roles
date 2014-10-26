@@ -1,0 +1,10 @@
+---
+- name: clear apt-get database
+  command: >
+    /usr/bin/apt-get {{ item }} --force-yes -y
+  changed_when: false
+  with_items:
+    - autoremove
+    - autoclean
+    - clean
+#    - purge
