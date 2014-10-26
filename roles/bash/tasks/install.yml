@@ -1,0 +1,13 @@
+---
+- name: install package
+  apt: >
+    force=yes
+    pkg=bash
+    state=present
+
+- name: install post-packages
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: bash_post_packages

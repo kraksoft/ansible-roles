@@ -1,0 +1,12 @@
+---
+bash_configs_path: ../../files/bash/configs/
+bash_post_packages:
+  - bash-completion
+bash_users: []
+#  - name: user
+#    group: group
+#    home: /home/user
+#    configs:
+#      - .bash_aliases
+#      - .bash_profile
+#      - .profile
