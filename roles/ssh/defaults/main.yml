@@ -1,5 +1,9 @@
 ---
 ssh_keys_path: ../../files/ssh/keys/
-ssh_files: {}
-ssh_files_path: ../../files/ssh/files/
 ssh_users: []
+#  - name: user
+#    group: group
+#    home: /home/user
+#    shell: /bin/bash
+#    keys:
+#      - user.id_rsa.pub
