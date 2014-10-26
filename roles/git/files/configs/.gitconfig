@@ -1,9 +1,9 @@
 [user]
-    name = User Name
+    name = User
     email = user@domain.com
 
 [core]
-    editor = mcedit
+    editor = vim
     excludesfile = ~/.gitignore
 #    autocrlf = input
 #    safecrlf = true
@@ -43,10 +43,10 @@
 #    prompt = false
 
 [diff]
-    tool = kdiff3
+    tool = vimdiff
 
 [merge]
-    tool = kdiff3
+    tool = vimdiff
 
 ; local branch <=> remote repo branch
 ;    git remote add             demo                    git@domain.com:tests/ee/demo
