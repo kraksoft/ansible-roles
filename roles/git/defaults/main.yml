@@ -1,0 +1,9 @@
+---
+git_configs_path: ../../files/git/configs/
+git_users: []
+#  - name: user
+#    group: group
+#    home: /home/user
+#    configs:
+#      - .gitconfig
+#      - .gitignore
