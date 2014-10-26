@@ -1,0 +1,11 @@
+---
+- name: copy files
+  copy: >
+    dest="{{ item.0.home }}"
+    group="{{ item.0.group }}"
+    mode="0644"
+    owner="{{ item.0.name }}"
+    src="{{ mc_configs_path }}{{ item.1 }}"
+  with_subelements:
+    - mc_users
+    - configs

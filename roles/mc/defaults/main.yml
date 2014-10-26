@@ -1,0 +1,8 @@
+---
+mc_configs_path: ../../files/mc/configs/
+mc_users: []
+#  - name: user
+#    group: group
+#    home: /home/user
+#    configs:
+#      - .selected_editor
