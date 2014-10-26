@@ -1,7 +1,7 @@
 ---
-- name: "refresh and clear apt-get database for group '{{ group }}'"
+- name: "refresh and clear apt-get database for project '{{ project }}' with environment '{{ env }}'"
   gather_facts: false
-  hosts: "{{ group }}"
+  hosts: "{{ project }}_{{ env }}"
   roles:
     -
       role: refresh
