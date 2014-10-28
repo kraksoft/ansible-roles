@@ -1,0 +1,22 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:          symfony
+# Required-Start:
+# Required-Stop:
+# Should-Start:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Setting up Symfony2 environment
+# Description:       Setting up Symfony2 environment
+### END INIT INFO
+
+PROJECT_NAME="projectx"
+
+mkdir -p /var/lock/cron/${PROJECT_NAME}
+mkdir -p /var/log/cron/${PROJECT_NAME}
+mkdir -p /var/log/queue/${PROJECT_NAME}
+
+find /var/lock/cron -type d -exec chmod 0777 {} \;
+find /var/log/cron -type d -exec chmod 0777 {} \;
+find /var/log/queue -type d -exec chmod 0777 {} \;

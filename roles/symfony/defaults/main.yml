@@ -1,4 +1,6 @@
 ---
 symfony_files_path: ../../files/symfony/
 symfony_services: []
+#  - symfony_projectx
 symfony_settings: []
+#  - "export SYMFONY_ENV={{ env }}"

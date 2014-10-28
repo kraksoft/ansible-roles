@@ -1,3 +1,4 @@
 ---
 vim_configs: []
+#  - vimrc.local
 vim_files_path: ../../files/vim/

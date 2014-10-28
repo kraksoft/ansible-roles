@@ -1,7 +1,7 @@
 <VirtualHost *:80>
-    ServerName                          domain.com
-    ServerAlias                         *.domain.com
-    ServerAdmin                         webmaster@domain.com
+    ServerName                          projectx.env.com
+    ServerAlias                         *.projectx.env.com
+    ServerAdmin                         webmaster@projectx.env.com
     DocumentRoot                        "/var/www/public_html"
     <Directory                          "/var/www/public_html">
         Options                         Indexes FollowSymLinks

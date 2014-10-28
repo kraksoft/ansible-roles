@@ -6,3 +6,8 @@ rabbitmq_plugins: []
 #  - rabbitmq_management
 rabbitmq_rabbitmqadmin_path: /usr/local/bin/rabbitmqadmin
 rabbitmq_vhosts: []
+#  - name: /
+#    users:
+#      - name: user
+#        password: pass
+#        priv: "'.*' '.*' '.*'"

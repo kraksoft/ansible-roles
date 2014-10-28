@@ -11,6 +11,11 @@ common_commands: []
 common_files_path: ../../files/common/
 common_locales_name: en_US.UTF-8
 common_remote_path: /usr/local/bin/
+common_required_libraries:
+  - aptitude
+  - debconf
+  - debconf-utils
+  - python-apt
 common_required_packages:
   - curl
   - python-software-properties
