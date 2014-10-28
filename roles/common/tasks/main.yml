@@ -1,6 +1,4 @@
 ---
-- include: install_libs.yml
-
 - include: include_vars.yml
 
 #- include: set_locales.yml

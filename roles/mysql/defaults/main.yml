@@ -2,6 +2,14 @@
 mysql_configs: []
 #  - common.cnf
 mysql_databases: []
+#  - name: database
+#    users:
+#      - name: user
+#        password: pass
+#        priv: ALL PRIVILEGES
+#      - name: user_ro
+#        password: pass_ro
+#        priv: SELECT
 mysql_files_path: ../../files/mysql/
 mysql_login_host: localhost
 mysql_login_password: ~
