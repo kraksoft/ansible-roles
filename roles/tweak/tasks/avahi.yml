@@ -1,0 +1,15 @@
+---
+- name: stop avahi service
+  service: >
+    enabled=no
+    name=avahi-daemon
+    state=stopped
+
+- name: uninstall avahi service
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=absent
+  with_items:
+     - avahi-daemon
+     - avahi-autoipd

@@ -1,5 +1,5 @@
 ---
-- name: fix brightness
+- name: set brightness
   lineinfile: >
     create=yes
     dest=/etc/rc.local

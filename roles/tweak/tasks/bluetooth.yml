@@ -1,5 +1,5 @@
 ---
-- name: fix bluetooth
+- name: kill bluetooth
   lineinfile: >
     create=yes
     dest=/etc/rc.local

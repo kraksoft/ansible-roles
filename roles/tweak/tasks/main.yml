@@ -1,4 +1,7 @@
 ---
+- include: avahi.yml
+  when: "'avahi' in tweak_fixes"
+
 - include: bluetooth.yml
   when: "'bluetooth' in tweak_fixes"
 
