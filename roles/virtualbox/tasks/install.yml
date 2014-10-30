@@ -1,0 +1,27 @@
+---
+- name: add gpg key
+  apt_key: >
+    id="{{ virtualbox_key_id }}"
+    state=present
+    url="{{ virtualbox_key_url }}"
+  when: virtualbox_key_url != false
+
+- name: add repositories
+  apt_repository: >
+    repo="{{ virtualbox_repository }}"
+    state=present
+    update_cache=yes
+  when: virtualbox_repository != false
+
+- name: install service
+  apt: >
+    force=yes
+    pkg=virtualbox-4.3
+    state=present
+  notify: restart virtualbox
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=virtualbox
+    state=started
