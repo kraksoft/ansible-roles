@@ -1,2 +1,4 @@
 ---
+mysql_key_id: 89DF5277
+mysql_key_url: http://www.dotdeb.org/dotdeb.gpg
 mysql_repository: deb http://packages.dotdeb.org squeeze all

@@ -1,9 +1,10 @@
 ---
 - name: add gpg key
   apt_key: >
-    id=EEA14886
-    keyserver=hkp://keyserver.ubuntu.com:80
+    id="{{ java_key_id }}"
+    keyserver="{{ java_key_keyserver }}"
     state=present
+  when: java_key_url != false
 
 - name: set debconf variables
   debconf: >

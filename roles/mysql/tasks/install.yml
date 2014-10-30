@@ -1,9 +1,10 @@
 ---
 - name: add gpg key
   apt_key: >
+    id="{{ mysql_key_id }}"
     state=present
-    url="http://www.dotdeb.org/dotdeb.gpg"
-  when: ansible_distribution == "Debian"
+    url="{{ mysql_key_url }}"
+  when: mysql_key_url != false
 
 - name: add repository
   apt_repository: >

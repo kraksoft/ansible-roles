@@ -1,2 +1,4 @@
 ---
+php_key_id: false
+php_key_url: false
 php_repository: ppa:ondrej/php5

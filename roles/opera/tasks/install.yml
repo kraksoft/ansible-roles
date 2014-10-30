@@ -1,6 +1,7 @@
 ---
 - name: add gpg key
   apt_key: >
+    id=A8492E35
     state=present
     url="http://deb.opera.com/archive.key"
 

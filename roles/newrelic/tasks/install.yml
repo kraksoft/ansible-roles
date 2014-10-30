@@ -1,6 +1,7 @@
 ---
 - name: add gpg key
   apt_key: >
+    id=548C16BF
     state=present
     url="https://download.newrelic.com/548C16BF.gpg"
 

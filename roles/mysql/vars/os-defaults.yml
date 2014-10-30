@@ -1,2 +1,4 @@
 ---
+mysql_key_id: false
+mysql_key_url: false
 mysql_repository: false
