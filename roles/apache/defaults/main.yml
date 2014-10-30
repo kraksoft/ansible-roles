@@ -4,6 +4,8 @@ apache_modules: []
 #  - headers
 #  - rewrite
 apache_sites_disabled: []
+#  - 000-default
+#  - 000-default-ssl
 #  - default
 #  - default.conf
 #  - default-ssl
