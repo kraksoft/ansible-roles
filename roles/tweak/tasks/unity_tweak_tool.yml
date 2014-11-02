@@ -1,0 +1,6 @@
+---
+- name: install unity-tweak-tool
+  apt: >
+    force=yes
+    pkg=unity-tweak-tool
+    state=present

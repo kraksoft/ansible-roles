@@ -1,0 +1,12 @@
+---
+- name: add repository
+  apt_repository: >
+    repo=ppa:tualatrix/ppa
+    state=present
+    update_cache=yes
+
+- name: install ubuntu-tweak
+  apt: >
+    force=yes
+    pkg=ubuntu-tweak
+    state=present

@@ -1,9 +1,18 @@
 ---
-- include: avahi.yml
-  when: "'avahi' in tweak_fixes"
+- include: gnome_tweak_tool.yml
+  when: tweak_gnome_enabled != false
 
-- include: bluetooth.yml
-  when: "'bluetooth' in tweak_fixes"
+- include: ubuntu_tweak.yml
+  when: tweak_ubuntu_enabled != false
 
-- include: brightness.yml
-  when: "'brightness' in tweak_fixes"
+- include: unity_tweak_tool.yml
+  when: tweak_unity_enabled != false
+
+- include: fix_avahi.yml
+  when: "'fix_avahi' in tweak_fixes"
+
+- include: fix_bluetooth.yml
+  when: "'fix_bluetooth' in tweak_fixes"
+
+- include: fix_brightness.yml
+  when: "'fix_brightness' in tweak_fixes"

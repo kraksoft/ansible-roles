@@ -1,5 +1,8 @@
 ---
 tweak_fixes: []
-#  - avahi
-#  - bluetooth
-#  - brightness
+#  - fix_avahi
+#  - fix_bluetooth
+#  - fix_brightness
+tweak_gnome_enabled: false
+tweak_ubuntu_enabled: false
+tweak_unity_enabled: false
