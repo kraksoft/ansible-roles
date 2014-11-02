@@ -1,5 +1,0 @@
----
-- name: restart virtualbox
-  service: >
-    name=virtualbox
-    state=restarted
