@@ -1,0 +1,20 @@
+---
+- name: install service
+  apt: >
+    force=yes
+    pkg=tlp
+    state=present
+  notify: restart tlp
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=tlp
+    state=started
+
+- name: install post-packages
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: tlp_post_packages
