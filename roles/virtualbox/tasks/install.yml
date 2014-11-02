@@ -13,15 +13,8 @@
     update_cache=yes
   when: virtualbox_repository != false
 
-- name: install service
+- name: install package
   apt: >
     force=yes
     pkg=virtualbox-4.3
     state=present
-  notify: restart virtualbox
-
-- name: ensure a service is enabled and running
-  service: >
-    enabled=yes
-    name=virtualbox
-    state=started
