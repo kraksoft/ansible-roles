@@ -12,9 +12,9 @@
     name=smartmontools
     state=started
 
-- name: install post-packages
+- name: enable modules
   apt: >
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: smartmontools_post_packages
+  with_items: smartmontools_modules

@@ -1,4 +1,4 @@
 ---
-smartmontools_post_packages:
+smartmontools_modules:
   - gsmartcontrol
   - smart-notifier
