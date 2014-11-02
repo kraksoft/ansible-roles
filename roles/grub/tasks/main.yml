@@ -1,0 +1,5 @@
+---
+- include: install.yml
+
+- include: grub_customizer.yml
+  when: grub_customizer_enabled != false

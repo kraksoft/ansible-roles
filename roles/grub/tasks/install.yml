@@ -1,0 +1,13 @@
+---
+- name: install service
+  apt: >
+    force=yes
+    pkg=grub-pc
+    state=present
+  notify: restart grub
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=grub-common
+    state=started

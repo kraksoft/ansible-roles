@@ -1,0 +1,12 @@
+---
+- name: add repository
+  apt_repository: >
+    repo=ppa:danielrichter2007/grub-customizer
+    state=present
+    update_cache=yes
+
+- name: install package
+  apt: >
+    force=yes
+    pkg=grub-customizer
+    state=present
