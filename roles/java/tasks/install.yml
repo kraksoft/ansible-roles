@@ -4,7 +4,7 @@
     id="{{ java_key_id }}"
     keyserver="{{ java_key_keyserver }}"
     state=present
-  when: java_key_url != false
+  when: java_key_keyserver != false
 
 - name: set debconf variables
   debconf: >

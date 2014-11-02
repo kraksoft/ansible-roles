@@ -1,4 +1,4 @@
 ---
 virtualbox_key_id: false
-virtualbox_key_keyserver: false
+virtualbox_key_url: false
 virtualbox_repository: false
