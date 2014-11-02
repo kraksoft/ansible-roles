@@ -1,10 +1,25 @@
 ---
-- name: install service
+- name: add gpg key
+  apt_key: >
+    id="{{ tlp_key_id }}"
+    keyserver="{{ tlp_key_keyserver }}"
+    state=present
+  when: tlp_key_keyserver != false
+
+- name: add repository
+  apt_repository: >
+    repo="{{ tlp_repository }}"
+    state=present
+    update_cache=yes
+  when: tlp_repository != false
+
+- name: install services
   apt: >
     force=yes
-    pkg=tlp
+    pkg="{{ item }}"
     state=present
   notify: restart tlp
+  with_items: tlp_services
 
 - name: ensure a service is enabled and running
   service: >
@@ -12,9 +27,9 @@
     name=tlp
     state=started
 
-- name: install post-packages
+- name: enable modules
   apt: >
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: tlp_post_packages
+  with_items: tlp_modules

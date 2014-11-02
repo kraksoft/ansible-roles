@@ -1,0 +1,4 @@
+---
+tlp_key_id: 02D65EFF
+tlp_key_keyserver: hkp://keyserver.ubuntu.com
+tlp_repository: deb http://ppa.launchpad.net/linrunner/tlp/ubuntu lucid main

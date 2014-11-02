@@ -1,3 +1,7 @@
 ---
-tlp_post_packages: []
+tlp_modules: []
+#  - acpi-call-tools
 #  - tp-smapi-dkms
+tlp_services:
+  - tlp
+  - tlp-rdw
