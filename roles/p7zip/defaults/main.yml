@@ -1,0 +1,3 @@
+---
+p7zip_post_packages:
+  - p7zip-rar
