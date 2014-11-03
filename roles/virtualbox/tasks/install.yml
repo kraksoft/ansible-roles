@@ -16,5 +16,5 @@
 - name: install package
   apt: >
     force=yes
-    pkg=virtualbox-4.3
+    pkg="virtualbox-{{ virtualbox_version }}"
     state=present
