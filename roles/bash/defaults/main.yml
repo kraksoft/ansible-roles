@@ -1,6 +1,6 @@
 ---
 bash_files_path: ../../files/bash/
-bash_post_packages:
+bash_pre_packages:
   - bash-completion
 bash_users: []
 #  - name: user

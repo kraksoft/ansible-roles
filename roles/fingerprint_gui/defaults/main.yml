@@ -1,4 +1,4 @@
 ---
-fingerprint_gui_post_packages:
+fingerprint_gui_pre_packages:
   - libbsapi
   - policykit-1-fingerprint-gui
