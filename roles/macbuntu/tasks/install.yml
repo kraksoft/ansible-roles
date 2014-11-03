@@ -1,9 +1,10 @@
 ---
-- name: add repository
+- name: add repositories
   apt_repository: >
-    repo=ppa:noobslab/themes
+    repo="{{ item }}"
     state=present
     update_cache=yes
+  with_items: macbuntu_repositories
 
 - name: install pre-packages
   apt: >
