@@ -1,5 +1,5 @@
 ---
-tlp_modules: []
+tlp_post_packages: []
 #  - acpi-call-tools
 #  - tp-smapi-dkms
 tlp_services:

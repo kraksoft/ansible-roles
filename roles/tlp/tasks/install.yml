@@ -13,23 +13,16 @@
     update_cache=yes
   when: tlp_repository != false
 
-- name: install services
+- name: install packages
   apt: >
     force=yes
     pkg="{{ item }}"
     state=present
-  notify: restart tlp
   with_items: tlp_services
 
-- name: ensure a service is enabled and running
-  service: >
-    enabled=yes
-    name=tlp
-    state=started
-
-- name: enable modules
+- name: install post-packages
   apt: >
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: tlp_modules
+  with_items: tlp_post_packages

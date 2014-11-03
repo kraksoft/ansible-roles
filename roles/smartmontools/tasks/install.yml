@@ -1,20 +1,13 @@
 ---
-- name: install service
+- name: install package
   apt: >
     force=yes
     pkg=smartmontools
     state=present
-  notify: restart smartmontools
 
-- name: ensure a service is enabled and running
-  service: >
-    enabled=yes
-    name=smartmontools
-    state=started
-
-- name: enable modules
+- name: install post-packages
   apt: >
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: smartmontools_modules
+  with_items: smartmontools_post_packages

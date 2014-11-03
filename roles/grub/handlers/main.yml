@@ -1,5 +1,0 @@
----
-- name: restart grub
-  service: >
-    name=grub-common
-    state=restarted
