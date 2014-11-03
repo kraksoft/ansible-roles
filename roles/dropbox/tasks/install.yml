@@ -1,0 +1,27 @@
+---
+- name: add gpg key
+  apt_key: >
+    id="{{ dropbox_key_id }}"
+    keyserver="{{ dropbox_key_keyserver }}"
+    state=present
+  when: dropbox_key_keyserver != false
+
+- name: add repository
+  apt_repository: >
+    repo="{{ dropbox_repository }}"
+    state=present
+    update_cache=yes
+  when: dropbox_repository != false
+
+- name: install pre-packages
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: dropbox_pre_packages
+
+- name: install package
+  apt: >
+    force=yes
+    pkg=dropbox
+    state=present

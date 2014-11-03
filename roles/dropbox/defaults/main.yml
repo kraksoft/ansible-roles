@@ -1,0 +1,4 @@
+---
+dropbox_pre_packages:
+  - libappindicator1
+  - python-gpgme
