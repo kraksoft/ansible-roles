@@ -1,0 +1,13 @@
+---
+- name: install package
+  apt: >
+    force=yes
+    pkg=gnome-commander
+    state=present
+
+- name: install pre-packages
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: gnome_commander_post_packages

@@ -1,0 +1,5 @@
+---
+gnome_commander_post_packages: []
+#  - libgnomevfs2-bin
+#  - libgnomevfs2-extra
+#  - meld
