@@ -9,3 +9,11 @@
   with_subelements:
     - bash_users
     - scripts
+
+- name: add .profile execution into .bashrc
+  lineinfile: >
+    dest="{{ item.home }}/.bashrc"
+    insertafter=EOF
+    line='if [ -f "$HOME/.profile" ]; then . "$HOME/.profile"; fi'
+    state=present
+  with_items: bash_users

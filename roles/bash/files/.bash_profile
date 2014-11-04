@@ -1,9 +1,8 @@
-# first read general settings
-if [ -f ~/.bashrc ]; then
-. ~/.bashrc
+# include .bashrc if it exists
+if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
 fi
 
-# and later override it with own settings
-if [ -f ~/.profile ]; then
-. ~/.profile
-fi
+
+# set non idempotent environment variables here, like: PATH="...:$PATH"
+export PATH=".:$HOME/bin:$PATH"
