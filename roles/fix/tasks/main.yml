@@ -2,6 +2,9 @@
 - include: avahi.yml
   when: "'avahi' in fix_issues"
 
+- include: blkid_tab.yml
+  when: "'blkid-tab' in fix_issues"
+
 - include: bluetooth.yml
   when: "'bluetooth' in fix_issues"
 

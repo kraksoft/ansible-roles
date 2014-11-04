@@ -1,0 +1,5 @@
+---
+- name: generate /etc/blkid.tab
+  command: >
+    /sbin/blkid
+  changed_when: false

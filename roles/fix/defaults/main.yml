@@ -1,5 +1,6 @@
 ---
 fix_issues: []
 #  - avahi
-#  - bluetooth
+#  - blkid-tab
 #  - brightness
+#  - bluetooth
