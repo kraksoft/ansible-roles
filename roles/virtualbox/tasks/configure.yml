@@ -1,0 +1,7 @@
+---
+- name: allow user to use raw disks /vmdk/
+  user: >
+    append=yes
+    groups=disk
+    name="{{ item }}"
+  with_items: virtualbox_users
