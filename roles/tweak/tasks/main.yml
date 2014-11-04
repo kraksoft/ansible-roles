@@ -1,18 +1,9 @@
 ---
 - include: gnome_tweak_tool.yml
-  when: tweak_gnome_enabled != false
+  when: "'gnome-tweak-tool' in tweak_tools"
 
 - include: ubuntu_tweak.yml
-  when: tweak_ubuntu_enabled != false
+  when: "'ubuntu-tweak' in tweak_tools"
 
 - include: unity_tweak_tool.yml
-  when: tweak_unity_enabled != false
-
-- include: fix_avahi.yml
-  when: "'fix_avahi' in tweak_fixes"
-
-- include: fix_bluetooth.yml
-  when: "'fix_bluetooth' in tweak_fixes"
-
-- include: fix_brightness.yml
-  when: "'fix_brightness' in tweak_fixes"
+  when: "'unity-tweak-tool' in tweak_tools"

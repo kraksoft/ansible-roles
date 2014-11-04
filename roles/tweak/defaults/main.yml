@@ -1,8 +1,5 @@
 ---
-tweak_fixes: []
-#  - fix_avahi
-#  - fix_bluetooth
-#  - fix_brightness
-tweak_gnome_enabled: false
-tweak_ubuntu_enabled: false
-tweak_unity_enabled: false
+tweak_tools: []
+#  - gnome-tweak-tool
+#  - ubuntu-tweak
+#  - unity-tweak-tool

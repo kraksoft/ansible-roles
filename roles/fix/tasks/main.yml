@@ -1,0 +1,9 @@
+---
+- include: avahi.yml
+  when: "'avahi' in fix_issues"
+
+- include: bluetooth.yml
+  when: "'bluetooth' in fix_issues"
+
+- include: brightness.yml
+  when: "'brightness' in fix_issues"
