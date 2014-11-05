@@ -1,20 +1,10 @@
 ---
-- name: create users
-  user: >
-    createhome=yes
-    generate_ssh_key=yes
-    group="{{ item.group }}"
-    home="{{ item.home }}"
-    name="{{ item.name }}"
-    shell="{{ item.shell }}"
+- name: set parameters
+  lineinfile: >
+    dest=/etc/ssh/sshd_config
+    line="{{ item.key }} {{ item.value }}"
+    regexp="^{{ item.key }}"
     state=present
-  with_items: ssh_users
-
-- name: add authorized keys
-  authorized_key: >
-    key="{{ lookup('file', ssh_files_path + item.1) }}"
-    state=present
-    user="{{ item.0.name }}"
-  with_subelements:
-    - ssh_users
-    - keys
+    validate="/usr/sbin/sshd -t -f %s"
+  notify: restart ssh
+  with_dict: ssh_parameters
