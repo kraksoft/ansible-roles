@@ -9,7 +9,7 @@
     mode="0600"
     owner="{{ cron_lines_user }}"
     state=present
-    validate="crontab -u {{ cron_lines_user }} %s"
+    validate="/usr/bin/crontab -u {{ cron_lines_user }} %s"
   notify: restart cron
   with_items: cron_lines_bof
 
@@ -23,7 +23,7 @@
     mode="0600"
     owner="{{ cron_lines_user }}"
     state=present
-    validate="crontab -u {{ cron_lines_user }} %s"
+    validate="/usr/bin/crontab -u {{ cron_lines_user }} %s"
   notify: restart cron
   with_items: cron_lines_eof
 
