@@ -1,6 +1,6 @@
 ---
 ssh_files_path: ../../files/ssh/
-ssh_parameters:
+ssh_parameters: {}
 #  ListenAddress: 0.0.0.0
 #  Port: 22
 ssh_users: []

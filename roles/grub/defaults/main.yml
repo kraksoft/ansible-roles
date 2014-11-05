@@ -1,2 +1,10 @@
 ---
 grub_customizer_enabled: false
+grub_parameters: {}
+#  GRUB_DEFAULT: saved
+#  GRUB_TIMEOUT: 1
+#  GRUB_CMDLINE_LINUX_DEFAULT: ipv6.disable=0 quiet splash
+#  GRUB_GFXMODE: 1024x768
+#  GRUB_SAVEDEFAULT: "true"
+#  export GRUB_COLOR_NORMAL: light-gray/black
+#  export GRUB_COLOR_HIGHLIGHT: yellow/black
