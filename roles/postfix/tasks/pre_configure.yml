@@ -1,0 +1,9 @@
+---
+# it must be there, because: can't have more than one mta
+- name: uninstall other services
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    purge=yes
+    state=absent
+  with_items: postfix_alternatives

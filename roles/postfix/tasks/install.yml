@@ -1,0 +1,13 @@
+---
+- name: install service
+  apt: >
+    force=yes
+    pkg=postfix
+    state=present
+  notify: restart postfix
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=postfix
+    state=started
