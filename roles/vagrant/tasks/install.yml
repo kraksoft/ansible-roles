@@ -1,0 +1,21 @@
+---
+- name: install tool
+  shell: >
+    /usr/bin/curl -L -sS {{ vagrant_url }} -o vagrant.deb &&
+    /usr/bin/dpkg -i vagrant.deb
+    creates="{{ vagrant_vagrant_path }}"
+  when: vagrant_url != false
+
+- name: allow everyone for execute
+  file: >
+    group=root
+    mode="0755"
+    owner=root
+    path="{{ vagrant_vagrant_path }}"
+  when: vagrant_url != false
+
+- name: enable plugins
+  shell: >
+    /usr/bin/vagrant plugin install {{ item }}
+  changed_when: false
+  with_items: vagrant_plugins

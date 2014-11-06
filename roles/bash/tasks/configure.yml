@@ -10,7 +10,7 @@
     - bash_users
     - scripts
 
-- name: add .profile execution into .bashrc
+- name: add line to .bashrc
   lineinfile: >
     dest="{{ item.home }}/.bashrc"
     insertafter=EOF
