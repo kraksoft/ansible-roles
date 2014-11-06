@@ -1,9 +1,0 @@
----
-- name: set licence key
-  lineinfile: >
-    dest=/etc/newrelic/nrsysmond.cfg
-    line="license_key={{ newrelic_licence_key }}"
-    regexp=^license_key=
-    state=present
-  notify: restart newrelic
-  when: newrelic_licence_key != false
