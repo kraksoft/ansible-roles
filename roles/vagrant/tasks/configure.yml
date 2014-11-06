@@ -1,0 +1,20 @@
+---
+- name: install modules
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: vagrant_modules
+
+- name: install sudoers parameters
+  shell: >
+    /usr/bin/curl -sS https://raw.githubusercontent.com/mitchellh/vagrant/master/contrib/sudoers/linux -o vagrant &&
+    /bin/mv vagrant {{ vagrant_sudoers_path }}/
+    creates="{{ vagrant_sudoers_path }}/vagrant"
+
+- name: add includedir
+  lineinfile: >
+    dest=/etc/default/grub
+    line="includedir {{ vagrant_sudoers_path }}"
+    regexp="includedir {{ vagrant_sudoers_path }}"
+    state=present
