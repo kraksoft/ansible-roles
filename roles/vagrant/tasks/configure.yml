@@ -12,9 +12,9 @@
     /bin/mv vagrant {{ vagrant_sudoers_path }}/
     creates="{{ vagrant_sudoers_path }}/vagrant"
 
-- name: add includedir
-  lineinfile: >
-    dest=/etc/default/grub
-    line="includedir {{ vagrant_sudoers_path }}"
-    regexp="includedir {{ vagrant_sudoers_path }}"
-    state=present
+- name: set file permissions
+  file: >
+    group=root
+    mode="0440"
+    owner=root
+    path="{{ vagrant_sudoers_path }}/vagrant"

@@ -1,6 +1,7 @@
 ---
 vagrant_modules:
   - nfs-common
+  - nfs-kernel-server
 vagrant_plugins:
   - vagrant-vbguest
 vagrant_vagrant_path: /usr/bin/vagrant
