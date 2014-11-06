@@ -18,16 +18,6 @@
     state=present
   notify: restart newrelic
 
-# it must be there, because: "Can not start the New Relic Server Monitor until you insert a valid license key"
-- name: set licence key
-  lineinfile: >
-    dest=/etc/newrelic/nrsysmond.cfg
-    line="license_key={{ newrelic_licence_key }}"
-    regexp=^license_key=
-    state=present
-  notify: restart newrelic
-  when: newrelic_licence_key != false
-
 - name: ensure a service is enabled and running
   service: >
     enabled=yes

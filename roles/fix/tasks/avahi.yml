@@ -3,6 +3,7 @@
   apt: >
     force=yes
     pkg="{{ item }}"
+    purge=yes
     state=absent
   with_items:
      - avahi-daemon
