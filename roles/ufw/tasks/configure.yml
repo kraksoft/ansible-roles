@@ -1,0 +1,12 @@
+---
+- name: ufw
+  ufw: >
+    direction="{{ item.direction }}"
+    from_ip="{{ item.from_ip }}"
+    from_port="{{ item.from_port }}"
+    proto="{{ item.proto }}"
+    rule="{{ item.rule }}"
+    to_ip="{{ item.to_ip }}"
+    to_port="{{ item.to_port }}"
+  notify: restart ufw
+  with_items: ufw_rules
