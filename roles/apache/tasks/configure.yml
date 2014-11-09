@@ -10,24 +10,6 @@
   notify: restart apache
   when: apache_ports != false
 
-- name: copy configs
-  template: >
-    dest="/etc/apache2/conf-available/{{ item }}"
-    force=yes
-    group=root
-    mode="0644"
-    owner=root
-    src="{{ apache_files_path }}{{ item }}"
-  notify: restart apache
-  with_items: apache_configs_enabled
-
-- name: enable configs
-  command: >
-    /usr/sbin/a2enconf {{ item }}
-    creates="/etc/apache2/conf-enabled/{{ item }}"
-  notify: restart apache
-  with_items: apache_configs_enabled
-
 - name: copy sites
   template: >
     dest="/etc/apache2/sites-available/{{ item }}"
