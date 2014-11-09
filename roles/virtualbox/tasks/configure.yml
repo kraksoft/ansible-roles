@@ -5,3 +5,22 @@
     groups=disk
     name="{{ item }}"
   with_items: virtualbox_users
+
+# original author: https://gist.github.com/ymc-geha/8416723
+- name: install tool
+  shell: >
+    /usr/bin/curl -sS https://gist.githubusercontent.com/kedrap/a2dd9296628840f31a34/raw/7220c3ca2f90217d7bb84f05615f15ce22fca6e3/save-running-virtualboxes -o save-running-virtualboxes &&
+    /bin/mv save-running-virtualboxes /etc/init.d/save-running-virtualboxes
+    creates=/etc/init.d/save-running-virtualboxes
+
+- name: set file permissions
+  file: >
+    group=root
+    mode="0755"
+    owner=root
+    path=/etc/init.d/save-running-virtualboxes
+
+- name: run update-rc.d defaults
+  command: >
+    /usr/sbin/update-rc.d save-running-virtualboxes stop 19 0 1 6 .
+  changed_when: false
