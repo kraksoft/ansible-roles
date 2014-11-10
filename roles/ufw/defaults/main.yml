@@ -1,2 +1,11 @@
 ---
 ufw_gui_enabled: false
+ufw_rules: []
+#  - name: allow ssh
+#    direction: in
+#    from_ip: 192.168.1.0/24
+#    from_port: ~
+#    proto: any
+#    rule: allow
+#    to_ip: 192.168.1.1
+#    to_port: 22

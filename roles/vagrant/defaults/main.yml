@@ -4,6 +4,7 @@ vagrant_modules:
   - nfs-kernel-server
 vagrant_plugins:
   - vagrant-vbguest
+vagrant_rpc_mountd_port: 1011
 vagrant_vagrant_path: /usr/bin/vagrant
 vagrant_version: 1.6.5
 vagrant_url: https://dl.bintray.com/mitchellh/vagrant/vagrant_{{ vagrant_version }}_x86_64.deb

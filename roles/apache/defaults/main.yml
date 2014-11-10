@@ -3,12 +3,16 @@ apache_files_path: ../../files/apache/
 apache_modules: []
 #  - headers
 #  - rewrite
+apache_ports: false
 apache_sites_disabled: []
-#  - 000-default
-#  - 000-default-ssl
 #  - default
 #  - default.conf
+#  - 000-default
+#  - 000-default.conf
 #  - default-ssl
 #  - default-ssl.conf
+#  - 000-default-ssl
+#  - 000-default-ssl.conf
 apache_sites_enabled: []
+#  - 000-common.conf
 #  - projectx-env

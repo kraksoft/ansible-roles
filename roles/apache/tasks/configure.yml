@@ -1,4 +1,15 @@
 ---
+- name: copy ports.conf
+  template: >
+    dest=/etc/apache2/ports.conf
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ apache_files_path }}{{ apache_ports }}"
+  notify: restart apache
+  when: apache_ports != false
+
 - name: copy sites
   template: >
     dest="/etc/apache2/sites-available/{{ item }}"

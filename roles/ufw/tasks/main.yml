@@ -1,5 +1,7 @@
 ---
 - include: install.yml
 
+- include: configure.yml
+
 - include: gui.yml
   when: ufw_gui_enabled != false

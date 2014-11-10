@@ -18,3 +18,12 @@
     mode="0440"
     owner=root
     path="{{ vagrant_sudoers_path }}/vagrant"
+
+- name: set fixed port for rpc.mountd
+  lineinfile: >
+    dest=/etc/default/nfs-kernel-server
+    line="RPCMOUNTDOPTS=\"-p {{ vagrant_rpc_mountd_port }}\""
+    regexp="RPCMOUNTDOPTS="
+    state=present
+  notify: restart nfs-kernel-server
+  when: vagrant_rpc_mountd_port != false
