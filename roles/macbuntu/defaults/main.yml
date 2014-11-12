@@ -1,8 +1,9 @@
 ---
 macbuntu_packages:
-  - faenza-icon-theme
   - mac-icons-v3
   - mac-ithemes-v3
+macbuntu_post_packages: []
+#  - faenza-icon-theme
 macbuntu_pre_packages:
   - libglib2.0-bin
 macbuntu_repositories:
