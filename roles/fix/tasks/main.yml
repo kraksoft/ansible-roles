@@ -10,3 +10,6 @@
 
 - include: brightness.yml
   when: "'brightness' in fix_issues"
+
+- include: inotify.yml
+  when: "'inotify' in fix_issues"
