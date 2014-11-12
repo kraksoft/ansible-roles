@@ -5,7 +5,7 @@
     pkg=gnome-commander
     state=present
 
-- name: install pre-packages
+- name: install post-packages
   apt: >
     force=yes
     pkg="{{ item }}"
