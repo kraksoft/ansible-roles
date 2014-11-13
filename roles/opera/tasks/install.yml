@@ -1,15 +1,17 @@
 ---
 - name: add gpg key
   apt_key: >
-    id=A8492E35
+    id="{{ opera_key_id }}"
     state=present
-    url="http://deb.opera.com/archive.key"
+    url="{{ opera_key_url }}"
+  when: opera_key_url != false
 
 - name: add repository
   apt_repository: >
-    repo="deb http://deb.opera.com/opera/ stable non-free"
+    repo="{{ opera_repository }}"
     state=present
     update_cache=yes
+  when: opera_repository != false
 
 - name: install package
   apt: >

@@ -1,0 +1,4 @@
+---
+newrelic_key_id: 548C16BF
+newrelic_key_url: https://download.newrelic.com/548C16BF.gpg
+newrelic_repository: deb http://apt.newrelic.com/debian/ newrelic non-free

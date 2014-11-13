@@ -1,7 +1,9 @@
 ---
+- include: include_vars.yml
+
 - include: install.yml
 
-#- include: secure.yml
+- include: secure.yml
 
 - include: configure.yml
 
