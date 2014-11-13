@@ -1,9 +1,10 @@
 ---
 - name: add beta repository
   apt_repository: >
-    repo="deb http://deb.opera.com/opera-beta/ stable non-free"
+    repo="{{ opera_beta_repository }}"
     state=present
     update_cache=yes
+  when: opera_beta_repository != false
 
 - name: install beta package
   apt: >
