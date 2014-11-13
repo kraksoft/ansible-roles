@@ -1,15 +1,17 @@
 ---
 - name: add gpg key
   apt_key: >
-    id=548C16BF
+    id="{{ newrelic_key_id }}"
     state=present
-    url="https://download.newrelic.com/548C16BF.gpg"
+    url="{{ newrelic_key_url }}"
+  when: newrelic_key_url != false
 
 - name: add repository
   apt_repository: >
-    repo="deb http://apt.newrelic.com/debian/ newrelic non-free"
+    repo="{{ newrelic_repository }}"
     state=present
     update_cache=yes
+  when: newrelic_repository != false
 
 - name: install service
   apt: >

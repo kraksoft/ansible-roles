@@ -1,0 +1,4 @@
+---
+rabbitmq_key_id: false
+rabbitmq_key_url: false
+rabbitmq_repository: false

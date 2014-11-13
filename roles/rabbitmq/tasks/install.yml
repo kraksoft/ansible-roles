@@ -1,4 +1,18 @@
 ---
+- name: add gpg key
+  apt_key: >
+    id="{{ rabbitmq_key_id }}"
+    state=present
+    url="{{ rabbitmq_key_url }}"
+  when: rabbitmq_key_url != false
+
+- name: add repository
+  apt_repository: >
+    repo="{{ rabbitmq_repository }}"
+    state=present
+    update_cache=yes
+  when: rabbitmq_repository != false
+
 - name: install service
   apt: >
     force=yes
