@@ -9,7 +9,7 @@
 - name: create vhosts
   command: >
     /usr/sbin/rabbitmqctl add_vhost {{ item.item.name }}
-  when: item.stdout == "" && _vhosts.results is defined
+  when: _vhosts.results is defined and item.stdout == ""
   with_items: _vhosts.results
 
 - name: check if users are created
@@ -25,12 +25,12 @@
   command: >
     /usr/sbin/rabbitmqctl add_user {{ item.item.1.name }} {{ item.item.1.password }}
   notify: restart rabbitmq
-  when: item.stdout == "" && _users.results is defined
+  when: _users.results is defined and item.stdout == ""
   with_items: _users.results
 
 - name: create privileges
   command: >
     /usr/sbin/rabbitmqctl set_permissions -p {{ item.item.0.name }} {{ item.item.1.name }} {{ item.item.1.priv }}
   notify: restart rabbitmq
-  when: item.stdout == "" && _users.results is defined
+  when: _users.results is defined and item.stdout == ""
   with_items: _users.results
