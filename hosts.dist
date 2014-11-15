@@ -2,25 +2,30 @@
 localhost                               ansible_ssh_host=127.0.0.1 ansible_connection=local
 
 ; projectX
-projectx.dev.lan                        ansible_ssh_host=192.168.1.101 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
-projectx.stage.com-A                    ansible_ssh_host=projectx.stage.com ansible_ssh_user=user
-projectx.prod.com                       ansible_ssh_host=projectx.prod.com ansible_ssh_user=user
+name11.dev.lan                          ansible_ssh_host=192.168.1.101 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+name.stage.com-A                        ansible_ssh_host=name.stage.com ansible_ssh_user=user
+name13.prod.com                         ansible_ssh_host=name13.prod.com ansible_ssh_user=user
 
 ; projectY
-projecty.dev.lan                        ansible_ssh_host=192.168.1.102 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
-projecty.stage.com-B                    ansible_ssh_host=projecty.stage.com ansible_ssh_user=user
-projecty.prod.com                       ansible_ssh_host=projecty.prod.com ansible_ssh_user=user
+name21.dev.lan                          ansible_ssh_host=192.168.1.102 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+name.stage.com-B                        ansible_ssh_host=name.stage.com ansible_ssh_user=user
+name23.prod.com                         ansible_ssh_host=name23.prod.com ansible_ssh_user=user
+
+; projectZ
+name31.com                              ansible_ssh_host=host31.com ansible_ssh_user=user
+name32.com                              ansible_ssh_host=host32.com ansible_ssh_user=user
+name33.com                              ansible_ssh_host=host33.com ansible_ssh_user=user
 
 
 ; projectX
 [projectx_dev]
-projectx.dev.lan
+name11.dev.lan
 
 [projectx_stage]
-projectx.stage.com-A
+name.stage.com-A
 
 [projectx_prod]
-projectx.prod.com
+name13.prod.com
 
 [projectx:children]
 projectx_dev
@@ -30,15 +35,31 @@ projectx_prod
 
 ; projectY
 [projecty_dev]
-projecty.dev.lan
+name21.dev.lan
 
 [projecty_stage]
-projecty.stage.com-B
+name.stage.com-B
 
 [projecty_prod]
-projecty.prod.com
+name23.prod.com
 
 [projecty:children]
 projecty_dev
 projecty_stage
 projecty_prod
+
+
+; projectZ
+[projectz_name31]
+name31.com
+
+[projectz_name32]
+name32.com
+
+[projectz_name33]
+name33.com
+
+[projecty:children]
+projectz_name31
+projectz_name32
+projectz_name33

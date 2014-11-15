@@ -1,0 +1,22 @@
+---
+- name: "prepare project 'projectZ' with host '{{ host }}'"
+  gather_facts: true
+  hosts: "projectz_{{ host }}"
+  tasks:
+    # simple task to ensure, that required parameters are set
+    - name: check if required parameters are defined
+      assert:
+        that:
+          - "host is defined"
+
+- include: roles/_projectx/base.yml
+
+- include: roles/_projectx/packages.yml
+
+- include: roles/_projectx/services.yml
+
+- include: roles/_projectx/host_name31.yml
+
+- include: roles/_projectx/host_name32.yml
+
+- include: roles/_projectx/host_name33.yml
