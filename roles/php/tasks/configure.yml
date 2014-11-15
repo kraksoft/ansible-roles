@@ -15,7 +15,7 @@
 - name: copy default config
   command: >
     /bin/cp -f /etc/php5/apache2/php.ini /etc/php5/common/php.ini
-  when: _stat.stat.lnk_source is not defined or _stat.stat.lnk_source != "/etc/php5/common/php.ini"
+  when: _stat is defined and (_stat.stat.lnk_source is not defined or _stat.stat.lnk_source != "/etc/php5/common/php.ini")
 
 - name: set file permissions
   file: >
