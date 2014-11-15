@@ -1,5 +1,4 @@
 ---
-grub_customizer_enabled: false
 grub_parameters: {}
 #  GRUB_DEFAULT: saved
 #  GRUB_TIMEOUT: 1
