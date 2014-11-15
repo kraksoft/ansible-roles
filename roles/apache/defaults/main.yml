@@ -4,9 +4,6 @@ apache_modules: []
 #  - headers
 #  - rewrite
 apache_ports: false
-apache_post_packages: []
-#  - apache2-utils
-#  - apachetop
 apache_sites_disabled: []
 #  - default
 #  - default.conf
