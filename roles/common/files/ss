@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$#" -eq 0 ]; then
+    sudo su -
+else
+    sudo $@
+fi

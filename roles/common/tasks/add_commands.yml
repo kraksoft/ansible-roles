@@ -1,4 +1,10 @@
 ---
+- name: delete aliases with the same names
+  command: >
+    unalias {{ item }}
+  changed_when: false
+  with_items: common_commands
+
 - name: copy commands
   copy: >
     dest="{{ common_remote_path }}{{ item }}"
