@@ -1,5 +1,4 @@
 ---
-php_composer_path: /usr/local/bin/composer
 php_configs:
   apache: false
   cli: false
@@ -10,8 +9,4 @@ php_files_path: ../../files/php/
 php_modules:
   - php5-cli
   - php5-common
-php_phpunit_path: /usr/local/bin/phpunit
-php_tools: []
-#  - composer
-#  - phpunit
 php_version: 5.5

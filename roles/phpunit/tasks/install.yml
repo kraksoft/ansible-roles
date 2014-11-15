@@ -2,12 +2,12 @@
 - name: install tool
   shell: >
     /usr/bin/curl -sS https://phar.phpunit.de/phpunit.phar -o phpunit.phar &&
-    /bin/mv phpunit.phar {{ php_phpunit_path }}
-    creates="{{ php_phpunit_path }}"
+    /bin/mv phpunit.phar {{ phpunit_path }}
+    creates="{{ phpunit_path }}"
 
 - name: allow everyone for selfupdate
   file: >
     group=root
     mode="0777"
     owner=root
-    path="{{ php_phpunit_path }}"
+    path="{{ phpunit_path }}"

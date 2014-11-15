@@ -1,0 +1,13 @@
+---
+composer_files_path: ../../files/composer/
+composer_path: /usr/local/bin/composer
+composer_users: []
+#  - name: user
+#    group: group
+#    home: /home/user
+#    configs:
+#      - config.json
+
+
+# custom parameters for templates
+_composer_github_oauth: "{{ __encrypted_parameter__ }}"
