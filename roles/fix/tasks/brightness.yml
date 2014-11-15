@@ -5,7 +5,7 @@
     dest=/etc/rc.local
     group=root
     insertbefore="^exit 0"
-    line="echo 9 > /sys/class/backlight/acpi_video0/brightness"
+    line="echo {{ fix_brightness_value }} > /sys/class/backlight/acpi_video0/brightness"
     mode="0755"
     owner=root
     regexp="^echo \d{1,2} \> \/sys\/class\/backlight\/acpi_video0\/brightness"
