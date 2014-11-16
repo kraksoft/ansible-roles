@@ -8,8 +8,8 @@
 - name: copy commands
   copy: >
     dest="{{ common_remote_path }}{{ item }}"
-    group=root
+    group="{{ common_commands_group }}"
     mode="0755"
-    owner=root
+    owner="{{ common_commands_user }}"
     src="{{ common_files_path }}{{ item }}"
   with_items: common_commands

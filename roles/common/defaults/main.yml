@@ -12,6 +12,8 @@ common_commands: []
 #  - path-show
 #  - pp
 #  - ss
+common_commands_group: root
+common_commands_user: root
 common_files_path: ../../files/common/
 common_locales_name: en_US.UTF-8
 common_remote_path: /usr/local/bin/
