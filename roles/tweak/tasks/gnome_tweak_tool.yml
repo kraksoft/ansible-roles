@@ -1,6 +1,0 @@
----
-- name: install gnome-tweak-tool
-  apt: >
-    force=yes
-    pkg=gnome-tweak-tool
-    state=present

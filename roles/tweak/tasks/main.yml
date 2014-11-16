@@ -1,9 +1,0 @@
----
-- include: gnome_tweak_tool.yml
-  when: "'gnome-tweak-tool' in tweak_tools"
-
-- include: ubuntu_tweak.yml
-  when: "'ubuntu-tweak' in tweak_tools"
-
-- include: unity_tweak_tool.yml
-  when: "'unity-tweak-tool' in tweak_tools"
