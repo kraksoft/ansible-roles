@@ -1,4 +1,13 @@
 ---
+- name: create dir for config files
+  file: >
+    group="{{ item.group }}"
+    mode="0755"
+    owner="{{ item.name }}"
+    path="{{ item.home }}/.composer"
+    state=directory
+  with_items: composer_users
+
 - name: copy configs
   template: >
     dest="{{ item.0.home }}/.composer/config.json"
