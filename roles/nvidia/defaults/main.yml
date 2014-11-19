@@ -2,3 +2,6 @@
 nvidia_packages:
   - nvidia-331
   - nvidia-settings
+nvidia_lines: {}
+#  NoLogo: True
+#  RegistryDwords: EnableBrightnessControl=1

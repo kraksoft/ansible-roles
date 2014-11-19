@@ -1,0 +1,13 @@
+---
+- name: add lines to xorg.conf
+  lineinfile: >
+    create=yes
+    dest=/etc/X11/xorg.conf
+    group=root
+    insertafter='Section "Device"'
+    line='    Option         "{{ item.key }}" "{{ item.value }}"'
+    mode="0644"
+    owner=root
+    regexp="^(.*){{ item.key }}"
+    state=present
+  with_dict: nvidia_lines
