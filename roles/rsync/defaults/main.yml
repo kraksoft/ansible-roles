@@ -1,0 +1,8 @@
+---
+rsync_files_path: ../../files/rsync/
+rsync_users: []
+#  - name: user
+#    group: group
+#    home: /home/user
+#    configs:
+#      - exclude.txt
