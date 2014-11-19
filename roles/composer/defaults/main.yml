@@ -6,6 +6,7 @@ composer_users: []
 #    group: group
 #    home: /home/user
 #    configs:
+#      - auth.json
 #      - config.json
 
 
