@@ -1,8 +1,5 @@
 {
     "config": {
-        "github-oauth": {
-            "github.com": "{{ _composer_github_oauth }}"
-        }
-
+        "store-auths": false
     }
 }
