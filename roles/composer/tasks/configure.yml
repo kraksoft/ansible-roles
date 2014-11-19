@@ -10,7 +10,7 @@
 
 - name: copy configs
   template: >
-    dest="{{ item.0.home }}/.composer/config.json"
+    dest="{{ item.0.home }}/.composer/{{ item.1 }}"
     force=yes
     group="{{ item.0.group }}"
     mode="0600"
