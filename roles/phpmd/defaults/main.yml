@@ -7,4 +7,4 @@ phpmd_users: []
 #    home: /home/user
 #    configs:
 #      - rulesets.xml
-phpmd_version: 2.0.3
+phpmd_version: 2.1.3
