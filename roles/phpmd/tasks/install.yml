@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -sS http://static.phpmd.org/php/{{ phpmd_version }}/phpmd..phar -o phpmd.phar &&
+    /usr/bin/curl -sS http://static.phpmd.org/php/{{ phpmd_version }}/phpmd.phar -o phpmd.phar &&
     /bin/mv phpmd.phar {{ phpmd_path }}
     creates="{{ phpmd_path }}"
 
