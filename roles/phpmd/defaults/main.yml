@@ -1,0 +1,10 @@
+---
+phpmd_files_path: ../../files/phpmd/
+phpmd_path: /usr/local/bin/phpmd
+phpmd_users: []
+#  - name: user
+#    group: group
+#    home: /home/user
+#    configs:
+#      - rulesets.xml
+phpmd_version: 2.0.3

@@ -1,0 +1,13 @@
+---
+- name: install tool
+  shell: >
+    /usr/bin/curl -sS http://static.pdepend.org/php/{{ phpmd_version }}/pdepend.phar -o phpmd.phar &&
+    /bin/mv phpmd.phar {{ phpmd_path }}
+    creates="{{ phpmd_path }}"
+
+- name: allow everyone for selfupdate
+  file: >
+    group=root
+    mode="0777"
+    owner=root
+    path="{{ phpmd_path }}"
