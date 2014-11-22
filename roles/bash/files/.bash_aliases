@@ -1,7 +1,3 @@
-# unalias l
-# unalias la
-# unalias ll
-
 alias ..='cd ..'
 alias ...='cd ...'
 alias cd..='cd ..'
