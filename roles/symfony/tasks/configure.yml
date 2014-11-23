@@ -1,15 +1,12 @@
 ---
-- name: add lines to global profile
-  lineinfile: >
-    create=yes
-    dest=/etc/profile.d/symfony.sh
+- name: copy commands
+  copy: >
+    dest="{{ symfony_remote_path }}{{ item }}"
     group=root
-    insertafter=EOF
-    line="{{ item }}"
-    mode="0644"
+    mode="0755"
     owner=root
-    state=present
-  with_items: symfony_settings
+    src="{{ symfony_files_path }}{{ item }}"
+  with_items: symfony_commands
 
 - name: install bash completion
   shell: >
@@ -23,6 +20,18 @@
     mode="0644"
     owner=root
     path=/etc/bash_completion.d/symfony2
+
+- name: add lines to global profile
+  lineinfile: >
+    create=yes
+    dest=/etc/profile.d/symfony.sh
+    group=root
+    insertafter=EOF
+    line="{{ item }}"
+    mode="0644"
+    owner=root
+    state=present
+  with_items: symfony_settings
 
 - name: add service to init.d
   template: >

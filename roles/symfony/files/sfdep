@@ -1,0 +1,88 @@
+#!/bin/bash
+
+COLOR_CLR="\e[39m"  # transparent
+COLOR_INF="\e[32m"  # green
+COLOR_ERR="\e[31m"  # rd
+COLOR_WRN="\e[33m"  # yellow
+
+
+# check parameters
+if [ ! -f composer.json ]; then
+    echo -e "${COLOR_ERR}Error: File composer.json not exist${COLOR_CLR}"
+    exit 2
+fi
+
+if [ $# -lt 1 ]; then
+    echo -e "${COLOR_ERR}Error: No arguments supplied${COLOR_CLR}"
+    exit 2
+fi
+
+if [ $# -gt 3 ]; then
+    echo -e "${COLOR_ERR}Error: Too much arguments supplied${COLOR_CLR}"
+    exit 2
+fi
+
+
+# set variables
+DIR=$1
+if [ -z "$2" ]
+    then
+        SERV="user@domain.com"
+    else
+        SERV="$2"
+fi
+if [ -z "$3" ]
+    then
+        ENV="prod"
+    else
+        ENV="$3"
+fi
+HTACCESS_ORG="public_html/.htaccess"
+HTACCESS_TMP="public_html/.htaccess-lock"
+EXCLUSE_LOCAL="$HOME/.rsync/exclude.txt"
+EXCLUSE_REMOTE="app/config/rsync_exclude.txt"
+MESSAGE="Service temporarily unavailable..."
+
+
+# display files to synchronize
+echo -e "${COLOR_INF}Checking...${COLOR_CLR}"
+rsync -azCc --force --delete --progress --no-group --keep-dirlinks --copy-unsafe-links --include "core" -O -e "ssh -p22" --exclude-from=${EXCLUSE_LOCAL} --exclude-from=${EXCLUSE_REMOTE} ./ ${SERV}:${DIR}/ -n
+
+echo -e "${COLOR_WRN}rsync ./ $SERV:$DIR/${COLOR_CLR} (y/n)?"
+read CHAR
+if [ "$CHAR" != "y" ]; then
+    echo -e "${COLOR_WRN}Quit${COLOR_CLR}"
+    exit 1
+fi
+
+
+# do the job
+echo -e "${COLOR_INF}Blocking...${COLOR_CLR}"
+ssh ${SERV} /bin/bash << EOF_1
+cd ${DIR}
+mv -f ${HTACCESS_ORG} ${HTACCESS_TMP}
+cat > ${HTACCESS_ORG} << EOF_2
+ErrorDocument   503                     '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="refresh" content="60"><title></title></head><body style="font-family: Arial; text-align:center"><h4>${MESSAGE}</h4></body></html>'
+RewriteEngine   on
+RewriteCond     %{ENV:REDIRECT_STATUS}  !=503
+RewriteRule     .* -                    [R=503,L]
+EOF_2
+EOF_1
+
+echo -e "${COLOR_INF}Syncing...${COLOR_CLR}"
+rsync -azCc --force --delete --progress --no-group --keep-dirlinks --copy-unsafe-links --include "core" -O -e "ssh -p22" --exclude-from=${EXCLUSE_LOCAL} --exclude-from=${EXCLUSE_REMOTE} ./ ${SERV}:${DIR}/
+
+echo -e "${COLOR_INF}Cache clearing and warming up...${COLOR_CLR}"
+ssh ${SERV} /bin/bash << EOF_3
+cd ${DIR}
+app/console cache:clear --env=${ENV}
+app/console cache:warmup --env=${ENV}
+EOF_3
+
+echo -e "${COLOR_INF}Unblocking...${COLOR_CLR}"
+ssh ${SERV} /bin/bash << EOF_4
+cd ${DIR}
+mv -f ${HTACCESS_TMP} ${HTACCESS_ORG}
+EOF_4
+
+echo -e "${COLOR_INF}OK${COLOR_CLR}"
