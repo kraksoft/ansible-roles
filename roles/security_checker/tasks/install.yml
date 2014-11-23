@@ -1,0 +1,13 @@
+---
+- name: install tool
+  shell: >
+    /usr/bin/curl -sS http://get.sensiolabs.org/security-checker.phar -o security-checker.phar &&
+    /bin/mv security-checker.phar {{ security_checker_path }}
+    creates="{{ security_checker_path }}"
+
+- name: allow everyone for selfupdate
+  file: >
+    group=root
+    mode="0777"
+    owner=root
+    path="{{ security_checker_path }}"

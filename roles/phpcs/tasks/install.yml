@@ -1,0 +1,13 @@
+---
+- name: install tool
+  shell: >
+    /usr/bin/curl -L -sS https://github.com/squizlabs/PHP_CodeSniffer/releases/download/{{ phpcs_version }}/phpcs.phar -o phpcs.phar &&
+    /bin/mv phpcs.phar {{ phpcs_path }}
+    creates="{{ phpcs_path }}"
+
+- name: allow everyone for selfupdate
+  file: >
+    group=root
+    mode="0777"
+    owner=root
+    path="{{ phpcs_path }}"

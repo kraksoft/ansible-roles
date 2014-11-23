@@ -1,0 +1,13 @@
+---
+- name: install tool
+  shell: >
+    /usr/bin/curl -L -sS https://github.com/squizlabs/PHP_CodeSniffer/releases/download/{{ phpcbf_version }}/phpcbf.phar -o phpcbf.phar &&
+    /bin/mv phpcbf.phar {{ phpcbf_path }}
+    creates="{{ phpcbf_path }}"
+
+- name: allow everyone for selfupdate
+  file: >
+    group=root
+    mode="0777"
+    owner=root
+    path="{{ phpcbf_path }}"
