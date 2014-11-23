@@ -1,7 +1,7 @@
 ---
 - name: copy configs
   copy: >
-    dest="{{ item.0.home }}"
+    dest="{{ item.0.home }}/{{ item.1 }}"
     group="{{ item.0.group }}"
     mode="0600"
     owner="{{ item.0.name }}"
