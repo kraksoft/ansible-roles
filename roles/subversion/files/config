@@ -172,7 +172,7 @@
 ### custom settings
 
 # [helpers]
-# editor-cmd = /usr/bin/mcedit
-# diff-cmd = /usr/local/bin/diff-wrap
-# diff3-cmd = /usr/local/bin/diff3-wrap
-# merge-tool-cmd = /usr/local/bin/merge-wrap
+# editor-cmd = mcedit
+# diff-cmd = diff-wrap
+# diff3-cmd = diff3-wrap
+# merge-tool-cmd = merge-wrap
