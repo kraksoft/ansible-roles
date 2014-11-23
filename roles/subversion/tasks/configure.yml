@@ -1,0 +1,20 @@
+---
+- name: create dir for config files
+  file: >
+    group="{{ item.group }}"
+    mode="0755"
+    owner="{{ item.name }}"
+    path="{{ item.home }}/.subversion"
+    state=directory
+  with_items: subversion_users
+
+- name: copy configs
+  copy: >
+    dest="{{ item.0.home }}/.subversion/{{ item.1 }}"
+    group="{{ item.0.group }}"
+    mode="0644"
+    owner="{{ item.0.name }}"
+    src="{{ subversion_files_path }}{{ item.1 }}"
+  with_subelements:
+    - subversion_users
+    - configs
