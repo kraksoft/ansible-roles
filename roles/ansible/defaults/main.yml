@@ -1,5 +1,9 @@
 ---
+ansible_commands: []
+#  - ap
+#  - av
 ansible_files_path: ../../files/ansible/
+ansible_remote_path: /usr/local/bin/
 ansible_users: []
 #  - name: user
 #    group: group

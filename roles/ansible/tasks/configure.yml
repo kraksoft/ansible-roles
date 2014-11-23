@@ -9,3 +9,12 @@
   with_subelements:
     - ansible_users
     - configs
+
+- name: copy commands
+  copy: >
+    dest="{{ ansible_remote_path }}{{ item }}"
+    group=root
+    mode="0755"
+    owner=root
+    src="{{ ansible_files_path }}{{ item }}"
+  with_items: ansible_commands
