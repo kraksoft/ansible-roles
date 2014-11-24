@@ -11,9 +11,9 @@
 
 - include: roles/_projectx/base.yml
 
-- include: roles/_projectx/packages.yml
-
 - include: roles/_projectx/services.yml
+
+- include: roles/_projectx/packages.yml
 
 - include: roles/_projectx/env_dev.yml
 
