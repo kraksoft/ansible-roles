@@ -2,9 +2,13 @@
 # it must be there, because: "Can not start the New Relic Server Monitor until you insert a valid license key"
 - name: set licence key
   lineinfile: >
+    create=yes
     dest=/etc/newrelic/nrsysmond.cfg
+    group=newrelic
     line="license_key={{ newrelic_licence_key }}"
-    regexp=^license_key=
+    mode="0640"
+    owner=root
+    regexp="^license_key"
     state=present
   notify: restart newrelic
   when: newrelic_licence_key != false
