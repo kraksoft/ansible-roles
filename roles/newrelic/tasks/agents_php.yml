@@ -1,0 +1,20 @@
+---
+- name: enable modules
+  apt: >
+    force=yes
+    pkg=newrelic-php5
+    state=present
+  notify: restart newrelic-apache
+
+- name: set licence key
+  lineinfile: >
+    create=yes
+    dest=/etc/php5/mods-available/newrelic.ini
+    group=newrelic
+    line='newrelic.license = "{{ newrelic_licence_key }}"'
+    mode="0644"
+    owner=root
+    regexp="^newrelic.license"
+    state=present
+  notify: restart newrelic-apache
+  when: newrelic_licence_key != false

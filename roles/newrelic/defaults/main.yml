@@ -1,4 +1,4 @@
 ---
+newrelic_agents: []
+#  - php
 newrelic_licence_key: false
-newrelic_modules: []
-#  - newrelic-php5

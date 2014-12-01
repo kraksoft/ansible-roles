@@ -4,3 +4,6 @@
 - include: pre_configure.yml
 
 - include: install.yml
+
+- include: agents_php.yml
+  when: "'php' in newrelic_agents"

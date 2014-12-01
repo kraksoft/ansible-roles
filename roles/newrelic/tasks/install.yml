@@ -25,11 +25,3 @@
     enabled=yes
     name=newrelic-sysmond
     state=started
-
-- name: enable modules
-  apt: >
-    force=yes
-    pkg="{{ item }}"
-    state=present
-  notify: restart newrelic-apache
-  with_items: newrelic_modules
