@@ -1,3 +1,16 @@
+# unalias clr
+# unalias h
+# unalias l
+# unalias la
+# unalias ll
+# unalias mount-show
+# unalias o
+# unalias oo
+# unalias p
+# unalias path-show
+# unalias pp
+# unalias ss
+
 alias ..='cd ..'
 alias ...='cd ...'
 alias cd..='cd ..'
