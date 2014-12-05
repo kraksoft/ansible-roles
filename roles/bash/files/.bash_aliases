@@ -1,15 +1,5 @@
-# unalias clr
-# unalias h
-# unalias l
-# unalias la
-# unalias ll
-# unalias mount-show
-# unalias o
-# unalias oo
-# unalias p
-# unalias path-show
-# unalias pp
-# unalias ss
+# remove existing aliases with the same file name as commands in /usr/local/bin/
+# find /usr/local/bin/ -type f -printf "%f\n" 2>/dev/null | while IFS= read -r file; do unalias "$file" > /dev/null 2>&1; done
 
 alias ..='cd ..'
 alias ...='cd ...'
