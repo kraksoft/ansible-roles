@@ -8,7 +8,7 @@
 
 - name: install sudoers parameters
   shell: >
-    /usr/bin/curl -sS https://raw.githubusercontent.com/mitchellh/vagrant/master/contrib/sudoers/linux -o vagrant &&
+    /usr/bin/curl -sS https://raw.githubusercontent.com/mitchellh/vagrant/master/contrib/sudoers/linux-ubuntu -o vagrant &&
     /bin/mv vagrant {{ vagrant_sudoers_path }}/
     creates="{{ vagrant_sudoers_path }}/vagrant"
 
