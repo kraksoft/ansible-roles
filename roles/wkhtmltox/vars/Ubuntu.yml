@@ -12,4 +12,4 @@ wkhtmltox_pre_packages:
   - libxext6
   - libxrender1
   - zlib1g
-wkhtmltox_url: http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
+wkhtmltox_url: http://downloads.sourceforge.net/project/wkhtmltopdf/{{ wkhtmltox_version }}/wkhtmltox-{{ wkhtmltox_version }}_linux-trusty-amd64.deb
