@@ -1,0 +1,20 @@
+---
+- name: add gpg key
+  apt_key: >
+    id="{{ chrome_key_id }}"
+    state=present
+    url="{{ chrome_key_url }}"
+  when: chrome_key_url != false
+
+- name: add repository
+  apt_repository: >
+    repo="{{ chrome_repository }}"
+    state=present
+    update_cache=yes
+  when: chrome_repository != false
+
+- name: install package
+  apt: >
+    force=yes
+    pkg=google-chrome-stable
+    state=present
