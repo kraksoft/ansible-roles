@@ -15,22 +15,20 @@
     ui = true
 
 [alias]
-    co = checkout
     ci = commit
+    co = checkout
     di = diff
-    st = status
     dt = difftool
     mt = mergetool
+    st = status
 
     df = diff HEAD
-    ss = status -s
-    lo = log --stat --graph --date-order
     hi = log --pretty=\"format:%h %ai | %s%d [%an]\" --graph --date-order
     hist = log --pretty=\"format:%h %ai | %s%d [%an]\"
     last = log -1 HEAD
-    unstage = reset HEAD --
-    type = cat-file -t
-    dump = cat-file -p
+    lo = log --stat --graph --date-order
+    ss = status -s
+    un = reset --soft HEAD~1
 
 [log]
     decorate = true

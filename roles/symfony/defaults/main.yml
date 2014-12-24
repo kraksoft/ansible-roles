@@ -7,3 +7,4 @@ symfony_services: []
 #  - symfony_projectx
 symfony_settings: []
 #  - "export SYMFONY_ENV={{ env }}"
+#  - "export SYMFONY_USE_SHM=true"

@@ -27,3 +27,19 @@
     state=present
   notify: restart nfs-kernel-server
   when: vagrant_rpc_mountd_port != false
+
+- name: set deny hosts
+  lineinfile: >
+    dest=/etc/hosts.deny
+    insertafter=EOF
+    line="{{ item }}"
+    state=present
+  with_items: vagrant_deny_hosts
+
+- name: set allow hosts
+  lineinfile: >
+    dest=/etc/hosts.allow
+    insertafter=EOF
+    line="{{ item }}"
+    state=present
+  with_items: vagrant_allow_hosts

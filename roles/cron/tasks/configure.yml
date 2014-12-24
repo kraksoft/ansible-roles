@@ -4,7 +4,7 @@
     create=yes
     dest="/var/spool/cron/crontabs/{{ cron_lines_user }}"
     group=crontab
-    insertafter=BOF
+    insertbefore=BOF
     line="{{ item }}"
     mode="0600"
     owner="{{ cron_lines_user }}"

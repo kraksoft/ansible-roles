@@ -1,4 +1,8 @@
 ---
+vagrant_allow_hosts: []
+#  - "rpcbind mountd nfsd statd lockd rquotad : 192.168.50."
+vagrant_deny_hosts: []
+#  - "rpcbind mountd nfsd statd lockd rquotad : ALL"
 vagrant_modules:
   - nfs-common
   - nfs-kernel-server
