@@ -8,7 +8,16 @@
   register: _grub
   with_dict: grub_parameters
 
+- name: set background color
+  lineinfile: >
+    dest=/lib/plymouth/themes/default.grub
+    line="if background_color {{ grub_background_color }}; then"
+    regexp="^if background_color "
+    state=present
+  register: _themes
+  when: grub_background_color != false
+
 - name: update grub
   command: >
     /usr/sbin/update-grub
-  when: _grub.changed == true
+  when: _grub.changed == true or _themes.changed == true

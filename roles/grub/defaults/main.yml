@@ -1,4 +1,5 @@
 ---
+grub_background_color: false
 grub_parameters: {}
 #  GRUB_DEFAULT: saved
 #  GRUB_TIMEOUT: 1
