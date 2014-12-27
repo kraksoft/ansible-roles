@@ -8,3 +8,5 @@
 - include: install_required.yml
 
 - include: add_commands.yml
+
+- include: add_hosts.yml

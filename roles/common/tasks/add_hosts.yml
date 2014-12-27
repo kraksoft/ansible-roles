@@ -1,0 +1,47 @@
+---
+- name: add header for external hosts
+  lineinfile: >
+    dest=/etc/hosts
+    insertafter=EOF
+    line="# external hosts"
+    state=present
+
+- name: add external hosts
+  lineinfile: >
+    dest=/etc/hosts
+    insertafter="# external hosts"
+    line="{{ item }}"
+    state=present
+  with_items: common_host_externals
+
+- name: add header for internal hosts
+  lineinfile: >
+    dest=/etc/hosts
+    insertafter=EOF
+    line="# internal hosts"
+    state=present
+
+- name: add internal hosts
+  lineinfile: >
+    dest=/etc/hosts
+    insertafter="# internal hosts"
+    line="{{ item.key }}    {{ item.value }}    {{ item.value }}{{ common_host_domain }}"
+    regexp="^{{ item.key }}(\s*){{ item.value }}(\s*){{ item.value }}{{ common_host_domain }}"
+    state=present
+  with_dict: common_host_internals
+
+- name: add header for website hosts
+  lineinfile: >
+    dest=/etc/hosts
+    insertafter=EOF
+    line="# website hosts"
+    state=present
+
+- name: add website hosts
+  lineinfile: >
+    dest=/etc/hosts
+    insertafter="# website hosts"
+    line="{{ common_host_ip }}    {{ item }}{{ common_host_env }}{{ common_host_domain }}    www.{{ item }}{{ common_host_env }}{{ common_host_domain }}"
+    regexp="^{{ common_host_ip }}(\s*){{ item }}{{ common_host_env }}{{ common_host_domain }}(\s*)www.{{ item }}{{ common_host_env }}{{ common_host_domain }}"
+    state=present
+  with_items: common_host_websites
