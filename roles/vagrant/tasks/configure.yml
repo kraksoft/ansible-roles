@@ -43,3 +43,17 @@
     line="{{ item }}"
     state=present
   with_items: vagrant_allow_hosts
+
+- name: disable nfs-kernel-server autostart
+  lineinfile: >
+    dest=/etc/init.d/nfs-kernel-server
+    line="# {{ item.key }}: {{ item.value }}"
+    regexp="^# {{ item.key }}: "
+    state=present
+  register: _nfs_kernel_server
+  with_dict: vagrant_nfs_lines
+
+- name: run update-rc.d disable
+  command: >
+    /usr/sbin/update-rc.d nfs-kernel-server disable
+  when: _nfs_kernel_server.changed == true
