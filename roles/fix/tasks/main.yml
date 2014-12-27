@@ -13,3 +13,6 @@
 
 - include: inotify.yml
   when: "'inotify' in fix_issues"
+
+- include: ipv6.yml
+  when: "'ipv6' in fix_issues"

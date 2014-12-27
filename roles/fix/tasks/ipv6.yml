@@ -1,0 +1,9 @@
+---
+- name: disable ipv6 messages
+  lineinfile: >
+    backrefs=yes
+    dest=/etc/netconfig
+    line="# {{ item }} \1"
+    regexp="^{{ item }} (.*)$"
+    state=present
+  with_items: fix_ipv6_lines

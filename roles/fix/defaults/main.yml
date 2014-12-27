@@ -1,7 +1,12 @@
 ---
 fix_brightness_value: 9
+fix_ipv6_lines: []
+#  - tcp6
+#  - udp6
 fix_issues: []
 #  - avahi
 #  - blkid-tab
-#  - brightness
 #  - bluetooth
+#  - brightness
+#  - inotify
+#  - ipv6
