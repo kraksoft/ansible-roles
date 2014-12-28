@@ -6,16 +6,17 @@
     line="cd /vagrant"
     state=present
 
-- name: delete files if dir for website contain its
-  file: >
-    path="{{ vagrant_guest_folder }}"
-    state=absent
-
 - name: check if dir for website is created
   stat: >
     path="{{ vagrant_guest_folder }}"
   register: _stat
   when: vagrant_guest_folder != false
+
+- name: delete files if dir for website contain its
+  file: >
+    path="{{ vagrant_guest_folder }}"
+    state=absent
+  when: _stat is defined and (_stat.stat.lnk_source is not defined or _stat.stat.lnk_source != "/vagrant")
 
 - name: create dir for website
   file: >
