@@ -5,6 +5,7 @@
     insertafter=EOF
     line="# external hosts"
     state=present
+  when: common_host_externals
 
 - name: add external hosts
   lineinfile: >
@@ -20,6 +21,7 @@
     insertafter=EOF
     line="# internal hosts"
     state=present
+  when: common_host_internals
 
 - name: add internal hosts
   lineinfile: >
@@ -36,6 +38,7 @@
     insertafter=EOF
     line="# website hosts"
     state=present
+  when: common_host_websites
 
 - name: add website hosts
   lineinfile: >
