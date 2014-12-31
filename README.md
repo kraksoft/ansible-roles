@@ -1,7 +1,7 @@
 Ansible roles
 =============
 
-The main goal of this repository is to provide ready to use Ansible roles.
+This repository provide ready to use Ansible roles.
 
 You can treat it like [Ansible Galaxy](https://galaxy.ansible.com/), but in local edition.
 
