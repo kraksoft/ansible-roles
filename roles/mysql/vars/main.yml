@@ -1,2 +1,2 @@
 ---
-_prefix: "-h{{ mysql_login_host }} -u{{ mysql_login_user }} -p{{ mysql_login_password }}"
+_prefix: "--host={{ mysql_login_host }} --user={{ mysql_login_user }} --password={{ mysql_login_password }}"
