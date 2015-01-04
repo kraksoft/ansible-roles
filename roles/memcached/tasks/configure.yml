@@ -1,0 +1,9 @@
+---
+- name: set parameters
+  lineinfile: >
+    dest=/etc/memcached.conf
+    line="-{{ item.key }} {{ item.value }}"
+    regexp="^(.*)-{{ item.key }} "
+    state=present
+  notify: restart memcached
+  with_dict: memcached_parameters
