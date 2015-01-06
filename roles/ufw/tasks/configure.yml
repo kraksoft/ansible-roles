@@ -10,3 +10,11 @@
     to_port="{{ item.to_port }}"
   notify: restart ufw
   with_items: ufw_rules
+
+- name: stop logging anything to /var/log/kern.log
+  lineinfile: >
+    dest=/etc/rsyslog.d/20-ufw.conf
+    line="& ~"
+    regexp="^(.*)& ~"
+    state=present
+  notify: restart ufw
