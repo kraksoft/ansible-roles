@@ -1,0 +1,4 @@
+---
+fail2ban_configs: []
+#  - jail.local
+fail2ban_files_path: ../../files/fail2ban/

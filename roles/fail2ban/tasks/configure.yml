@@ -1,0 +1,11 @@
+---
+- name: copy configs
+  template: >
+    dest="/etc/fail2ban/{{ item }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ fail2ban_files_path }}{{ item }}"
+  notify: restart fail2ban
+  with_items: fail2ban_configs
