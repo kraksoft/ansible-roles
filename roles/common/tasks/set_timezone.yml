@@ -1,0 +1,18 @@
+---
+- name: check if timezone is set
+  command: >
+    /bin/cat /etc/timezone
+  changed_when: false
+  register: _timezone
+  when: common_timezone_name != false
+
+- name: set timezone
+  copy: content="{{ common_timezone_name }}"
+        dest=/etc/timezone
+        group=root
+        mode=0644
+        owner=root
+  when: _timezone is defined and _timezone.stdout != common_timezone_name
+  notify:
+    - update timezone
+    - restart rsyslog

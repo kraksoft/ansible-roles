@@ -3,4 +3,10 @@
   locale_gen: >
     name="{{ common_locale_name }}"
     state=present
+  register: _locales
   when: common_locale_name != false
+
+- name: update locale
+  command: >
+    /usr/sbin/update-locale LANGUAGE={{ common_locale_name }} LANG={{ common_locale_name }} LC_ALL={{ common_locale_name }}
+  when: _locales.changed == true

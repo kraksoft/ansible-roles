@@ -3,6 +3,8 @@
 
 - include: set_locales.yml
 
+- include: set_timezone.yml
+
 - include: add_sources.yml
 
 - include: install_required.yml
