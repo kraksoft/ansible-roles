@@ -1,7 +1,7 @@
 ---
 - include: include_vars.yml
 
-#- include: set_locales.yml
+- include: set_locales.yml
 
 - include: add_sources.yml
 

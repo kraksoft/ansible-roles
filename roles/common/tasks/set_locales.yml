@@ -1,5 +1,6 @@
 ---
 - name: set locales
   locale_gen: >
-    name="{{ common_locales_name }}"
+    name="{{ common_locale_name }}"
     state=present
+  when: common_locale_name != false
