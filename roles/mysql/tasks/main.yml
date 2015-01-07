@@ -4,3 +4,12 @@
 - include: install.yml
 
 - include: configure.yml
+
+- include: configure_standalone.yml
+  when: mysql_standalone_installation == true
+
+- include: install_required.yml
+  when: mysql_standalone_installation != true
+
+- include: configure_embedded.yml
+  when: mysql_standalone_installation != true

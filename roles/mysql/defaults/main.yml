@@ -2,16 +2,28 @@
 mysql_configs: []
 #  - common.cnf
 mysql_databases: []
+#  - name: "*"
+#    users:
+#      - name: root
+#        host: localhost
+#        password: pass
+#        priv: ALL,GRANT
 #  - name: database
 #    users:
 #      - name: user
+#        host: localhost
 #        password: pass
-#        priv: ALL PRIVILEGES
+#        priv: ALL
 #      - name: user_ro
+#        host: "%"
 #        password: pass_ro
 #        priv: SELECT
 mysql_files_path: ../../files/mysql/
 mysql_login_host: localhost
 mysql_login_password: ~
+mysql_login_port: 3306
 mysql_login_user: root
+mysql_required_libraries:
+  - python-mysqldb
+mysql_standalone_installation: false
 mysql_version: 5.6

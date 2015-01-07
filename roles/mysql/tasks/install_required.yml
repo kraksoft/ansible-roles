@@ -1,0 +1,7 @@
+---
+- name: install required libraries
+  apt: >
+    force=yes
+    pkg="{{ item }}"
+    state=present
+  with_items: mysql_required_libraries
