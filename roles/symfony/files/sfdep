@@ -13,7 +13,7 @@ if [ ! -f composer.json ]; then
 fi
 
 if [ $# -lt 1 ]; then
-    echo -e "${COLOR_ERR}Error: No arguments supplied${COLOR_CLR}"
+    echo -e "${COLOR_ERR}Error: No arguments supplied, eg: sfdep ./ user@host.com:/path/ [env]${COLOR_CLR}"
     exit 2
 fi
 
@@ -24,13 +24,9 @@ fi
 
 
 # set variables
-DIR=$1
-if [ -z "$2" ]
-    then
-        SERV="user@domain.com"
-    else
-        SERV="$2"
-fi
+SRC=$1
+SERV=${2%:*}
+DIR=${2#*:}
 if [ -z "$3" ]
     then
         ENV="prod"
@@ -46,13 +42,13 @@ MESSAGE="Service temporarily unavailable..."
 
 # display files to synchronize
 echo -e "${COLOR_INF}Checking...${COLOR_CLR}"
-rsync -azCc --force --delete --progress --no-group --keep-dirlinks --copy-unsafe-links --include "core" -O -e "ssh -p22" --exclude-from=${EXCLUSE_LOCAL} --exclude-from=${EXCLUSE_REMOTE} ./ ${SERV}:${DIR}/ -n
+rsync -azCc --force --delete --progress --no-group --keep-dirlinks --copy-unsafe-links --include "core" -O -e "ssh -p22" --exclude-from=${EXCLUSE_LOCAL} --exclude-from=${EXCLUSE_REMOTE} ${SRC} ${SERV}:${DIR}/ -n
 
-echo -e "${COLOR_WRN}rsync ./ $SERV:$DIR/${COLOR_CLR} (y/n)?"
+echo -e "${COLOR_WRN}rsync ${SRC} $SERV:$DIR/${COLOR_CLR} (y/n)?"
 read CHAR
 if [ "$CHAR" != "y" ]; then
     echo -e "${COLOR_WRN}Quit${COLOR_CLR}"
-    exit 1
+    exit 0
 fi
 
 
@@ -70,7 +66,7 @@ EOF_2
 EOF_1
 
 echo -e "${COLOR_INF}Syncing...${COLOR_CLR}"
-rsync -azCc --force --delete --progress --no-group --keep-dirlinks --copy-unsafe-links --include "core" -O -e "ssh -p22" --exclude-from=${EXCLUSE_LOCAL} --exclude-from=${EXCLUSE_REMOTE} ./ ${SERV}:${DIR}/
+rsync -azCc --force --delete --progress --no-group --keep-dirlinks --copy-unsafe-links --include "core" -O -e "ssh -p22" --exclude-from=${EXCLUSE_LOCAL} --exclude-from=${EXCLUSE_REMOTE} ${SRC} ${SERV}:${DIR}/
 
 echo -e "${COLOR_INF}Cache clearing and warming up...${COLOR_CLR}"
 ssh ${SERV} /bin/bash << EOF_3
