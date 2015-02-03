@@ -11,5 +11,7 @@ wkhtmltox_pre_packages:
   - libx11-6
   - libxext6
   - libxrender1
+  - xfonts-75dpi
+  - xfonts-base
   - zlib1g
 wkhtmltox_url: http://downloads.sourceforge.net/project/wkhtmltopdf/{{ wkhtmltox_version }}/wkhtmltox-{{ wkhtmltox_version }}_linux-wheezy-amd64.deb
