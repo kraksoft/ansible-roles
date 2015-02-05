@@ -1,0 +1,38 @@
+---
+#- name: copy configs
+#  template: >
+#    dest="/etc/postgresql/conf.d/{{ item }}"
+#    force=yes
+#    group=root
+#    mode="0644"
+#    owner=root
+#    src="{{ postgresql_files_path }}{{ item }}"
+#  notify: restart postgresql
+#  with_items: postgresql_configs
+
+- name: create databases
+  postgresql_db: >
+    login_host="{{ postgresql_login_host }}"
+    login_password="{{ postgresql_login_password }}"
+    login_user="{{ postgresql_login_user }}"
+    name="{{ item.name }}"
+    port="{{ postgresql_port }}"
+    state=present
+  sudo_user: "{{ postgresql_login_user }}"
+  with_items: postgresql_databases
+
+- name: create users
+  postgresql_user: >
+    db="{{ item.0.name }}"
+    login_host="{{ postgresql_login_host }}"
+    login_password="{{ postgresql_login_password }}"
+    login_user="{{ postgresql_login_user }}"
+    name="{{ item.1.name }}"
+    password="{{ item.1.password }}"
+    port="{{ postgresql_port }}"
+    priv="{{ item.1.priv }}"
+    state=present
+  sudo_user: "{{ postgresql_login_user }}"
+  with_subelements:
+    - postgresql_databases
+    - users

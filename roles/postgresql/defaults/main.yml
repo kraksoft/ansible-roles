@@ -1,0 +1,20 @@
+---
+postgresql_configs: []
+#  - common.cnf
+postgresql_databases: []
+#  - name: database
+#    users:
+#      - name: user
+#        password: pass
+#        priv: ALL
+#      - name: user_ro
+#        password: pass_ro
+#        priv: ALL # @FIXME: should be SELECT
+postgresql_files_path: ../../files/postgresql/
+postgresql_login_host: ~ # @FIXME: should be localhost
+postgresql_login_password: ~
+postgresql_login_user: postgres
+postgresql_port: 5432
+postgresql_required_libraries:
+  - python-psycopg2
+postgresql_version: 9.4

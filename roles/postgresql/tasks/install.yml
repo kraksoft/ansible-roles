@@ -1,0 +1,27 @@
+---
+- name: add gpg key
+  apt_key: >
+    id="{{ postgresql_key_id }}"
+    state=present
+    url="{{ postgresql_key_url }}"
+  when: postgresql_key_url != false
+
+- name: add repository
+  apt_repository: >
+    repo="{{ postgresql_repository }}"
+    state=present
+    update_cache=yes
+  when: postgresql_repository != false
+
+- name: install service
+  apt: >
+    force=yes
+    pkg="postgresql-{{ postgresql_version }}"
+    state=present
+  notify: restart postgresql
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=postgresql
+    state=started
