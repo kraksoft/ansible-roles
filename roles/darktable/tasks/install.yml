@@ -1,0 +1,12 @@
+---
+- name: add repository
+  apt_repository: >
+    repo=ppa:pmjdebruijn/darktable-release
+    state=present
+    update_cache=yes
+
+- name: install package
+  apt: >
+    force=yes
+    pkg=darktable
+    state=present
