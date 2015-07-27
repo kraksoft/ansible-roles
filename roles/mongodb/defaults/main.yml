@@ -6,10 +6,10 @@ mongodb_databases: []
 #  - name: database
 #    users:
 #      - name: user
-#        password: "{{ __metadata_1__ }}"
+#        password: pass
 #        read_only: false
 #      - name: user_ro
-#        password: "{{ __metadata_2__ }}"
+#        password: pass
 #        read_only: true
 mongodb_login_host: localhost
 mongodb_login_password: ~
