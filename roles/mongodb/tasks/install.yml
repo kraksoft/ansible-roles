@@ -1,9 +1,19 @@
 ---
-- name: install service
+- name: install service /standard/
   apt: >
     force=yes
     pkg=mongodb-server
     state=present
+  notify: restart mongodb
+  when: mongodb_use_backports != true
+
+- name: install service /backports/
+  apt: >
+    force=yes
+    pkg=mongodb-server
+    state=present
+    default_release="{{ ansible_distribution_release }}-backports"
+  when: mongodb_use_backports == true
   notify: restart mongodb
 
 - name: ensure a service is enabled and running

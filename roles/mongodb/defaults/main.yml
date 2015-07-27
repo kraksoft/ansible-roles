@@ -2,3 +2,20 @@
 mongodb_parameters: {}
 #  bind_ip: 127.0.0.1
 #  port: 27017
+mongodb_databases: []
+#  - name: database
+#    users:
+#      - name: user
+#        password: "{{ __metadata_1__ }}"
+#        read_only: false
+#      - name: user_ro
+#        password: "{{ __metadata_2__ }}"
+#        read_only: true
+mongodb_login_host: localhost
+mongodb_login_password: ~
+mongodb_login_port: 27017
+mongodb_login_user: ~
+mongodb_required_libraries:
+  - python-mongoengine
+mongodb_standalone_installation: false
+mongodb_use_backports: false

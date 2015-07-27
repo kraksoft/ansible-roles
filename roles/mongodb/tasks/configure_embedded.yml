@@ -1,0 +1,16 @@
+---
+- name: create users
+  mongodb_user: >
+    database="{{ item.0.name }}"
+    login_host="{{ mongodb_login_host }}"
+    login_password="{{ mongodb_login_password }}"
+    login_port="{{ mongodb_login_port }}"
+    login_user="{{ mongodb_login_user }}"
+    name="{{ item.1.name }}"
+    password="{{ item.1.password }}"
+    roles="{{ item.1.roles }}"
+    state=present
+  notify: restart mongodb
+  with_subelements:
+    - mongodb_databases
+    - users
