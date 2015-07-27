@@ -21,3 +21,7 @@
     enabled=yes
     name=mongodb
     state=started
+
+- name: wait for preallocating files
+  pause: >
+    seconds="{{ mongodb_pause }}"

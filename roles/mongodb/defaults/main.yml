@@ -15,6 +15,7 @@ mongodb_login_host: localhost
 mongodb_login_password: ~
 mongodb_login_port: 27017
 mongodb_login_user: ~
+mongodb_pause: 10
 mongodb_required_libraries:
   - python-mongoengine
 mongodb_standalone_installation: false
