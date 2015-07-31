@@ -14,4 +14,4 @@ wkhtmltox_pre_packages:
   - xfonts-75dpi
   - xfonts-base
   - zlib1g
-wkhtmltox_url: http://downloads.sourceforge.net/project/wkhtmltopdf/{{ wkhtmltox_version }}/wkhtmltox-{{ wkhtmltox_version }}_linux-trusty-amd64.deb
+wkhtmltox_url: http://download.gna.org/wkhtmltopdf/0.12/{{ wkhtmltox_version }}/wkhtmltox-{{ wkhtmltox_version }}_linux-wheezy-amd64.deb
