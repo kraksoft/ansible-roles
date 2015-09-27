@@ -2,3 +2,4 @@
 fingerprint_gui_pre_packages:
   - libbsapi
   - policykit-1-fingerprint-gui
+fingerprint_fix_login_issue: false
