@@ -5,6 +5,15 @@
     state=present
     update_cache=yes
 
+# @FIX: problem with first login after boot, see:
+# http://home.ullrich-online.cc/fingerprint/Forum/topic.php?TopicId=491
+- name: add experimental repository
+  apt_repository: >
+    repo=ppa:fingerprint/fingerprint-gui-experimental
+    state=present
+    update_cache=yes
+  when: fingerprint_fix_login_issue == true
+
 - name: install pre-packages
   apt: >
     force=yes
