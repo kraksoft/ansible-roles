@@ -1,0 +1,20 @@
+---
+- name: add gpg key
+  apt_key: >
+    id="{{ nodejs_key_id }}"
+    state=present
+    url="{{ nodejs_key_url }}"
+  when: nodejs_key_url != false
+
+- name: add repository
+  apt_repository: >
+    repo="{{ nodejs_repository }}"
+    state=present
+    update_cache=yes
+  when: nodejs_repository != false
+
+- name: install package
+  apt: >
+    force=yes
+    pkg=nodejs
+    state=present
