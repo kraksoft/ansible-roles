@@ -32,6 +32,7 @@ common_required_libraries:
   - debconf-utils
   - python-apt
 common_required_packages:
+  - apt-transport-https
   - curl
   - python-software-properties
   - software-properties-common
