@@ -4,6 +4,7 @@ fix_ipv6_lines: []
 #  - tcp6
 #  - udp6
 fix_issues: []
+#  - apport
 #  - avahi
 #  - blkid-tab
 #  - bluetooth

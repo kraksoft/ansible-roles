@@ -1,4 +1,7 @@
 ---
+- include: apport.yml
+  when: "'apport' in fix_issues"
+
 - include: avahi.yml
   when: "'avahi' in fix_issues"
 

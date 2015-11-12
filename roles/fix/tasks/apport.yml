@@ -1,0 +1,8 @@
+---
+- name: disable apport messages
+  lineinfile: >
+    dest=/etc/default/apport
+    line="enabled=0"
+    regexp="enabled="
+    state=present
+  notify: restart apport
