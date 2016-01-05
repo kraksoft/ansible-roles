@@ -9,4 +9,15 @@ php_files_path: ../../files/php/
 php_modules:
   - php5-cli
   - php5-common
-php_version: 5.5
+#  - php5-curl
+#  - php5-gd
+#  - php5-imagick=3.*
+#  - php5-imap
+#  - php5-intl
+#  - php5-mcrypt
+#  - php5-memcached=2.*
+#  - php5-mongo=1.*
+#  - php5-mysqlnd
+#  - php5-readline
+#  - php5-xsl
+php_version: 5.6

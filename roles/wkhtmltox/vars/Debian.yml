@@ -4,7 +4,7 @@ wkhtmltox_pre_packages:
   - libc6
   - libfontconfig1
   - libfreetype6
-  - libjpeg8
+#  - libjpeg8
   - libpng12-0
   - libssl1.0.0
   - libstdc++6
@@ -14,4 +14,4 @@ wkhtmltox_pre_packages:
   - xfonts-75dpi
   - xfonts-base
   - zlib1g
-wkhtmltox_url: http://download.gna.org/wkhtmltopdf/0.12/{{ wkhtmltox_version }}/wkhtmltox-{{ wkhtmltox_version }}_linux-wheezy-amd64.deb
+wkhtmltox_url: http://download.gna.org/wkhtmltopdf/0.12/{{ wkhtmltox_version }}/wkhtmltox-{{ wkhtmltox_version }}_linux-jessie-amd64.deb

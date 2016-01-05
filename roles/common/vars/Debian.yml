@@ -1,13 +1,13 @@
 ---
 common_sources_repositories:
-  - deb http://http.debian.net/debian wheezy main non-free contrib
-  - deb-src http://http.debian.net/debian wheezy main non-free contrib
+  - deb http://httpredir.debian.org/debian jessie main non-free contrib
+  - deb-src http://httpredir.debian.org/debian jessie main non-free contrib
 
-  - deb http://http.debian.net/debian wheezy-updates main contrib non-free
-  - deb-src http://http.debian.net/debian wheezy-updates main contrib non-free
+  - deb http://httpredir.debian.org/debian jessie-updates main contrib non-free
+  - deb-src http://httpredir.debian.org/debian jessie-updates main contrib non-free
 
-  - deb http://http.debian.net/debian wheezy-backports main contrib non-free
-  - deb-src http://http.debian.net/debian wheezy-backports main contrib non-free
+  - deb http://httpredir.debian.org/debian jessie-backports main contrib non-free
+  - deb-src http://httpredir.debian.org/debian jessie-backports main contrib non-free
 
-  - deb http://security.debian.org/ wheezy/updates main contrib non-free
-  - deb-src http://security.debian.org/ wheezy/updates main contrib non-free
+  - deb http://security.debian.org/ jessie/updates main contrib non-free
+  - deb-src http://security.debian.org/ jessie/updates main contrib non-free

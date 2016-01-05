@@ -1,4 +1,4 @@
 ---
 nodejs_key_id: 68576280
 nodejs_key_url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-nodejs_repository: deb https://deb.nodesource.com/node_0.12 jessie main
+nodejs_repository: deb https://deb.nodesource.com/node_5.x jessie main
