@@ -1,2 +1,2 @@
 ---
-vagrant_url: https://dl.bintray.com/mitchellh/vagrant/vagrant_{{ vagrant_version }}_x86_64.deb
+vagrant_url: https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_x86_64.deb
