@@ -1,2 +1,8 @@
 ---
+libreoffice_post_packages: []
+#  - libreoffice-help-pl
+#  - libreoffice-l10n-pl
+#  - libreoffice-style-sifr
+#  - openclipart-libreoffice
+#  - openclipart2-libreoffice
 libreoffice_version: 5.0

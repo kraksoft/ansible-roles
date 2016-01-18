@@ -1,2 +1,2 @@
 ---
-robomongo_url: http://robomongo.org/files/linux/robomongo-{{ robomongo_version }}-x86_64.deb
+robomongo_url: http://app.robomongo.org/files/linux/robomongo-{{ robomongo_version }}-x86_64.deb
