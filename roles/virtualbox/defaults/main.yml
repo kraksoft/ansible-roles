@@ -1,5 +1,5 @@
 ---
 virtualbox_files_path: ./files/virtualbox/
-virtualbox_version: 4.3
+virtualbox_version: 5.0
 virtualbox_users: []
 #  - user
