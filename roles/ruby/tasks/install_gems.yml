@@ -1,0 +1,16 @@
+---
+- name: gem update
+  command: >
+    /usr/bin/gem {{ item }}
+  changed_when: false
+  when: ruby_gems
+  with_items:
+    - update --system
+    - update
+
+- name: install gems
+  gem: >
+    name="{{ item }}"
+    state=present
+    user_install=no
+  with_items: ruby_gems
