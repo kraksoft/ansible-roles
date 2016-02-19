@@ -1,0 +1,9 @@
+---
+- name: set parameters
+  lineinfile: >
+    dest=/etc/redis/redis.conf
+    line="{{ item.key }} {{ item.value }}"
+    regexp="^{{ item.key }} "
+    state=present
+  notify: restart redis
+  with_dict: redis_parameters

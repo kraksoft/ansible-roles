@@ -1,0 +1,13 @@
+---
+- name: install service
+  apt: >
+    force=yes
+    pkg=redis-server
+    state=present
+  notify: restart redis
+
+- name: ensure a service is enabled and running
+  service: >
+    enabled=yes
+    name=redis-server
+    state=started
