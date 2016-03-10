@@ -1,4 +1,4 @@
 ---
-rabbitmq_key_id: 056E8E56
+rabbitmq_key_id: "056E8E56"
 rabbitmq_key_url: http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 rabbitmq_repository: deb http://www.rabbitmq.com/debian/ testing main

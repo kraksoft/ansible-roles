@@ -8,3 +8,4 @@
       - "os-defaults.yml"
       paths:
        - ../vars/
+  when: chrome_repository is undefined

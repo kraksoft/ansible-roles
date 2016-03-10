@@ -8,3 +8,4 @@
       - "os-defaults.yml"
       paths:
        - ../vars/
+  when: php_repository is undefined

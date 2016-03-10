@@ -8,3 +8,4 @@
       - "os-defaults.yml"
       paths:
        - ../vars/
+  when: java_repository is undefined

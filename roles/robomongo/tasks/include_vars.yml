@@ -8,3 +8,4 @@
       - "os-defaults.yml"
       paths:
        - ../vars/
+  when: robomongo_repository is undefined

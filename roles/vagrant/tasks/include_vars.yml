@@ -8,3 +8,4 @@
       - "os-defaults.yml"
       paths:
        - ../vars/
+  when: vagrant_repository is undefined

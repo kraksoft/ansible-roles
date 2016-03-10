@@ -1,4 +1,4 @@
 ---
-php_key_id: 89DF5277
+php_key_id: "89DF5277"
 php_key_url: http://www.dotdeb.org/dotdeb.gpg
 php_repository: deb http://packages.dotdeb.org wheezy-php55 all

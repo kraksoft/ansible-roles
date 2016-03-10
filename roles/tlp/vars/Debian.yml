@@ -1,4 +1,4 @@
 ---
-tlp_key_id: CD4E8809
+tlp_key_id: "CD4E8809"
 tlp_key_keyserver: hkp://pool.sks-keyservers.net
 tlp_repository: deb http://repo.linrunner.de/debian jessie main

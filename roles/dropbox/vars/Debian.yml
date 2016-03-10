@@ -1,4 +1,4 @@
 ---
-dropbox_key_id: 5044912E
+dropbox_key_id: "5044912E"
 dropbox_key_keyserver: hkp://pgp.mit.edu
 dropbox_repository: deb http://linux.dropbox.com/debian jessie main

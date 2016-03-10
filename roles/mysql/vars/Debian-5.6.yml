@@ -1,5 +1,5 @@
 ---
-mysql_key_id: 89DF5277
+mysql_key_id: "89DF5277"
 mysql_key_url: http://www.dotdeb.org/dotdeb.gpg
 mysql_repository: deb http://packages.dotdeb.org wheezy all
 # according to https://www.dotdeb.org/2015/04/26/debian-8-0-jessie-has-been-released-and-what-it-means-for-dotdeb/

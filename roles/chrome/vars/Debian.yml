@@ -1,4 +1,4 @@
 ---
-chrome_key_id: 7FAC5991
+chrome_key_id: "7FAC5991"
 chrome_key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
 chrome_repository: deb http://dl.google.com/linux/chrome/deb/ stable main
