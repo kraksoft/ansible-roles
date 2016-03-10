@@ -9,3 +9,30 @@
     src="{{ mysql_files_path }}{{ item }}"
   notify: restart mysql
   with_items: mysql_configs
+
+- name: create databases
+  mysql_db: >
+    login_host="{{ mysql_login_host }}"
+    login_password="{{ mysql_login_password }}"
+    login_port="{{ mysql_login_port }}"
+    login_user="{{ mysql_login_user }}"
+    name="{{ item.name }}"
+    state=present
+  when: item.name != "*"
+  with_items: mysql_databases
+
+- name: create users
+  mysql_user: >
+    append_privs=yes
+    login_host="{{ mysql_login_host }}"
+    login_password="{{ mysql_login_password }}"
+    login_port="{{ mysql_login_port }}"
+    login_user="{{ mysql_login_user }}"
+    host="{{ item.1.host }}"
+    name="{{ item.1.name }}"
+    password="{{ item.1.password }}"
+    priv="*.*:{{ item.1.priv }}"
+    state=present
+  with_subelements:
+    - mysql_databases
+    - users
