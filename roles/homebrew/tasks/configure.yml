@@ -1,0 +1,12 @@
+---
+- name: install taps
+  homebrew_tap: >
+    state=present
+    tap="{{ item }}"
+  with_items: ansible_taps
+
+- name: install packages
+  homebrew: >
+    name="{{ item }}"
+    state=present
+  with_items: ansible_packages
