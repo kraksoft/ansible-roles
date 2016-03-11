@@ -1,6 +1,13 @@
 ---
-- name: install package
+- name: install package (apt)
   apt: >
     force=yes
     pkg=git
     state=present
+  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
+
+- name: install package (homebrew)
+  homebrew: >
+    name=git
+    state=present
+  when: ansible_distribution == "MacOSX"
