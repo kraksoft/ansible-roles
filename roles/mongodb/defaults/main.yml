@@ -7,16 +7,14 @@ mongodb_databases: []
 #    users:
 #      - name: user
 #        password: pass
-#        read_only: false
+#        roles: readWrite
 #      - name: user_ro
 #        password: pass
-#        read_only: true
+#        roles: read
 mongodb_login_host: localhost
 mongodb_login_password: ~
 mongodb_login_port: 27017
 mongodb_login_user: ~
-mongodb_pause: 10
 mongodb_required_libraries:
   - python-mongoengine
-mongodb_standalone_installation: false
-mongodb_version: 1:2.4*
+mongodb_version: 3.0

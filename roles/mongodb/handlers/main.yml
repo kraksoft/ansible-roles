@@ -2,6 +2,6 @@
 # @FIX: 'sleep' have to be there
 - name: restart mongodb
   service: >
-    name=mongodb
+    name=mongod
     sleep=1
     state=restarted

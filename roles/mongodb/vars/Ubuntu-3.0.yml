@@ -1,0 +1,4 @@
+---
+mongodb_key_id: "7F0CEB10"
+mongodb_key_keyserver: hkp://keyserver.ubuntu.com
+mongodb_repository: deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse

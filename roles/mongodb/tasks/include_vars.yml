@@ -1,0 +1,11 @@
+---
+- name: include os specific variables
+  include_vars: >
+    {{ item }}
+  with_first_found:
+    - files:
+      - "{{ ansible_distribution }}-{{ mongodb_version }}.yml"
+      - "os-defaults.yml"
+      paths:
+       - ../vars/
+  when: mongodb_repository is undefined

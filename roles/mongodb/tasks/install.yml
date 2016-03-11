@@ -1,17 +1,27 @@
 ---
+- name: add gpg key
+  apt_key: >
+    id="{{ mongodb_key_id }}"
+    keyserver="{{ mongodb_key_keyserver }}"
+    state=present
+  when: mongodb_key_keyserver != false
+
+- name: add repository
+  apt_repository: >
+    repo="{{ mongodb_repository }}"
+    state=present
+    update_cache=yes
+  when: mongodb_repository != false
+
 - name: install service
   apt: >
     force=yes
-    pkg="mongodb-server={{ mongodb_version }}"
+    pkg=mongodb-org-server
     state=present
   notify: restart mongodb
 
 - name: ensure a service is enabled and running
   service: >
     enabled=yes
-    name=mongodb
+    name=mongod
     state=started
-
-- name: wait for preallocating files
-  pause: >
-    seconds="{{ mongodb_pause }}"
