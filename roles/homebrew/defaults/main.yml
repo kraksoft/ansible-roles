@@ -1,12 +1,12 @@
 ---
-ansible_packages: []
+homebrew_packages: []
 #  - ansible
 #  - bash-completion
 #  - git
 #  - lynx
 #  - midnight-commander
 #  - wget
-ansible_taps: []
+homebrew_taps: []
 #  - homebrew/dupes
 #  - homebrew/php
 #  - homebrew/versions
