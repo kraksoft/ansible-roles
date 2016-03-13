@@ -2,10 +2,24 @@
 - name: include os specific variables
   include_vars: >
     "{{ item }}"
-  when: common_sources_repositories is undefined
   with_first_found:
     - files:
       - "{{ ansible_distribution }}.yml"
       - default.yml
       paths:
        - ../vars/
+
+- name: set fact 'common_required_libraries'
+  set_fact: >
+    common_required_libraries="{{ _common_required_libraries }}"
+  when: common_required_libraries is undefined
+
+- name: set fact 'common_required_packages'
+  set_fact: >
+    common_required_packages="{{ _common_required_packages }}"
+  when: common_required_packages is undefined
+
+- name: set fact 'common_sources_repositories'
+  set_fact: >
+    common_sources_repositories="{{ _common_sources_repositories }}"
+  when: common_sources_repositories is undefined

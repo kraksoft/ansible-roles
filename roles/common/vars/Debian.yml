@@ -1,15 +1,16 @@
 ---
-common_required_libraries:
+# custom parameters
+_common_required_libraries:
   - aptitude
   - debconf
   - debconf-utils
   - python-apt
-common_required_packages:
+_common_required_packages:
   - apt-transport-https
   - curl
   - python-software-properties
   - software-properties-common
-common_sources_repositories:
+_common_sources_repositories:
   - deb http://httpredir.debian.org/debian jessie main non-free contrib
   - deb-src http://httpredir.debian.org/debian jessie main non-free contrib
 

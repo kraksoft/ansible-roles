@@ -7,7 +7,7 @@
 
 - name: "install '{{ name }}' package"
   homebrew: >
-    name="{{ item }}"
+    name="{{ name }}"
     state=present
 
 - name: "install '{{ name }}' post-packages"
