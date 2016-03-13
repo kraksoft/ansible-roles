@@ -8,4 +8,3 @@
       - "defaults.yml"
       paths:
        - ../vars/
-  when: tlp_repository is undefined

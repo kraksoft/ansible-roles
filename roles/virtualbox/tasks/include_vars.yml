@@ -8,4 +8,3 @@
       - "defaults.yml"
       paths:
        - ../vars/
-  when: virtualbox_repository is undefined

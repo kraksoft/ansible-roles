@@ -8,4 +8,3 @@
       - "defaults.yml"
       paths:
        - ../vars/
-  when: mongodb_repository is undefined
