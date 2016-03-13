@@ -1,0 +1,9 @@
+---
+- name: add sources for apt
+  lineinfile: >
+    dest=/etc/apt/sources.list
+    line="{{ item }}"
+    regexp="^(.*){{ item }}"
+    state=present
+  notify: update apt cache
+  with_items: common_sources_debian

@@ -1,11 +1,15 @@
 ---
-- include: include_vars.yml
-
 - include: set_locales.yml
 
 - include: set_timezone.yml
 
-- include: add_sources.yml
+- include: "{{ item }}"
+  with_first_found:
+    - files:
+      - "{{ ansible_distribution }}.yml"
+      - default.yml
+      paths:
+       - ./add_sources/
 
 - include: install_required.yml
 
