@@ -1,0 +1,5 @@
+---
+- name: install package
+  homebrew: >
+    name=ansible
+    state=present

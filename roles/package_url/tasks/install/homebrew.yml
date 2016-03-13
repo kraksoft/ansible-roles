@@ -1,0 +1,17 @@
+---
+- name: "install '{{ name }}' pre-packages"
+  homebrew: >
+    name="{{ item }}"
+    state=present
+  with_items: pre
+
+- name: "install '{{ name }}' package"
+  homebrew: >
+    name="{{ item }}"
+    state=present
+
+- name: "install '{{ name }}' post-packages"
+  homebrew: >
+    name="{{ item }}"
+    state=present
+  with_items: post
