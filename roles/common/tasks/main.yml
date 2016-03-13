@@ -8,7 +8,7 @@
 - include: "{{ item }}"
   with_first_found:
     - files:
-      - "{{ ansible_distribution }}.yml"
+      - "{{ ansible_pkg_mgr }}.yml"
       - default.yml
       paths:
        - ./add_sources/
@@ -16,7 +16,7 @@
 - include: "{{ item }}"
   with_first_found:
     - files:
-      - "{{ ansible_distribution }}.yml"
+      - "{{ ansible_pkg_mgr }}.yml"
       - default.yml
       paths:
        - ./install_required/
