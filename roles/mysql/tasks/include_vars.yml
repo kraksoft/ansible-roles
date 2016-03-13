@@ -1,7 +1,7 @@
 ---
 - name: include os specific variables
   include_vars: >
-    {{ item }}
+    "{{ item }}"
   with_first_found:
     - files:
       - "{{ ansible_distribution }}-{{ mysql_version }}.yml"
