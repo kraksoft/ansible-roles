@@ -5,6 +5,6 @@
   with_first_found:
     - files:
       - "{{ ansible_distribution }}.yml"
-      - "defaults.yml"
+      - default.yml
       paths:
        - ../vars/
