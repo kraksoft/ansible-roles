@@ -1,0 +1,23 @@
+---
+common_required_libraries:
+  - aptitude
+  - debconf
+  - debconf-utils
+  - python-apt
+common_required_packages:
+  - apt-transport-https
+  - curl
+  - python-software-properties
+  - software-properties-common
+common_sources_repositories:
+  - deb http://httpredir.debian.org/debian jessie main non-free contrib
+  - deb-src http://httpredir.debian.org/debian jessie main non-free contrib
+
+  - deb http://httpredir.debian.org/debian jessie-updates main contrib non-free
+  - deb-src http://httpredir.debian.org/debian jessie-updates main contrib non-free
+
+  - deb http://httpredir.debian.org/debian jessie-backports main contrib non-free
+  - deb-src http://httpredir.debian.org/debian jessie-backports main contrib non-free
+
+  - deb http://security.debian.org/ jessie/updates main contrib non-free
+  - deb-src http://security.debian.org/ jessie/updates main contrib non-free

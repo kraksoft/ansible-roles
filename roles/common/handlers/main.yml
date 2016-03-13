@@ -1,14 +1,18 @@
 ---
+- name: restart rsyslog
+  service: >
+    name=rsyslog
+    state=restarted
+
 - name: update apt cache
   apt: >
     force=yes
     update_cache=yes
 
+- name: update homebrew cache
+  homebrew: >
+    update_homebrew=yes
+
 - name: update timezone
   command: >
     /usr/sbin/dpkg-reconfigure --frontend noninteractive tzdata
-
-- name: restart rsyslog
-  service: >
-    name=rsyslog
-    state=restarted

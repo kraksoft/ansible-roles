@@ -6,4 +6,4 @@
     regexp="^(.*){{ item }}"
     state=present
   notify: update apt cache
-  with_items: common_sources_ubuntu
+  with_items: common_sources_repositories

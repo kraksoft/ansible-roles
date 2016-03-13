@@ -1,0 +1,7 @@
+---
+common_required_libraries: []
+common_required_packages: []
+common_sources_repositories:
+  - homebrew/core
+  - homebrew/dupes
+  - homebrew/versions

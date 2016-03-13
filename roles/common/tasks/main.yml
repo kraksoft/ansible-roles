@@ -1,4 +1,6 @@
 ---
+- include: include_vars.yml
+
 - include: set_locales.yml
 
 - include: set_timezone.yml
@@ -11,7 +13,13 @@
       paths:
        - ./add_sources/
 
-- include: install_required.yml
+- include: "{{ item }}"
+  with_first_found:
+    - files:
+      - "{{ ansible_distribution }}.yml"
+      - default.yml
+      paths:
+       - ./install_required/
 
 - include: add_commands.yml
 
