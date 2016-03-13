@@ -5,7 +5,7 @@
   with_first_found:
     - files:
       - "{{ ansible_distribution }}-{{ mongodb_version }}.yml"
-      - "os-defaults.yml"
+      - "defaults.yml"
       paths:
        - ../vars/
   when: mongodb_repository is undefined

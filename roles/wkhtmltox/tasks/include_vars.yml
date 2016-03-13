@@ -5,7 +5,7 @@
   with_first_found:
     - files:
       - "{{ ansible_distribution }}.yml"
-      - "os-defaults.yml"
+      - "defaults.yml"
       paths:
        - ../vars/
   when: wkhtmltox_repository is undefined

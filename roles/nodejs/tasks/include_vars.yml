@@ -5,7 +5,7 @@
   with_first_found:
     - files:
       - "{{ ansible_distribution }}-{{ nodejs_version }}.yml"
-      - "os-defaults.yml"
+      - "defaults.yml"
       paths:
        - ../vars/
   when: nodejs_repository is undefined
