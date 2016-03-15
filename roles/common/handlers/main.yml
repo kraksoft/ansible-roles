@@ -12,6 +12,7 @@
 - name: update homebrew cache
   homebrew: >
     update_homebrew=yes
+  sudo: false
 
 - name: update timezone
   command: >
