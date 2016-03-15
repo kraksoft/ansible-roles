@@ -2,9 +2,9 @@
 - name: copy commands
   copy: >
     dest="{{ symfony_remote_path }}{{ item }}"
-    group=root
+    group="{{ symfony_commands_group }}"
     mode="0755"
-    owner=root
+    owner="{{ symfony_commands_user }}"
     src="{{ symfony_files_path }}{{ item }}"
   with_items: symfony_commands
 

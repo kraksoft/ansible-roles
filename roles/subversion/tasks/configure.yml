@@ -18,3 +18,12 @@
   with_subelements:
     - subversion_users
     - configs
+
+- name: copy commands
+  copy: >
+    dest="{{ subversion_remote_path }}{{ item }}"
+    group="{{ subversion_commands_group }}"
+    mode="0755"
+    owner="{{ subversion_commands_user }}"
+    src="{{ subversion_files_path }}{{ item }}"
+  with_items: subversion_commands

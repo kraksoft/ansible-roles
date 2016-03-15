@@ -3,6 +3,8 @@ subversion_commands: []
 #  - diff3-wrap
 #  - diff-wrap
 #  - merge-wrap
+subversion_commands_group: root
+subversion_commands_user: root
 subversion_files_path: ../../files/subversion/
 subversion_remote_path: /usr/local/bin/
 subversion_users: []

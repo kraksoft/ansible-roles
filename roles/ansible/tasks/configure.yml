@@ -13,8 +13,8 @@
 - name: copy commands
   copy: >
     dest="{{ ansible_remote_path }}{{ item }}"
-    group=root
+    group="{{ ansible_commands_group }}"
     mode="0755"
-    owner=root
+    owner="{{ ansible_commands_user }}"
     src="{{ ansible_files_path }}{{ item }}"
   with_items: ansible_commands
