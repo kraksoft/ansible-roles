@@ -17,13 +17,12 @@ common_commands_user: root
 common_files_path: ../../files/common/
 common_host_domain: .lan
 common_host_env: .dev
-common_host_externals: []
-#  - 127.0.0.1       adserver.domain.com
+common_host_externals: {}
+#  127.0.0.1: adserver.domain.com
 common_host_internals: {}
-#  192.168.1.1:      router
-common_host_ip: 127.0.0.1
-common_host_websites: []
-#  - default
+#  192.168.1.1: router
+common_host_websites: {}
+#  192.168.1.100: projectx
 common_locale_name: false # en_US.UTF-8
 common_remote_path: /usr/local/bin/
 common_timezone_name: false # GMT+0

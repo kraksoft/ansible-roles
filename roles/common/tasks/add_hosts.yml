@@ -11,9 +11,10 @@
   lineinfile: >
     dest=/etc/hosts
     insertafter="# external hosts"
-    line="{{ item }}"
+    line="{{ item.key }}    {{ item.value }}"
+    regexp="^{{ item.key }}(\s*){{ item.value }}"
     state=present
-  with_items: common_host_externals
+  with_dict: common_host_externals
 
 - name: add header for internal hosts
   lineinfile: >
@@ -44,7 +45,7 @@
   lineinfile: >
     dest=/etc/hosts
     insertafter="# website hosts"
-    line="{{ common_host_ip }}    {{ item }}{{ common_host_env }}{{ common_host_domain }}    www.{{ item }}{{ common_host_env }}{{ common_host_domain }}"
-    regexp="^{{ common_host_ip }}(\s*){{ item }}{{ common_host_env }}{{ common_host_domain }}(\s*)www.{{ item }}{{ common_host_env }}{{ common_host_domain }}"
+    line="{{ item.key }}    {{ item.value }}{{ common_host_env }}{{ common_host_domain }}    www.{{ item.value }}{{ common_host_env }}{{ common_host_domain }}"
+    regexp="^{{ item.key }}(\s*){{ item.value }}{{ common_host_env }}{{ common_host_domain }}(\s*)www.{{ item.value }}{{ common_host_env }}{{ common_host_domain }}"
     state=present
-  with_items: common_host_websites
+  with_dict: common_host_websites
