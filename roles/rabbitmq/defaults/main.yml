@@ -1,4 +1,7 @@
 ---
+rabbitmq_configs: []
+#  - rabbitmq.config
+rabbitmq_files_path: ../../files/rabbitmq/
 rabbitmq_login_host: localhost
 rabbitmq_login_password: guest
 rabbitmq_login_user: guest
