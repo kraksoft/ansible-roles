@@ -4,4 +4,5 @@
     state=present
     tap="{{ item }}"
   notify: update homebrew cache
+  sudo: false
   with_items: common_sources_repositories

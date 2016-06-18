@@ -1,4 +1,15 @@
 ---
+- name: copy configs
+  template: >
+    dest="/etc/rabbitmq/{{ item }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ rabbitmq_files_path }}{{ item }}"
+  notify: restart rabbitmq
+  with_items: rabbitmq_configs
+
 - name: check if vhosts are created
   shell: >
     /usr/sbin/rabbitmqctl list_vhosts -q | /bin/grep "^{{ item.name }}" || /bin/true

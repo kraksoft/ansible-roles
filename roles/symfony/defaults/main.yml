@@ -1,6 +1,8 @@
 ---
 symfony_commands: []
 #  - sfdep
+symfony_commands_group: root
+symfony_commands_user: root
 symfony_files_path: ../../files/symfony/
 symfony_remote_path: /usr/local/bin/
 symfony_services: []
