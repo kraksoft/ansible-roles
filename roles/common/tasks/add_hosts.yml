@@ -49,3 +49,12 @@
     regexp="^{{ item.key }}(\s*){{ item.value }}{{ common_host_env }}{{ common_host_domain }}(\s*)www.{{ item.value }}{{ common_host_env }}{{ common_host_domain }}"
     state=present
   with_dict: common_host_websites
+
+- name: add website hosts without ip
+  lineinfile: >
+    dest=/etc/hosts
+    insertafter="# website hosts"
+    line="{{ common_host_websites_ip }}    {{ item }}{{ common_host_env }}{{ common_host_domain }}    www.{{ item }}{{ common_host_env }}{{ common_host_domain }}"
+    regexp="^{{ common_host_websites_ip }}(\s*){{ item }}{{ common_host_env }}{{ common_host_domain }}(\s*)www.{{ item }}{{ common_host_env }}{{ common_host_domain }}"
+    state=present
+  with_items: common_host_websites_without_ip
