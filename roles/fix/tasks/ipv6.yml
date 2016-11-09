@@ -6,4 +6,4 @@
     line="# {{ item }} \1"
     regexp="^{{ item }} (.*)$"
     state=present
-  with_items: fix_ipv6_lines
+  with_items: "{{ fix_ipv6_lines }}"

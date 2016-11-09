@@ -4,14 +4,14 @@
     append=yes
     groups=disk
     name="{{ item }}"
-  with_items: virtualbox_users
+  with_items: "{{ virtualbox_users }}"
 
 - name: allow user to use usb devices
   user: >
     append=yes
     groups=vboxusers
     name="{{ item }}"
-  with_items: virtualbox_users
+  with_items: "{{ virtualbox_users }}"
 
 # original author: https://gist.github.com/ymc-geha/8416723
 - name: install tool

@@ -6,7 +6,7 @@
     mode="0755"
     owner="{{ symfony_commands_user }}"
     src="{{ symfony_files_path }}{{ item }}"
-  with_items: symfony_commands
+  with_items: "{{ symfony_commands }}"
 
 - name: install bash completion
   shell: >
@@ -31,7 +31,7 @@
     mode="0644"
     owner=root
     state=present
-  with_items: symfony_settings
+  with_items: "{{ symfony_settings }}"
 
 - name: add service to init.d
   template: >
@@ -40,22 +40,22 @@
     mode="0755"
     owner=root
     src="{{ symfony_files_path }}{{ item }}"
-  with_items: symfony_services
+  with_items: "{{ symfony_services }}"
 
 - name: run update-rc.d defaults
   command: >
     /usr/sbin/update-rc.d {{ item }} defaults
   changed_when: false
-  with_items: symfony_services
+  with_items: "{{ symfony_services }}"
 
 - name: run update-rc.d enable
   command: >
     /usr/sbin/update-rc.d {{ item }} enable
   changed_when: false
-  with_items: symfony_services
+  with_items: "{{ symfony_services }}"
 
 - name: run init.d
   command: >
     /etc/init.d/{{ item }}
   changed_when: false
-  with_items: symfony_services
+  with_items: "{{ symfony_services }}"

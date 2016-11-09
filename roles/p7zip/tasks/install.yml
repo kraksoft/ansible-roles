@@ -10,4 +10,4 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: p7zip_post_packages
+  with_items: "{{ p7zip_post_packages }}"

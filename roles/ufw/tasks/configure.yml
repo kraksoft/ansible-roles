@@ -9,7 +9,7 @@
     to_ip="{{ item.to_ip }}"
     to_port="{{ item.to_port }}"
   notify: restart ufw
-  with_items: ufw_rules
+  with_items: "{{ ufw_rules }}"
 
 - name: stop logging anything to /var/log/kern.log
   lineinfile: >

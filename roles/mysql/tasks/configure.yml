@@ -8,7 +8,7 @@
     owner=root
     src="{{ mysql_files_path }}{{ item }}"
   notify: restart mysql
-  with_items: mysql_configs
+  with_items: "{{ mysql_configs }}"
 
 - name: create databases
   mysql_db: >
@@ -19,7 +19,7 @@
     name="{{ item.name }}"
     state=present
   when: item.name != "*"
-  with_items: mysql_databases
+  with_items: "{{ mysql_databases }}"
 
 - name: create users
   mysql_user: >
@@ -34,5 +34,5 @@
     priv="*.*:{{ item.1.priv }}"
     state=present
   with_subelements:
-    - mysql_databases
+    - "{{ mysql_databases }}"
     - users

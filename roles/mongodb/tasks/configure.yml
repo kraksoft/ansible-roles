@@ -6,7 +6,7 @@
     regexp="^(.*){{ item.key }}(\s*)="
     state=present
   notify: restart mongodb
-  with_dict: mongodb_parameters
+  with_dict: "{{ mongodb_parameters }}"
 
 - name: create users
   mongodb_user: >
@@ -21,5 +21,5 @@
     state=present
   notify: restart mongodb
   with_subelements:
-    - mongodb_databases
+    - "{{ mongodb_databases }}"
     - users

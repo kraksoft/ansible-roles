@@ -7,4 +7,4 @@
     mode="0644"
     owner=root
     src="{{ vim_files_path }}{{ item }}"
-  with_items: vim_configs
+  with_items: "{{ vim_configs }}"

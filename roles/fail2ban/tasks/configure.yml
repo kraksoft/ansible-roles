@@ -8,4 +8,4 @@
     owner=root
     src="{{ fail2ban_files_path }}{{ item }}"
   notify: restart fail2ban
-  with_items: fail2ban_configs
+  with_items: "{{ fail2ban_configs }}"

@@ -19,18 +19,18 @@
     owner=root
     src="{{ apache_files_path }}{{ item }}"
   notify: restart apache
-  with_items: apache_sites_enabled
+  with_items: "{{ apache_sites_enabled }}"
 
 - name: disable sites
   command: >
     /usr/sbin/a2dissite {{ item }}
     removes="/etc/apache2/sites-enabled/{{ item }}"
   notify: restart apache
-  with_items: apache_sites_disabled
+  with_items: "{{ apache_sites_disabled }}"
 
 - name: enable sites
   command: >
     /usr/sbin/a2ensite {{ item }}
     creates="/etc/apache2/sites-enabled/{{ item }}"
   notify: restart apache
-  with_items: apache_sites_enabled
+  with_items: "{{ apache_sites_enabled }}"

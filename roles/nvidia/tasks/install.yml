@@ -4,4 +4,4 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: nvidia_packages
+  with_items: "{{ nvidia_packages }}"

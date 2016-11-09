@@ -17,4 +17,4 @@
     name="{{ item }}"
     state=present
   notify: restart apache
-  with_items: apache_modules
+  with_items: "{{ apache_modules }}"

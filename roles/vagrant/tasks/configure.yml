@@ -4,7 +4,7 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: vagrant_modules
+  with_items: "{{ vagrant_modules }}"
 
 - name: install sudoers parameters
   shell: >
@@ -34,7 +34,7 @@
     insertafter=EOF
     line="{{ item }}"
     state=present
-  with_items: vagrant_deny_hosts
+  with_items: "{{ vagrant_deny_hosts }}"
 
 - name: set allow hosts
   lineinfile: >
@@ -42,7 +42,7 @@
     insertafter=EOF
     line="{{ item }}"
     state=present
-  with_items: vagrant_allow_hosts
+  with_items: "{{ vagrant_allow_hosts }}"
 
 - name: disable nfs-kernel-server autostart
   lineinfile: >
@@ -51,7 +51,7 @@
     regexp="^# {{ item.key }}: "
     state=present
   register: _nfs_kernel_server
-  with_dict: vagrant_nfs_lines
+  with_dict: "{{ vagrant_nfs_lines }}"
 
 - name: run update-rc.d disable
   command: >

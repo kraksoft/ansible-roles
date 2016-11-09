@@ -6,7 +6,7 @@
     owner="{{ item.name }}"
     path="{{ item.home }}/.composer"
     state=directory
-  with_items: composer_users
+  with_items: "{{ composer_users }}"
 
 - name: copy configs
   template: >
@@ -17,5 +17,5 @@
     owner="{{ item.0.name }}"
     src="{{ composer_files_path }}{{ item.1 }}"
   with_subelements:
-    - composer_users
+    - "{{ composer_users }}"
     - configs

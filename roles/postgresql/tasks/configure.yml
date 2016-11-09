@@ -8,7 +8,7 @@
 #    owner=root
 #    src="{{ postgresql_files_path }}{{ item }}"
 #  notify: restart postgresql
-#  with_items: postgresql_configs
+#  with_items: "{{ postgresql_configs }}"
 
 - name: create databases
   postgresql_db: >
@@ -19,7 +19,7 @@
     port="{{ postgresql_port }}"
     state=present
   sudo_user: "{{ postgresql_login_user }}"
-  with_items: postgresql_databases
+  with_items: "{{ postgresql_databases }}"
 
 - name: create users
   postgresql_user: >
@@ -34,5 +34,5 @@
     state=present
   sudo_user: "{{ postgresql_login_user }}"
   with_subelements:
-    - postgresql_databases
+    - "{{ postgresql_databases }}"
     - users

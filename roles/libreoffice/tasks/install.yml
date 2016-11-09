@@ -16,4 +16,4 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: libreoffice_post_packages
+  with_items: "{{ libreoffice_post_packages }}"

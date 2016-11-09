@@ -7,13 +7,13 @@
     state=present
     validate="/usr/sbin/sshd -t -f %s"
   notify: restart ssh
-  with_dict: ssh_parameters
+  with_dict: "{{ ssh_parameters }}"
 
 - name: create groups
   group: >
     name="{{ item.group }}"
     state=present
-  with_items: ssh_users
+  with_items: "{{ ssh_users }}"
 
 - name: create users
   user: >
@@ -24,7 +24,7 @@
     name="{{ item.name }}"
     shell="{{ item.shell }}"
     state=present
-  with_items: ssh_users
+  with_items: "{{ ssh_users }}"
 
 - name: add authorized keys
   authorized_key: >
@@ -32,5 +32,5 @@
     state=present
     user="{{ item.0.name }}"
   with_subelements:
-    - ssh_users
+    - "{{ ssh_users }}"
     - keys

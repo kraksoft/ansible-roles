@@ -18,11 +18,11 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: tlp_services
+  with_items: "{{ tlp_services }}"
 
 - name: install post-packages
   apt: >
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: tlp_post_packages
+  with_items: "{{ tlp_post_packages }}"

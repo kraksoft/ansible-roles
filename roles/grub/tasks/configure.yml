@@ -6,7 +6,7 @@
     regexp="^{{ item.key }}"
     state=present
   register: _grub
-  with_dict: grub_parameters
+  with_dict: "{{ grub_parameters }}"
 
 - name: set background color
   lineinfile: >

@@ -4,25 +4,25 @@
     repo="{{ item }}"
     state=present
     update_cache=yes
-  with_items: macbuntu_repositories
+  with_items: "{{ macbuntu_repositories }}"
 
 - name: install pre-packages
   apt: >
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: macbuntu_pre_packages
+  with_items: "{{ macbuntu_pre_packages }}"
 
 - name: install packages
   apt: >
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: macbuntu_packages
+  with_items: "{{ macbuntu_packages }}"
 
 - name: install post-packages
   apt: >
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: macbuntu_post_packages
+  with_items: "{{ macbuntu_post_packages }}"

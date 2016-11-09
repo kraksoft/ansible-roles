@@ -6,4 +6,4 @@
     pkg="{{ item }}"
     purge=yes
     state=absent
-  with_items: postfix_alternatives
+  with_items: "{{ postfix_alternatives }}"

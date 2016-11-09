@@ -7,7 +7,7 @@
     path="{{ item.0.home }}/.rsync"
     state=directory
   with_subelements:
-    - rsync_users
+    - "{{ rsync_users }}"
     - configs
 
 - name: copy configs
@@ -18,5 +18,5 @@
     owner="{{ item.0.name }}"
     src="{{ rsync_files_path }}{{ item.1 }}"
   with_subelements:
-    - rsync_users
+    - "{{ rsync_users }}"
     - configs

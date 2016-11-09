@@ -6,4 +6,4 @@
     regexp="^{{ item.key }} "
     state=present
   notify: restart redis
-  with_dict: redis_parameters
+  with_dict: "{{ redis_parameters }}"

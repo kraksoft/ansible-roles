@@ -4,7 +4,7 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: pre
+  with_items: "{{ pre }}"
 
 - name: "install '{{ name }}' package"
   apt: >
@@ -17,4 +17,4 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: post
+  with_items: "{{ post }}"

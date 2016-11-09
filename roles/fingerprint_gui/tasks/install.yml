@@ -19,7 +19,7 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: fingerprint_gui_pre_packages
+  with_items: "{{ fingerprint_gui_pre_packages }}"
 
 - name: install package
   apt: >

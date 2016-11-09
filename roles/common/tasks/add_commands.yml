@@ -6,4 +6,4 @@
     mode="0755"
     owner="{{ common_commands_user }}"
     src="{{ common_files_path }}{{ item }}"
-  with_items: common_commands
+  with_items: "{{ common_commands }}"

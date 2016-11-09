@@ -10,4 +10,4 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: argyll_post_packages
+  with_items: "{{ argyll_post_packages }}"

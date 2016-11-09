@@ -4,4 +4,4 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: mysql_required_libraries
+  with_items: "{{ mysql_required_libraries }}"

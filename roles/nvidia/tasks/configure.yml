@@ -10,4 +10,4 @@
     owner=root
     regexp="^(.*){{ item.key }}"
     state=present
-  with_dict: nvidia_lines
+  with_dict: "{{ nvidia_lines }}"

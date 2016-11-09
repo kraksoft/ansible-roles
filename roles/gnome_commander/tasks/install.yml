@@ -10,4 +10,4 @@
     force=yes
     pkg="{{ item }}"
     state=present
-  with_items: gnome_commander_post_packages
+  with_items: "{{ gnome_commander_post_packages }}"

@@ -7,7 +7,7 @@
     owner="{{ item.0.name }}"
     src="{{ bash_files_path }}{{ item.1 }}"
   with_subelements:
-    - bash_users
+    - "{{ bash_users }}"
     - scripts
 
 - name: add line to .bashrc
@@ -16,4 +16,4 @@
     insertafter=EOF
     line='if [ -f "$HOME/.profile" ]; then . "$HOME/.profile"; fi'
     state=present
-  with_items: bash_users
+  with_items: "{{ bash_users }}"

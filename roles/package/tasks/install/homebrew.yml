@@ -4,7 +4,7 @@
     name="{{ item }}"
     state=present
   sudo: false
-  with_items: pre
+  with_items: "{{ pre }}"
 
 - name: "install '{{ name }}' package"
   homebrew: >
@@ -17,4 +17,4 @@
     name="{{ item }}"
     state=present
   sudo: false
-  with_items: post
+  with_items: "{{ post }}"
