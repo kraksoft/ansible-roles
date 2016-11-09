@@ -39,6 +39,13 @@
   when: _users.results is defined and item.stdout == ""
   with_items: "{{ _users.results }}"
 
+- name: create tag
+  command: >
+    /usr/sbin/rabbitmqctl set_user_tags {{ item.item.1.name }} {{ item.item.1.tag }}
+  notify: restart rabbitmq
+  when: _users.results is defined and item.stdout == ""
+  with_items: "{{ _users.results }}"
+
 - name: create privileges
   command: >
     /usr/sbin/rabbitmqctl set_permissions -p {{ item.item.0.name }} {{ item.item.1.name }} {{ item.item.1.priv }}

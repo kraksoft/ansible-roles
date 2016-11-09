@@ -14,3 +14,4 @@ rabbitmq_vhosts: []
 #      - name: user
 #        password: pass
 #        priv: "'.*' '.*' '.*'"
+#        tag: administrator
