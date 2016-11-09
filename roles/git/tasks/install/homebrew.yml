@@ -3,4 +3,4 @@
   homebrew: >
     name=git
     state=present
-  sudo: false
+  become: false

@@ -3,4 +3,4 @@
   homebrew: >
     name=ansible
     state=present
-  sudo: false
+  become: false

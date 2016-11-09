@@ -18,7 +18,7 @@
     name="{{ item.name }}"
     port="{{ postgresql_port }}"
     state=present
-  sudo_user: "{{ postgresql_login_user }}"
+  become_user: "{{ postgresql_login_user }}"
   with_items: "{{ postgresql_databases }}"
 
 - name: create users
@@ -32,7 +32,7 @@
     port="{{ postgresql_port }}"
     priv="{{ item.1.priv }}"
     state=present
-  sudo_user: "{{ postgresql_login_user }}"
+  become_user: "{{ postgresql_login_user }}"
   with_subelements:
     - "{{ postgresql_databases }}"
     - users

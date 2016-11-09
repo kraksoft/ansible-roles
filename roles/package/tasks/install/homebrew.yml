@@ -3,18 +3,18 @@
   homebrew: >
     name="{{ item }}"
     state=present
-  sudo: false
+  become: false
   with_items: "{{ pre }}"
 
 - name: "install '{{ name }}' package"
   homebrew: >
     name="{{ name }}"
     state=present
-  sudo: false
+  become: false
 
 - name: "install '{{ name }}' post-packages"
   homebrew: >
     name="{{ item }}"
     state=present
-  sudo: false
+  become: false
   with_items: "{{ post }}"

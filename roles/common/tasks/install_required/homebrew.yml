@@ -3,12 +3,12 @@
   homebrew: >
     name="{{ item }}"
     state=present
-  sudo: false
+  become: false
   with_items: "{{ common_required_libraries }}"
 
 - name: install required packages
   homebrew: >
     name="{{ item }}"
     state=present
-  sudo: false
+  become: false
   with_items: "{{ common_required_packages }}"

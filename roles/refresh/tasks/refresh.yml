@@ -40,5 +40,5 @@
     state=started
     timeout="{{ refresh_timeout }}"
   delegate_to: "{{ refresh_delegate }}"
-  sudo: false
+  become: false
   when: _apt_dist_upgrade.changed == true and reboot|bool == true
