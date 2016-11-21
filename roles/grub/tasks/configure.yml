@@ -10,7 +10,7 @@
 
 - name: set background color
   lineinfile: >
-    dest=/lib/plymouth/themes/default.grub
+    dest=/usr/share/plymouth/themes/default.grub
     line="if background_color {{ grub_background_color }}; then"
     regexp="^if background_color "
     state=present

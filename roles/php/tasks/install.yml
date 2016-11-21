@@ -16,7 +16,7 @@
 - name: install package
   apt: >
     force=yes
-    pkg=php5
+    pkg="php{{ php_version }}"
     state=present
   notify: restart php-apache
 

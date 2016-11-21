@@ -1,11 +1,10 @@
 ---
 macbuntu_packages:
-  - mac-icons-v3
-  - mac-ithemes-v3
+  - macbuntu-os-icons-lts-v7
+  - macbuntu-os-ithemes-lts-v7
 macbuntu_post_packages: []
 #  - faenza-icon-theme
 macbuntu_pre_packages:
   - libglib2.0-bin
 macbuntu_repositories:
-  - ppa:noobslab/icons
-  - ppa:noobslab/themes
+  - ppa:noobslab/macbuntu
