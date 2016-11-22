@@ -1,4 +1,5 @@
 ---
 php_key_id: false
 php_key_url: false
+php_package_name: "php5.6"
 php_repository: ppa:ondrej/php
