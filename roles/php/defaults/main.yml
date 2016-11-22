@@ -17,7 +17,7 @@ php_modules:
 #  - php5.6-intl
 #  - php5.6-mcrypt
 #  - php5-memcached=2.*
-#  - php5-mongo=1.*
+#  - php-mongo=1.*
 #  - php5.6-mysqlnd
 #  - php5.6-pgsql
 #  - php5.6-readline
