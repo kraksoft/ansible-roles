@@ -1,9 +1,9 @@
 ---
 - name: set parameters
   lineinfile: >
-    dest=/etc/mongodb.conf
-    line="{{ item.key }} = {{ item.value }}"
-    regexp="^(.*){{ item.key }}(\s*)="
+    dest=/etc/mongod.conf
+    line="  {{ item.key }}: {{ item.value }}"
+    regexp="^  {{ item.key }}:"
     state=present
   notify: restart mongodb
   with_dict: "{{ mongodb_parameters }}"
