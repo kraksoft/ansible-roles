@@ -41,7 +41,7 @@
 #    prompt = false
 
 [push]
-    default = matching
+    default = simple
 
 [user]
     email = user@domain.com
