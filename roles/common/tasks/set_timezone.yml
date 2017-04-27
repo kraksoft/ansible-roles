@@ -12,7 +12,7 @@
         group=root
         mode=0644
         owner=root
-  when: _timezone is defined and _timezone.stdout != common_timezone_name
+  when: _timezone is defined and _timezone.stdout is defined and _timezone.stdout != common_timezone_name
   notify:
     - update timezone
     - restart rsyslog
