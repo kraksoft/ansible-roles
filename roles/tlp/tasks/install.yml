@@ -15,14 +15,12 @@
 
 - name: install packages
   apt: >
-    force=yes
     pkg="{{ item }}"
     state=present
   with_items: "{{ tlp_services }}"
 
 - name: install post-packages
   apt: >
-    force=yes
     pkg="{{ item }}"
     state=present
   with_items: "{{ tlp_post_packages }}"

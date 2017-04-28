@@ -1,6 +1,5 @@
 ---
 - name: install package
   apt: >
-    force=yes
     pkg="{{ java_headless_package }}"
     state=present

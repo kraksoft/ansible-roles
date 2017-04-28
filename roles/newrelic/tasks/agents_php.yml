@@ -1,7 +1,6 @@
 ---
 - name: enable modules
   apt: >
-    force=yes
     pkg=newrelic-php5
     state=present
   notify: restart newrelic-apache

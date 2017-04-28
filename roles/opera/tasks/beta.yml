@@ -8,6 +8,5 @@
 
 - name: install beta package
   apt: >
-    force=yes
     pkg=opera-beta
     state=present

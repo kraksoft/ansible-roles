@@ -7,13 +7,11 @@
 
 - name: install pre-packages
   apt: >
-    force=yes
     pkg="{{ item }}"
     state=present
   with_items: "{{ asunder_pre_packages }}"
 
 - name: install package
   apt: >
-    force=yes
     pkg=asunder
     state=present

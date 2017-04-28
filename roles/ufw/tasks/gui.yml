@@ -1,6 +1,5 @@
 ---
 - name: install gui
   apt: >
-    force=yes
     pkg=gufw
     state=present

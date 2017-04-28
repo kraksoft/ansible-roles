@@ -1,7 +1,6 @@
 ---
 - name: install service
   apt: >
-    force=yes
     pkg=cron
     state=present
   notify: restart cron

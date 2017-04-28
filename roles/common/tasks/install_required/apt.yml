@@ -1,14 +1,12 @@
 ---
 - name: install required libraries
   apt: >
-    force=yes
     pkg="{{ item }}"
     state=present
   with_items: "{{ common_required_libraries }}"
 
 - name: install required packages
   apt: >
-    force=yes
     pkg="{{ item }}"
     state=present
   with_items: "{{ common_required_packages }}"

@@ -1,7 +1,6 @@
 ---
 - name: install service
   apt: >
-    force=yes
     pkg=postfix
     state=present
   notify: restart postfix

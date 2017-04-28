@@ -15,6 +15,5 @@
 
 - name: install package
   apt: >
-    force=yes
     pkg=nodejs
     state=present

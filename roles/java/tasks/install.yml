@@ -23,6 +23,5 @@
 
 - name: install package
   apt: >
-    force=yes
     pkg="oracle-java{{ java_version }}-installer"
     state=present

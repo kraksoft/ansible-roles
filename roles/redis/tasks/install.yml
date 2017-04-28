@@ -1,7 +1,6 @@
 ---
 - name: install service
   apt: >
-    force=yes
     pkg=redis-server
     state=present
   notify: restart redis

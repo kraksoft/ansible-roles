@@ -15,14 +15,12 @@
 
 - name: install package
   apt: >
-    force=yes
     pkg="{{ php_package_name }}"
     state=present
   notify: restart php-apache
 
 - name: enable modules
   apt: >
-    force=yes
     pkg="{{ item }}"
     state=present
   notify: restart php-apache

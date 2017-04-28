@@ -1,7 +1,6 @@
 ---
 - name: install packages
   apt: >
-    force=yes
     pkg="{{ item }}"
     state=present
   with_items: "{{ nvidia_packages }}"

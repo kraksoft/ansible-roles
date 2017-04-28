@@ -1,13 +1,11 @@
 ---
 - name: install package
   apt: >
-    force=yes
     pkg=argyll
     state=present
 
 - name: install post-packages
   apt: >
-    force=yes
     pkg="{{ item }}"
     state=present
   with_items: "{{ argyll_post_packages }}"

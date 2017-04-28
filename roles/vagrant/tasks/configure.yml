@@ -1,7 +1,6 @@
 ---
 - name: install modules
   apt: >
-    force=yes
     pkg="{{ item }}"
     state=present
   with_items: "{{ vagrant_modules }}"

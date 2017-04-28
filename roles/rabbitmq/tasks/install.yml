@@ -15,7 +15,6 @@
 
 - name: install service
   apt: >
-    force=yes
     pkg=rabbitmq-server
     state=present
   notify: restart rabbitmq
