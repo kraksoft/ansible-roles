@@ -1,0 +1,6 @@
+---
+- name: install package
+  homebrew: >
+    name=composer
+    state=present
+  become: false

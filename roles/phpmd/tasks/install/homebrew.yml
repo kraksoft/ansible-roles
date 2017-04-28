@@ -1,0 +1,6 @@
+---
+- name: install package
+  homebrew: >
+    name=phpmd
+    state=present
+  become: false

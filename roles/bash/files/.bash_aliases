@@ -17,4 +17,5 @@ alias cd..='cd ..'
 alias cd...='cd ...'
 alias cd-='cd -'
 alias h='history'
+
 # alias zz='cd /var/www'

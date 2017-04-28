@@ -1,0 +1,6 @@
+---
+- name: install package
+  homebrew: >
+    name=phpunit
+    state=present
+  become: false

@@ -1,13 +1,11 @@
 ---
-- name: install pre-packages
-  apt: >
-    force=yes
-    pkg="{{ item }}"
-    state=present
-  with_items: "{{ bash_pre_packages }}"
-
 - name: install package
-  apt: >
-    force=yes
-    pkg=bash
+  package: >
+    name=bash
     state=present
+
+- name: install post-packages
+  package: >
+    name="{{ item }}"
+    state=present
+  with_items: "{{ bash_post_packages }}"

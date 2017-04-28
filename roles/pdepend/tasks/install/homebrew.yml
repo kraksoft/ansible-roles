@@ -1,0 +1,6 @@
+---
+- name: install package
+  homebrew: >
+    name=pdepend
+    state=present
+  become: false
