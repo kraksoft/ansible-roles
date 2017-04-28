@@ -8,5 +8,5 @@
 
 - name: install beta package
   apt: >
-    pkg=opera-beta
+    name=opera-beta
     state=present

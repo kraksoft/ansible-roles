@@ -7,5 +7,5 @@
 
 - name: install package
   apt: >
-    pkg=indicator-multiload
+    name=indicator-multiload
     state=present

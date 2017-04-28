@@ -7,5 +7,5 @@
 
 - name: install package
   apt: >
-    pkg=ansible
+    name=ansible
     state=present

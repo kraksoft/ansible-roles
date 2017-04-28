@@ -1,11 +1,11 @@
 ---
 - name: install package
   apt: >
-    pkg=ruby
+    name=ruby
     state=present
 
 - name: install post-packages
   apt: >
-    pkg="{{ item }}"
+    name="{{ item }}"
     state=present
   with_items: "{{ ruby_post_packages }}"

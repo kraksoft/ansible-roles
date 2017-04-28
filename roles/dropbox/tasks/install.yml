@@ -15,11 +15,11 @@
 
 - name: install pre-packages
   apt: >
-    pkg="{{ item }}"
+    name="{{ item }}"
     state=present
   with_items: "{{ dropbox_pre_packages }}"
 
 - name: install package
   apt: >
-    pkg=dropbox
+    name=dropbox
     state=present

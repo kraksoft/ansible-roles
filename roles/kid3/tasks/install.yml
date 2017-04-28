@@ -7,5 +7,5 @@
 
 - name: install package
   apt: >
-    pkg=kid3-qt
+    name=kid3-qt
     state=present

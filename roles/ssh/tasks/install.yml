@@ -1,7 +1,7 @@
 ---
 - name: install service
   apt: >
-    pkg=openssh-server
+    name=openssh-server
     state=present
   notify: restart ssh
 

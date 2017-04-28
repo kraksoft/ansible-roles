@@ -15,7 +15,7 @@
 
 - name: install service
   apt: >
-    pkg="postgresql-{{ postgresql_version }}"
+    name="postgresql-{{ postgresql_version }}"
     state=present
   notify: restart postgresql
 

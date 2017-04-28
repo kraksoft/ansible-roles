@@ -15,5 +15,5 @@
 
 - name: install package
   apt: >
-    pkg=opera
+    name=opera
     state=present

@@ -1,5 +1,5 @@
 ---
 - name: install package
   apt: >
-    pkg=sqlite3
+    name=sqlite3
     state=present

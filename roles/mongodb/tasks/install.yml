@@ -15,7 +15,7 @@
 
 - name: install service
   apt: >
-    pkg=mongodb-org-server
+    name=mongodb-org-server
     state=present
   notify: restart mongodb
 

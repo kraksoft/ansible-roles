@@ -1,7 +1,7 @@
 ---
 - name: install service
   apt: >
-    pkg=apache2
+    name=apache2
     state=present
   notify: restart apache
 

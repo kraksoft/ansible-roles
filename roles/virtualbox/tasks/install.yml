@@ -15,5 +15,5 @@
 
 - name: install package
   apt: >
-    pkg="virtualbox-{{ virtualbox_version }}"
+    name="virtualbox-{{ virtualbox_version }}"
     state=present

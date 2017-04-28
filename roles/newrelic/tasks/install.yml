@@ -15,7 +15,7 @@
 
 - name: install service
   apt: >
-    pkg=newrelic-sysmond
+    name=newrelic-sysmond
     state=present
   notify: restart newrelic
 

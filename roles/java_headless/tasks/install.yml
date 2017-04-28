@@ -1,5 +1,5 @@
 ---
 - name: install package
   apt: >
-    pkg="{{ java_headless_package }}"
+    name="{{ java_headless_package }}"
     state=present

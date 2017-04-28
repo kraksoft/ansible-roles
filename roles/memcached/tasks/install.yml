@@ -1,7 +1,7 @@
 ---
 - name: install service
   apt: >
-    pkg=memcached
+    name=memcached
     state=present
   notify: restart memcached
 

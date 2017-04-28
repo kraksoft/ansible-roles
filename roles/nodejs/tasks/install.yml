@@ -15,5 +15,5 @@
 
 - name: install package
   apt: >
-    pkg=nodejs
+    name=nodejs
     state=present

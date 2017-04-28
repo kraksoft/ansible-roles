@@ -7,5 +7,5 @@
 
 - name: install package
   apt: >
-    pkg=grub-customizer
+    name=grub-customizer
     state=present

@@ -7,5 +7,5 @@
 
 - name: install package
   apt: >
-    pkg=indicator-sensors
+    name=indicator-sensors
     state=present

@@ -1,7 +1,7 @@
 ---
 - name: install pre-packages
   apt: >
-    pkg="{{ item }}"
+    name="{{ item }}"
     state=present
   when: wkhtmltox_url != false
   with_items: "{{ wkhtmltox_pre_packages }}"

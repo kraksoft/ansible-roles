@@ -1,7 +1,7 @@
 ---
 - name: install service
   apt: >
-    pkg=ufw
+    name=ufw
     state=present
   notify: restart ufw
 

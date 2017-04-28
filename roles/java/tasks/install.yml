@@ -23,5 +23,5 @@
 
 - name: install package
   apt: >
-    pkg="oracle-java{{ java_version }}-installer"
+    name="oracle-java{{ java_version }}-installer"
     state=present

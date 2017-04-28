@@ -7,17 +7,17 @@
 
 - name: "install '{{ name }}' pre-packages"
   apt: >
-    pkg="{{ item }}"
+    name="{{ item }}"
     state=present
   with_items: "{{ pre }}"
 
 - name: "install '{{ name }}' package"
   apt: >
-    pkg="{{ name }}"
+    name="{{ name }}"
     state=present
 
 - name: "install '{{ name }}' post-packages"
   apt: >
-    pkg="{{ item }}"
+    name="{{ item }}"
     state=present
   with_items: "{{ post }}"

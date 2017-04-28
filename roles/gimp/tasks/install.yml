@@ -7,5 +7,5 @@
 
 - name: install package
   apt: >
-    pkg=gimp
+    name=gimp
     state=present

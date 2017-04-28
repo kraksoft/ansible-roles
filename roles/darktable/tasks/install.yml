@@ -7,5 +7,5 @@
 
 - name: install package
   apt: >
-    pkg=darktable
+    name=darktable
     state=present

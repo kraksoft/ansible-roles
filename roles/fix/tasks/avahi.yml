@@ -2,7 +2,7 @@
 - name: uninstall avahi service
   apt: >
     force=yes
-    pkg="{{ item }}"
+    name="{{ item }}"
     purge=yes
     state=absent
   with_items:

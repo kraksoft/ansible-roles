@@ -1,5 +1,5 @@
 ---
 - name: install package
   apt: >
-    pkg=mc
+    name=mc
     state=present

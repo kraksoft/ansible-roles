@@ -7,5 +7,5 @@
 
 - name: install ubuntu-tweak
   apt: >
-    pkg=ubuntu-tweak
+    name=ubuntu-tweak
     state=present

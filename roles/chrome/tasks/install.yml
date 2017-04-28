@@ -15,5 +15,5 @@
 
 - name: install package
   apt: >
-    pkg=google-chrome-stable
+    name=google-chrome-stable
     state=present
