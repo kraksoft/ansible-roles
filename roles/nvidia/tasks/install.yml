@@ -1,6 +1,6 @@
 ---
 - name: install packages
-  apt: >
+  package: >
     name="{{ item }}"
     state=present
   with_items: "{{ nvidia_packages }}"

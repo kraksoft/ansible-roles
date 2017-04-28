@@ -1,5 +1,0 @@
----
-- name: install package
-  apt: >
-    name=git
-    state=present

@@ -1,11 +1,11 @@
 ---
 - name: install package
-  apt: >
+  package: >
     name=p7zip-full
     state=present
 
 - name: install post-packages
-  apt: >
+  package: >
     name="{{ item }}"
     state=present
   with_items: "{{ p7zip_post_packages }}"

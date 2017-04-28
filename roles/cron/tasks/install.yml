@@ -1,6 +1,6 @@
 ---
 - name: install service
-  apt: >
+  package: >
     name=cron
     state=present
   notify: restart cron

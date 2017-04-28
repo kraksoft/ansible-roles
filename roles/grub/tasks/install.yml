@@ -1,5 +1,5 @@
 ---
 - name: install package
-  apt: >
+  package: >
     name=grub-pc
     state=present

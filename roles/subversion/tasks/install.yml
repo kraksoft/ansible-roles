@@ -1,5 +1,5 @@
 ---
 - name: install package
-  apt: >
+  package: >
     name=subversion
     state=present

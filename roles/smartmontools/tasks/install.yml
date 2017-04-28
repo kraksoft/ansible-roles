@@ -1,11 +1,11 @@
 ---
 - name: install package
-  apt: >
+  package: >
     name=smartmontools
     state=present
 
 - name: install post-packages
-  apt: >
+  package: >
     name="{{ item }}"
     state=present
   with_items: "{{ smartmontools_post_packages }}"

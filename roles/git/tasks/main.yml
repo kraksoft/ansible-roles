@@ -1,10 +1,4 @@
 ---
-- include: "{{ item }}"
-  with_first_found:
-    - files:
-      - "{{ ansible_pkg_mgr }}.yml"
-      - default.yml
-      paths:
-       - ./install/
+- include: install.yml
 
 - include: configure.yml
