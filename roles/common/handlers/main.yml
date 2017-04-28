@@ -12,7 +12,6 @@
 - name: update homebrew cache
   homebrew: >
     update_homebrew=yes
-  become: false
 
 - name: update timezone
   command: >

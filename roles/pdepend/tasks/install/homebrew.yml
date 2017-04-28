@@ -3,4 +3,3 @@
   homebrew: >
     name=pdepend
     state=present
-  become: false

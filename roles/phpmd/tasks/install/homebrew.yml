@@ -3,4 +3,3 @@
   homebrew: >
     name=phpmd
     state=present
-  become: false

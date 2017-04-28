@@ -3,18 +3,15 @@
   homebrew: >
     name="{{ item }}"
     state=present
-  become: false
   with_items: "{{ pre }}"
 
 - name: "install '{{ name }}' package"
   homebrew: >
     name="{{ name }}"
     state=present
-  become: false
 
 - name: "install '{{ name }}' post-packages"
   homebrew: >
     name="{{ item }}"
     state=present
-  become: false
   with_items: "{{ post }}"

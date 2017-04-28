@@ -3,4 +3,3 @@
   homebrew: >
     name=composer
     state=present
-  become: false

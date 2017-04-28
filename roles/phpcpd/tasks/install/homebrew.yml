@@ -3,4 +3,3 @@
   homebrew: >
     name=phpcpd
     state=present
-  become: false

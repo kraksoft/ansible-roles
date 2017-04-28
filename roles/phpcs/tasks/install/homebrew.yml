@@ -3,4 +3,3 @@
   homebrew: >
     name=php-code-sniffer
     state=present
-  become: false

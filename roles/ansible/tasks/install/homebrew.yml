@@ -3,4 +3,3 @@
   homebrew: >
     name=ansible
     state=present
-  become: false

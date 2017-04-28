@@ -3,4 +3,3 @@
   homebrew: >
     name=phploc
     state=present
-  become: false
