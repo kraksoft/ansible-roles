@@ -20,7 +20,6 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 export LESS_TERMCAP_zz=$'\E[0m'   # fake parameter, but have to be the last one, to reset colors to 'normal'
-export PATH=".:$HOME/bin:$PATH"
 export PROMPT_COMMAND="history -a"
 if [ $LOGNAME == "git" ] ; then
     export PS1='\[\e[1;32m\]\u@\H \[\e[1;34m\]\w \[\e[1;33m\]$(__git_ps1 "{%s}")\[\e[00m\] \$ '
