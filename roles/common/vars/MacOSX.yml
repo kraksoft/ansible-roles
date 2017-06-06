@@ -4,5 +4,3 @@ _common_required_libraries: []
 _common_required_packages: []
 _common_sources_repositories:
   - homebrew/core
-  - homebrew/dupes
-  - homebrew/versions
