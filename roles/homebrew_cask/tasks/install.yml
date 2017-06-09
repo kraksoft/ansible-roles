@@ -1,0 +1,17 @@
+---
+- name: "install '{{ name }}' pre-casks"
+  homebrew_cask: >
+    name="{{ item }}"
+    state=present
+  with_items: "{{ pre }}"
+
+- name: "install '{{ name }}' cask"
+  homebrew_cask: >
+    name="{{ name }}"
+    state=present
+
+- name: "install '{{ name }}' post-casks"
+  homebrew_cask: >
+    name="{{ item }}"
+    state=present
+  with_items: "{{ post }}"
