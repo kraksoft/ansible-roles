@@ -1,2 +1,4 @@
 ---
+- include: install_required.yml
+
 - include: refresh.yml

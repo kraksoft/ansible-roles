@@ -1,6 +1,8 @@
 ---
 refresh_cache_valid_time: 3600
 refresh_delay: 30
-refresh_port: 22
-refresh_timeout: 300
 refresh_delegate: localhost
+refresh_port: 22
+refresh_required_libraries:
+  - aptitude
+refresh_timeout: 300
