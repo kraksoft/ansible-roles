@@ -4,3 +4,10 @@
     name="{{ item }}"
     state=present
   with_items: "{{ mongodb_required_libraries }}"
+
+- name: install required pip packages
+  pip: >
+    name="{{ item }}"
+    state=present
+    version={{ mongodb_version }}
+  with_items: "{{ mongodb_required_pip_packages }}"

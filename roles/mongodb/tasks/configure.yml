@@ -8,6 +8,17 @@
   notify: restart mongodb
   with_dict: "{{ mongodb_parameters }}"
 
+- name: create admin user /leverage localhost exception/
+  mongodb_user: >
+    database=admin
+    login_host="{{ mongodb_login_host }}"
+    login_port="{{ mongodb_login_port }}"
+    name="{{ mongodb_login_user }}"
+    password="{{ mongodb_login_password }}"
+    roles=root
+    state=present
+  when: mongodb_login_user is defined and mongodb_login_host == "localhost"
+
 - name: create users
   mongodb_user: >
     database="{{ item.0.name }}"

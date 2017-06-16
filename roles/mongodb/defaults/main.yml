@@ -16,5 +16,7 @@ mongodb_login_password: ~
 mongodb_login_port: 27017
 mongodb_login_user: ~
 mongodb_required_libraries:
-  - python-mongoengine
+  - python-pip
+mongodb_required_pip_packages:
+  - pymongo
 mongodb_version: 3.0
