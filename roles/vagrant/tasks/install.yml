@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -L -sS {{ vagrant_url }} -o vagrant.deb &&
+    /usr/bin/curl -L -s -S {{ vagrant_url }} -o vagrant.deb &&
     /usr/bin/dpkg -i vagrant.deb &&
     /bin/rm vagrant.deb
     creates="{{ vagrant_vagrant_path }}"

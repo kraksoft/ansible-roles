@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -L -sS https://github.com/squizlabs/PHP_CodeSniffer/releases/download/{{ phpcbf_version }}/phpcbf.phar -o phpcbf.phar &&
+    /usr/bin/curl -L -s -S https://github.com/squizlabs/PHP_CodeSniffer/releases/download/{{ phpcbf_version }}/phpcbf.phar -o phpcbf.phar &&
     /bin/mv phpcbf.phar {{ phpcbf_path }}
     creates="{{ phpcbf_path }}"
 

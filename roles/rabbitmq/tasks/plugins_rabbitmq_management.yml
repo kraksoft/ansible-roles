@@ -12,7 +12,7 @@
 
 - name: install tool
   shell: >
-    /usr/bin/curl -sS https://raw.githubusercontent.com/rabbitmq/rabbitmq-management/master/bin/rabbitmqadmin -o rabbitmqadmin &&
+    /usr/bin/curl -L -s -S https://raw.githubusercontent.com/rabbitmq/rabbitmq-management/master/bin/rabbitmqadmin -o rabbitmqadmin &&
     /bin/mv rabbitmqadmin {{ rabbitmq_rabbitmqadmin_path }}
     creates="{{ rabbitmq_rabbitmqadmin_path }}"
 

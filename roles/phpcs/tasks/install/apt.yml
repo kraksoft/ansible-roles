@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -L -sS https://github.com/squizlabs/PHP_CodeSniffer/releases/download/{{ phpcs_version }}/phpcs.phar -o phpcs.phar &&
+    /usr/bin/curl -L -s -S https://github.com/squizlabs/PHP_CodeSniffer/releases/download/{{ phpcs_version }}/phpcs.phar -o phpcs.phar &&
     /bin/mv phpcs.phar {{ phpcs_path }}
     creates="{{ phpcs_path }}"
 

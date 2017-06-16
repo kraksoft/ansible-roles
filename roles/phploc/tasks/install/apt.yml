@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -sS https://phar.phpunit.de/phploc.phar -o phploc.phar &&
+    /usr/bin/curl -L -s -S https://phar.phpunit.de/phploc.phar -o phploc.phar &&
     /bin/mv phploc.phar {{ phploc_path }}
     creates="{{ phploc_path }}"
 

@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -sS http://get.sensiolabs.org/php-cs-fixer.phar -o php-cs-fixer.phar &&
+    /usr/bin/curl -L -s -S http://get.sensiolabs.org/php-cs-fixer.phar -o php-cs-fixer.phar &&
     /bin/mv php-cs-fixer.phar {{ php_cs_fixer_path }}
     creates="{{ php_cs_fixer_path }}"
 

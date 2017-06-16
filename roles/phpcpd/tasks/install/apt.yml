@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -sS https://phar.phpunit.de/phpcpd.phar -o phpcpd.phar &&
+    /usr/bin/curl -L -s -S https://phar.phpunit.de/phpcpd.phar -o phpcpd.phar &&
     /bin/mv phpcpd.phar {{ phpcpd_path }}
     creates="{{ phpcpd_path }}"
 

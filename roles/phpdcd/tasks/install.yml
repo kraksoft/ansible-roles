@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -sS https://phar.phpunit.de/phpdcd.phar -o phpdcd.phar &&
+    /usr/bin/curl -L -s -S https://phar.phpunit.de/phpdcd.phar -o phpdcd.phar &&
     /bin/mv phpdcd.phar {{ phpdcd_path }}
     creates="{{ phpdcd_path }}"
 

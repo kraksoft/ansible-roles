@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -L -sS {{ robomongo_url }} -o robomongo.deb &&
+    /usr/bin/curl -L -s -S {{ robomongo_url }} -o robomongo.deb &&
     /usr/bin/dpkg -i robomongo.deb &&
     /bin/rm robomongo.deb
     creates="{{ robomongo_robomongo_path }}"

@@ -8,7 +8,7 @@
 
 - name: install tool
   shell: >
-    /usr/bin/curl -L -sS {{ wkhtmltox_url }} -o wkhtmltox.deb &&
+    /usr/bin/curl -L -s -S {{ wkhtmltox_url }} -o wkhtmltox.deb &&
     /usr/bin/dpkg -i wkhtmltox.deb &&
     /bin/rm wkhtmltox.deb
     creates="{{ wkhtmltox_wkhtmltopdf_path }}"

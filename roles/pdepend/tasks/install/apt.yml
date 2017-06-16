@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -sS http://static.pdepend.org/php/{{ pdepend_version }}/pdepend.phar -o pdepend.phar &&
+    /usr/bin/curl -L -s -S http://static.pdepend.org/php/{{ pdepend_version }}/pdepend.phar -o pdepend.phar &&
     /bin/mv pdepend.phar {{ pdepend_path }}
     creates="{{ pdepend_path }}"
 

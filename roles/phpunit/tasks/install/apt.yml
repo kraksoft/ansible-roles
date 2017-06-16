@@ -1,7 +1,7 @@
 ---
 - name: install tool
   shell: >
-    /usr/bin/curl -sS https://phar.phpunit.de/phpunit.phar -o phpunit.phar &&
+    /usr/bin/curl -L -s -S https://phar.phpunit.de/phpunit.phar -o phpunit.phar &&
     /bin/mv phpunit.phar {{ phpunit_path }}
     creates="{{ phpunit_path }}"
 

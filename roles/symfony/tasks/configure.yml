@@ -10,7 +10,7 @@
 
 - name: install bash completion
   shell: >
-    /usr/bin/curl -sS https://raw.githubusercontent.com/KnpLabs/symfony2-autocomplete/master/symfony2-autocomplete.bash -o symfony2-autocomplete.bash &&
+    /usr/bin/curl -L -s -S https://raw.githubusercontent.com/KnpLabs/symfony2-autocomplete/master/symfony2-autocomplete.bash -o symfony2-autocomplete.bash &&
     /bin/mv symfony2-autocomplete.bash /etc/bash_completion.d/symfony2
     creates=/etc/bash_completion.d/symfony2
 
