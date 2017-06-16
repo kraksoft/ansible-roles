@@ -1,0 +1,4 @@
+---
+heroku_key_id: "0F1B0520"
+heroku_key_url: https://cli-assets.heroku.com/apt/release.key
+heroku_repository: deb https://cli-assets.heroku.com/branches/stable/apt

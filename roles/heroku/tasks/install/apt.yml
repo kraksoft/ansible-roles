@@ -1,0 +1,25 @@
+---
+- name: add gpg key
+  apt_key: >
+    id="{{ heroku_key_id }}"
+    state=present
+    url="{{ heroku_key_url }}"
+  when: heroku_key_url != false
+
+- name: add repository
+  apt_repository: >
+    repo="{{ heroku_repository }}"
+    state=present
+    update_cache=yes
+  when: heroku_repository != false
+
+- name: install package
+  package: >
+    name=heroku
+    state=present
+
+- name: enable plugins
+  shell: >
+    heroku plugins:install {{ item }}
+  changed_when: false
+  with_items: "{{ heroku_plugins }}"
