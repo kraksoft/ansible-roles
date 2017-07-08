@@ -1,0 +1,5 @@
+---
+- name: install package
+  gem: >
+    name=travis
+    state=present
