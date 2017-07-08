@@ -3,10 +3,9 @@
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f "$HOME/.bash_aliases" ]; then
-    . "$HOME/.bash_aliases"
-fi
+if [ -f "$HOME/.bash_aliases" ]; then . "$HOME/.bash_aliases"; fi
 
-if [ -f "$HOME/.profile" ]; then
-    . "$HOME/.profile"
-fi
+if [ -f "$HOME/.profile" ]; then . "$HOME/.profile"; fi
+
+
+# if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi
