@@ -1,0 +1,7 @@
+---
+nvm_users: []
+#  - name: user
+#    group: group
+#    home: /home/user
+nvm_nodejs_version: 6
+nvm_path: /usr/local/opt/nvm/nvm.sh

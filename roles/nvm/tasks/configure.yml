@@ -1,0 +1,14 @@
+---
+- name: create dir for config files
+  file: >
+    group="{{ item.group }}"
+    mode="0755"
+    owner="{{ item.name }}"
+    path="{{ item.home }}/.nvm"
+    state=directory
+  with_items: "{{ nvm_users }}"
+
+- name: install nodejs
+  shell: >
+    . {{ nvm_path }} install {{ nvm_nodejs_version }}
+  changed_when: false
