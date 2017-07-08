@@ -7,5 +7,7 @@
 - name: enable plugins
   shell: >
     heroku plugins:install {{ item }}
-  changed_when: false
+  changed_when: "_plugins.rc == 0"
+  failed_when: "_plugins.rc != 0 and 'is already installed' not in _plugins.stderr"
+  register: _plugins
   with_items: "{{ heroku_plugins }}"
