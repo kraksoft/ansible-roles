@@ -9,4 +9,5 @@ bash_users: []
 #    scripts:
 #      - .bash_aliases
 #      - .bash_profile
+#      - .bashrc
 #      - .profile
