@@ -1,6 +1,3 @@
-# include .bashrc if it exists
-if [ -f "$HOME/.bashrc" ]; then . "$HOME/.bashrc"; fi
-
 # set non idempotent environment variables here, like: PATH="...:$PATH"
 
 ## colors cheat sheet
@@ -33,3 +30,7 @@ else
     export PS1='\[\e[1;32m\]\u@\H \[\e[1;34m\]\w \[\e[00m\]\$ '
 fi
 export VISUAL="mcedit"
+
+
+# include .bashrc if it exists
+if [ -f "$HOME/.bashrc" ]; then . "$HOME/.bashrc"; fi
