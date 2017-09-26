@@ -52,8 +52,3 @@
   notify: restart rabbitmq
   when: _users.results is defined and item.stdout == ""
   with_items: "{{ _users.results }}"
-
-- name: install bash completion
-  shell: >
-    {{ rabbitmq_rabbitmqadmin_path }} --bash-completion > /etc/bash_completion.d/rabbitmqadmin
-    creates=/etc/bash_completion.d/rabbitmqadmin

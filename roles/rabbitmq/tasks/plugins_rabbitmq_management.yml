@@ -22,3 +22,9 @@
     mode="0755"
     owner=root
     path="{{ rabbitmq_rabbitmqadmin_path }}"
+
+# @README: it has to be in this task, because THIS plugin contain 'bash completion script'
+- name: install bash completion
+  shell: >
+    {{ rabbitmq_rabbitmqadmin_path }} --bash-completion > /etc/bash_completion.d/rabbitmqadmin
+    creates=/etc/bash_completion.d/rabbitmqadmin
