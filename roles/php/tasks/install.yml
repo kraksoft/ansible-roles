@@ -26,8 +26,10 @@
   notify: restart php-apache
   with_items: "{{ php_modules }}"
 
-- name: enable php module in apache
-  apache2_module: >
-    name=php5
-    state=present
-  notify: restart php-apache
+# @README: temporary workaround to following error in ansible:
+# AttributeError: 'NoneType' object has no attribute 'group'
+#- name: enable php module in apache
+#  apache2_module: >
+#    name=php5
+#    state=present
+#  notify: restart php-apache
