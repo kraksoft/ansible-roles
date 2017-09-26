@@ -1,7 +1,7 @@
 ---
-- include: install.yml
+- include_tasks: install.yml
 
-- include: configure.yml
+- include_tasks: configure.yml
 
-- include: gui.yml
+- include_tasks: gui.yml
   when: ufw_gui_enabled != false

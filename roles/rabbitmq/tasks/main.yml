@@ -1,11 +1,11 @@
 ---
-- include: include_vars.yml
+- include_tasks: include_vars.yml
 
-- include: install.yml
+- include_tasks: install.yml
 
-- include: secure.yml
+- include_tasks: secure.yml
 
-- include: configure.yml
+- include_tasks: configure.yml
 
-- include: plugins_rabbitmq_management.yml
+- include_tasks: plugins_rabbitmq_management.yml
   when: "'rabbitmq_management' in rabbitmq_plugins"

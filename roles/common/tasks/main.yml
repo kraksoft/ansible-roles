@@ -1,11 +1,11 @@
 ---
-- include: include_vars.yml
+- include_tasks: include_vars.yml
 
-- include: set_locales.yml
+- include_tasks: set_locales.yml
 
-- include: set_timezone.yml
+- include_tasks: set_timezone.yml
 
-- include: "{{ item }}"
+- include_tasks: "{{ item }}"
   with_first_found:
     - files:
       - "{{ ansible_pkg_mgr }}.yml"
@@ -13,8 +13,8 @@
       paths:
        - ./add_sources/
 
-- include: install_required.yml
+- include_tasks: install_required.yml
 
-- include: add_commands.yml
+- include_tasks: add_commands.yml
 
-- include: add_hosts.yml
+- include_tasks: add_hosts.yml

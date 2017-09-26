@@ -1,4 +1,4 @@
 ---
-- include: install_required.yml
+- include_tasks: install_required.yml
 
-- include: refresh.yml
+- include_tasks: refresh.yml

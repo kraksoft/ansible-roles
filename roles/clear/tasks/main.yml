@@ -1,2 +1,2 @@
 ---
-- include: clear.yml
+- include_tasks: clear.yml

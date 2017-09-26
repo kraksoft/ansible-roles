@@ -7,4 +7,4 @@
       role: refresh
     -
       role: clear
-  sudo: true
+  become: true

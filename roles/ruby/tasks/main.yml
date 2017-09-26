@@ -1,4 +1,4 @@
 ---
-- include: install.yml
+- include_tasks: install.yml
 
-- include: install_gems.yml
+- include_tasks: install_gems.yml

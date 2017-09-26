@@ -1,4 +1,4 @@
 ---
-- include: pre_configure.yml
+- include_tasks: pre_configure.yml
 
-- include: install.yml
+- include_tasks: install.yml

@@ -1,21 +1,21 @@
 ---
-- include: apport.yml
+- include_tasks: apport.yml
   when: "'apport' in fix_issues"
 
-- include: avahi.yml
+- include_tasks: avahi.yml
   when: "'avahi' in fix_issues"
 
-- include: blkid_tab.yml
+- include_tasks: blkid_tab.yml
   when: "'blkid-tab' in fix_issues"
 
-- include: bluetooth.yml
+- include_tasks: bluetooth.yml
   when: "'bluetooth' in fix_issues"
 
-- include: brightness.yml
+- include_tasks: brightness.yml
   when: "'brightness' in fix_issues"
 
-- include: inotify.yml
+- include_tasks: inotify.yml
   when: "'inotify' in fix_issues"
 
-- include: ipv6.yml
+- include_tasks: ipv6.yml
   when: "'ipv6' in fix_issues"

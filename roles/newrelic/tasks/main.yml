@@ -1,9 +1,9 @@
 ---
-- include: include_vars.yml
+- include_tasks: include_vars.yml
 
-- include: pre_configure.yml
+- include_tasks: pre_configure.yml
 
-- include: install.yml
+- include_tasks: install.yml
 
-- include: agents_php.yml
+- include_tasks: agents_php.yml
   when: "'php' in newrelic_agents"

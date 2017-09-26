@@ -1,5 +1,5 @@
 ---
-- name: "prepare project 'projectZ' with host '{{ host }}'"
+- name: "prepare project 'projectZ' on '{{ host }}' host"
   gather_facts: true
   hosts: "projectz_{{ host }}"
   tasks:
@@ -9,14 +9,14 @@
         that:
           - "host is defined"
 
-- include: roles/_projectx/base.yml
+- import_playbook: roles/_projectx/base.yml
 
-- include: roles/_projectx/services.yml
+- import_playbook: roles/_projectx/services.yml
 
-- include: roles/_projectx/packages.yml
+- import_playbook: roles/_projectx/packages.yml
 
-- include: roles/_projectx/host_name31.yml
+- import_playbook: roles/_projectx/host_name31.yml
 
-- include: roles/_projectx/host_name32.yml
+- import_playbook: roles/_projectx/host_name32.yml
 
-- include: roles/_projectx/host_name33.yml
+- import_playbook: roles/_projectx/host_name33.yml

@@ -1,20 +1,20 @@
 ; localhost
-localhost                               ansible_ssh_host=127.0.0.1 ansible_connection=local
+localhost                               ansible_host=127.0.0.1 ansible_connection=local
 
 ; projectX
-name11.dev.lan                          ansible_ssh_host=192.168.1.101 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
-name.stage.com-A                        ansible_ssh_host=name.stage.com ansible_ssh_user=user
-name13.prod.com                         ansible_ssh_host=name13.prod.com ansible_ssh_user=user
+name11.dev.lan                          ansible_host=192.168.1.101 ansible_user=vagrant ansible_private_key_file=~/.vagrant.d/insecure_private_key
+name.stage.com-A                        ansible_host=name.stage.com ansible_user=user
+name13.prod.com                         ansible_host=name13.prod.com ansible_user=user
 
 ; projectY
-name21.dev.lan                          ansible_ssh_host=192.168.1.102 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
-name.stage.com-B                        ansible_ssh_host=name.stage.com ansible_ssh_user=user
-name23.prod.com                         ansible_ssh_host=name23.prod.com ansible_ssh_user=user
+name21.dev.lan                          ansible_host=192.168.1.102 ansible_user=vagrant ansible_private_key_file=~/.vagrant.d/insecure_private_key
+name.stage.com-B                        ansible_host=name.stage.com ansible_user=user
+name23.prod.com                         ansible_host=name23.prod.com ansible_user=user
 
 ; projectZ
-name31.com                              ansible_ssh_host=host31.com ansible_ssh_user=user
-name32.com                              ansible_ssh_host=host32.com ansible_ssh_user=user
-name33.com                              ansible_ssh_host=host33.com ansible_ssh_user=user
+name31.com                              ansible_host=host31.com ansible_user=user
+name32.com                              ansible_host=host32.com ansible_user=user
+name33.com                              ansible_host=host33.com ansible_user=user
 
 
 ; projectX

@@ -1,4 +1,4 @@
 ---
-- include: include_vars.yml
+- include_tasks: include_vars.yml
 
-- include: install.yml
+- include_tasks: install.yml

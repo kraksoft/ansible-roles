@@ -1,8 +1,8 @@
 ---
-- include: include_vars.yml
+- include_tasks: include_vars.yml
 
-- include: install.yml
+- include_tasks: install.yml
 
-- include: install_required.yml
+- include_tasks: install_required.yml
 
-- include: configure.yml
+- include_tasks: configure.yml

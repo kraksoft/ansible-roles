@@ -1,5 +1,5 @@
 ---
-- include: "{{ item }}"
+- include_tasks: "{{ item }}"
   with_first_found:
     - files:
       - "{{ ansible_pkg_mgr }}.yml"
