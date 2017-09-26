@@ -27,3 +27,8 @@ php_modules:
 #  - php5-redis=2.*
 #  - php5-sqlite
 php_version: 5.6
+
+# @README: separate php version for apache2_module
+# to fix this issue: https://github.com/ansible/ansible/issues/22635
+# mentioned here: https://github.com/ansible/ansible/pull/22649/files#diff-7929af2be4ceb644219ca9d7981e8bf2
+php_version_for_apache2_module: 5.6
