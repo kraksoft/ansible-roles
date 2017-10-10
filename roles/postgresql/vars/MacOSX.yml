@@ -1,6 +1,6 @@
 ---
 postgresql_key_id: false
 postgresql_key_url: false
-postgresql_package: false
+postgresql_package: postgresql@{{ postgresql_version }}
 postgresql_repository: false
 postgresql_required_libraries: []

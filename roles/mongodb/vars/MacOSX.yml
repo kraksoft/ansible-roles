@@ -1,7 +1,7 @@
 ---
 mongodb_key_id: false
 mongodb_key_keyserver: false
-mongodb_package: false
+mongodb_package: mongodb@{{ mongodb_version }}
 mongodb_repository: false
 mongodb_required_libraries: []
 mongodb_required_pip_packages: []

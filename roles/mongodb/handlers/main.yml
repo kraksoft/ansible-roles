@@ -5,3 +5,4 @@
     name=mongod
     sleep=1
     state=restarted
+  when: ansible_os_family == "Debian"

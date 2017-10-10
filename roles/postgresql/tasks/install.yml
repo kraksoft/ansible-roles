@@ -14,13 +14,15 @@
   when: postgresql_repository != false
 
 - name: install service
-  apt: >
-    name="postgresql-{{ postgresql_version }}"
+  package: >
+    name="{{ postgresql_package }}"
     state=present
   notify: restart postgresql
+  when: postgresql_package != false
 
 - name: ensure a service is enabled and running
   service: >
     enabled=yes
     name=postgresql
     state=started
+  when: ansible_os_family == "Debian"

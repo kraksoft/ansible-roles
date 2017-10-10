@@ -1,4 +1,7 @@
 ---
 mysql_key_id: false
 mysql_key_url: false
+mysql_package: mysql-server-5.5
 mysql_repository: ppa:ondrej/mysql-5.5
+mysql_required_libraries:
+  - python-mysqldb

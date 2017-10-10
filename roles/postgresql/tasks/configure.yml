@@ -1,14 +1,14 @@
 ---
-#- name: copy configs
-#  template: >
-#    dest="/etc/postgresql/conf.d/{{ item }}"
-#    force=yes
-#    group=root
-#    mode="0644"
-#    owner=root
-#    src="{{ postgresql_files_path }}{{ item }}"
-#  notify: restart postgresql
-#  with_items: "{{ postgresql_configs }}"
+- name: copy configs
+  template: >
+    dest="/etc/postgresql/conf.d/{{ item }}"
+    force=yes
+    group=root
+    mode="0644"
+    owner=root
+    src="{{ postgresql_files_path }}{{ item }}"
+  notify: restart postgresql
+  with_items: "{{ postgresql_configs }}"
 
 - name: create databases
   postgresql_db: >

@@ -1,4 +1,7 @@
 ---
 mysql_key_id: "89DF5277"
 mysql_key_url: http://www.dotdeb.org/dotdeb.gpg
+mysql_package: mysql-server-5.5
 mysql_repository: deb http://packages.dotdeb.org squeeze all
+mysql_required_libraries:
+  - python-mysqldb

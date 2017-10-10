@@ -20,18 +20,21 @@
     value="{{ mysql_login_password }}"
     vtype=password
   changed_when: false
+  when: ansible_os_family == "Debian"
   with_items:
     - mysql-server/root_password
     - mysql-server/root_password_again
 
 - name: install service
-  apt: >
-    name="mysql-server-{{ mysql_version }}"
+  package: >
+    name="{{ mysql_package }}"
     state=present
   notify: restart mysql
+  when: mysql_package != false
 
 - name: ensure a service is enabled and running
   service: >
     enabled=yes
     name=mysql
     state=started
+  when: ansible_os_family == "Debian"

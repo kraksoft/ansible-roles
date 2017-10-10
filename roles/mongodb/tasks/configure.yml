@@ -17,7 +17,7 @@
     password="{{ mongodb_login_password }}"
     roles=root
     state=present
-  when: mongodb_login_user is defined and mongodb_login_host == "localhost"
+  when: mongodb_parameters and mongodb_login_user is defined and mongodb_login_host == "localhost"
 
 - name: create users
   mongodb_user: >

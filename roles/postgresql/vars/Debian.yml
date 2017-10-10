@@ -1,4 +1,7 @@
 ---
 postgresql_key_id: "ACCC4CF8"
 postgresql_key_url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+postgresql_package: postgresql-{{ postgresql_version }}
 postgresql_repository: deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main
+postgresql_required_libraries:
+  - python-psycopg2
