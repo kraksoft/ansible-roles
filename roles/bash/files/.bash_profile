@@ -1,3 +1,7 @@
+# include .bashrc if it exists...
+if [ -f "$HOME/.bashrc" ]; then . "$HOME/.bashrc"; fi
+# ...and overwrite selected parameters with custom values
+
 # set non idempotent environment variables here, like: PATH="...:$PATH"
 
 ## colors cheat sheet
@@ -7,6 +11,7 @@
 ## YELLOW='\[\e[1;33m\]'
 ## BLUE='\[\e[1;34m\]'
 
+export CLICOLOR="1"
 export COLORTERM="1"
 export EDITOR="mcedit"
 export HISTFILESIZE="20000"
@@ -20,6 +25,7 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 export LESS_TERMCAP_zz=$'\E[0m'   # fake parameter, but have to be the last one, to reset colors to 'normal'
+export LSCOLORS='gxfxcxdxbxegedabagacad'
 export PATH=".:$HOME/bin:$PATH"
 export PROMPT_COMMAND="history -a"
 if [ $LOGNAME == "git" ] ; then
@@ -30,7 +36,3 @@ else
     export PS1='\[\e[1;32m\]\u@\H \[\e[1;34m\]\w \[\e[00m\]\$ '
 fi
 export VISUAL="mcedit"
-
-
-# include .bashrc if it exists
-if [ -f "$HOME/.bashrc" ]; then . "$HOME/.bashrc"; fi

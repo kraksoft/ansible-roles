@@ -1,7 +1,7 @@
 ---
 - name: copy configs
   template: >
-    dest="/etc/postgresql/conf.d/{{ item }}"
+    dest="/etc/postgresql/{{ postgresql_version }}/main/conf.d/{{ item }}"
     force=yes
     group=root
     mode="0644"
