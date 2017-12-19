@@ -1,7 +1,7 @@
 ---
 - name: install package
   package: >
-    name=heroku
+    name=heroku/brew/heroku
     state=present
 
 - name: enable plugins
