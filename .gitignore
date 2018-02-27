@@ -12,5 +12,5 @@ _darcs
 .DS_Store
 Thumbs.db
 
-# PhpStorm
+# IDE
 .idea

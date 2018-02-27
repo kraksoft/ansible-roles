@@ -6,7 +6,7 @@ symfony_commands_user: root
 symfony_files_path: ../../files/symfony/
 symfony_remote_path: /usr/local/bin/
 symfony_services: []
-#  - symfony_projectx
+#  - symfony_project_x
 symfony_settings: []
 #  - "export SYMFONY_ENV={{ env }}"
 #  - "export SYMFONY_USE_SHM=true"

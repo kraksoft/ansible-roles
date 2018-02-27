@@ -1,0 +1,22 @@
+---
+- name: "prepare project 'project_x' for '{{ env }}' environment"
+  gather_facts: true
+  hosts: "project_x_{{ env }}"
+  tasks:
+    # simple task to ensure, that required parameters are set
+    - name: check if required parameters are defined
+      assert:
+        that:
+          - "env is defined"
+
+- import_playbook: roles/_project_x/base.yml
+
+- import_playbook: roles/_project_x/services.yml
+
+- import_playbook: roles/_project_x/packages.yml
+
+- import_playbook: roles/_project_x/env_dev.yml
+
+- import_playbook: roles/_project_x/env_stage.yml
+
+- import_playbook: roles/_project_x/env_prod.yml

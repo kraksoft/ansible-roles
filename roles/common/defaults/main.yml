@@ -22,10 +22,10 @@ common_host_externals: {}
 common_host_internals: {}
 #  192.168.1.1: router              # => 192.168.1.1    router              router.lan
 common_host_websites: {}
-#  192.168.1.100: projectx          # => 192.168.1.100  projectx.dev.lan    www.projectx.dev.lan
+#  192.168.1.100: project_x         # => 192.168.1.100  project_x.dev.lan    www.project_x.dev.lan
 common_host_websites_ip: 192.168.1.200
 common_host_websites_without_ip: []
-#  - projecty                       # => 192.168.1.200  projecty.dev.lan    www.projecty.dev.lan
+#  - project_y                      # => 192.168.1.200  project_y.dev.lan    www.project_y.dev.lan
 common_locale_name: false # en_US.UTF-8
 common_remote_path: /usr/local/bin/
 common_timezone_name: false # GMT+0

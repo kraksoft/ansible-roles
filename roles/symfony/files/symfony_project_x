@@ -1,6 +1,6 @@
 #!/bin/bash
 ### BEGIN INIT INFO
-# Provides:          symfony_projectx
+# Provides:          symfony_project_x
 # Required-Start:
 # Required-Stop:
 # Default-Start:     2 3 4 5
@@ -9,7 +9,7 @@
 # Description:       Setting up Symfony2 environment
 ### END INIT INFO
 
-PROJECT_NAME="projectx"
+PROJECT_NAME="project_x"
 
 case "$1" in
   start)
@@ -26,7 +26,7 @@ case "$1" in
     echo "Done."
     ;;
   *)
-    echo "Usage: /etc/init.d/symfony_projectx start"
+    echo "Usage: /etc/init.d/symfony_project_x start"
     exit 1
     ;;
 esac

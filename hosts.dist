@@ -1,65 +1,65 @@
 ; localhost
 localhost                               ansible_host=127.0.0.1 ansible_connection=local
 
-; projectX
+; project_x
 name11.dev.lan                          ansible_host=192.168.1.101 ansible_user=vagrant ansible_private_key_file=~/.vagrant.d/insecure_private_key
 name.stage.com-A                        ansible_host=name.stage.com ansible_user=user
 name13.prod.com                         ansible_host=name13.prod.com ansible_user=user
 
-; projectY
+; project_y
 name21.dev.lan                          ansible_host=192.168.1.102 ansible_user=vagrant ansible_private_key_file=~/.vagrant.d/insecure_private_key
 name.stage.com-B                        ansible_host=name.stage.com ansible_user=user
 name23.prod.com                         ansible_host=name23.prod.com ansible_user=user
 
-; projectZ
+; project_z
 name31.com                              ansible_host=host31.com ansible_user=user
 name32.com                              ansible_host=host32.com ansible_user=user
 name33.com                              ansible_host=host33.com ansible_user=user
 
 
-; projectX
-[projectx_dev]
+; project_x
+[project_x_dev]
 name11.dev.lan
 
-[projectx_stage]
+[project_x_stage]
 name.stage.com-A
 
-[projectx_prod]
+[project_x_prod]
 name13.prod.com
 
-[projectx:children]
-projectx_dev
-projectx_stage
-projectx_prod
+[project_x:children]
+project_x_dev
+project_x_stage
+project_x_prod
 
 
-; projectY
-[projecty_dev]
+; project_y
+[project_y_dev]
 name21.dev.lan
 
-[projecty_stage]
+[project_y_stage]
 name.stage.com-B
 
-[projecty_prod]
+[project_y_prod]
 name23.prod.com
 
-[projecty:children]
-projecty_dev
-projecty_stage
-projecty_prod
+[project_y:children]
+project_y_dev
+project_y_stage
+project_y_prod
 
 
-; projectZ
-[projectz_name31]
+; project_z
+[project_z_name31]
 name31.com
 
-[projectz_name32]
+[project_z_name32]
 name32.com
 
-[projectz_name33]
+[project_z_name33]
 name33.com
 
-[projecty:children]
-projectz_name31
-projectz_name32
-projectz_name33
+[project_z:children]
+project_z_name31
+project_z_name32
+project_z_name33
