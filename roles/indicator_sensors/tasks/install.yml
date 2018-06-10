@@ -1,7 +1,7 @@
 ---
 - name: add repository
   apt_repository: >
-    repo=ppa:alexmurray/indicator-sensors
+    repo=ppa:dgadomski/indicator-sensors
     state=present
     update_cache=yes
 
