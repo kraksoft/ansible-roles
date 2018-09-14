@@ -1,15 +1,11 @@
 ---
 common_commands: []
-#  - clr
-#  - dmesg-custom
-#  - l
-#  - la
-#  - ll
-#  - mount-custom
+#  - dmesg-show
+#  - mount-show
 #  - o
 #  - oo
 #  - p
-#  - path-custom
+#  - path-show
 #  - pp
 #  - ss
 common_commands_group: root
@@ -27,5 +23,5 @@ common_host_websites_ip: 192.168.1.200
 common_host_websites_without_ip: []
 #  - project_y                      # => 192.168.1.200  project_y.dev.lan    www.project_y.dev.lan
 common_locale_name: false # en_US.UTF-8
-common_remote_path: /usr/local/bin/
+common_remote_path: ~/bin/ # OR /usr/local/bin/
 common_timezone_name: false # GMT+0

@@ -2,6 +2,6 @@
 - name: add sources for homebrew
   homebrew_tap: >
     state=present
-    tap="{{ item }}"
+    name="{{ item }}"
   notify: update homebrew cache
   with_items: "{{ common_sources_repositories }}"

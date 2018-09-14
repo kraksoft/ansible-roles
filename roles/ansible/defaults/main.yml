@@ -5,7 +5,7 @@ ansible_commands: []
 ansible_commands_group: root
 ansible_commands_user: root
 ansible_files_path: ../../files/ansible/
-ansible_remote_path: /usr/local/bin/
+ansible_remote_path: ~/bin/ # OR /usr/local/bin/
 ansible_users: []
 #  - name: user
 #    group: group
