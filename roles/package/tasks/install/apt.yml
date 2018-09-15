@@ -3,12 +3,14 @@
   apt_key: >
     state=present
     url="{{ key }}"
+  when: key is defined
 
 - name: "add '{{ repo }}' repository"
   apt_repository: >
     repo="{{ repo }}"
     state=present
     update_cache=yes
+  when: repo is defined
 
 - name: "install '{{ name }}' pre-packages"
   package: >
