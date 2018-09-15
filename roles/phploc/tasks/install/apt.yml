@@ -7,7 +7,7 @@
 
 - name: allow everyone for selfupdate
   file: >
-    group=root
+    group="{{ phploc_commands_group }}"
     mode="0777"
-    owner=root
+    owner="{{ phploc_commands_user }}"
     path="{{ phploc_path }}"

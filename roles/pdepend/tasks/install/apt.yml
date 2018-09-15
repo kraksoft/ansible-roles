@@ -7,7 +7,7 @@
 
 - name: allow everyone for selfupdate
   file: >
-    group=root
+    group="{{ pdepend_commands_group }}"
     mode="0777"
-    owner=root
+    owner="{{ pdepend_commands_user }}"
     path="{{ pdepend_path }}"

@@ -2,8 +2,8 @@
 ansible_commands: []
 #  - ap
 #  - av
-ansible_commands_group: root
-ansible_commands_user: root
+ansible_commands_group: ~
+ansible_commands_user: ~
 ansible_files_path: ../../files/ansible/
 ansible_remote_path: ~/bin/ # OR /usr/local/bin/
 ansible_users: []

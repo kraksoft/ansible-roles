@@ -1,2 +1,4 @@
 ---
-phpcpd_path: /usr/local/bin/phpcpd
+phpcpd_commands_group: ~
+phpcpd_commands_user: ~
+phpcpd_path: ~/bin/phpcpd # OR /usr/local/bin/phpcpd

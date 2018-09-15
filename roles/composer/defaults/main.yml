@@ -1,6 +1,8 @@
 ---
+composer_commands_group: ~
+composer_commands_user: ~
 composer_files_path: ../../files/composer/
-composer_path: /usr/local/bin/composer
+composer_path: ~/bin/composer # OR /usr/local/bin/composer
 composer_users: []
 #  - name: user
 #    group: group

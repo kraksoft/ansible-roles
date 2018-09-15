@@ -1,2 +1,4 @@
 ---
-phpunit_path: /usr/local/bin/phpunit
+phpunit_commands_group: ~
+phpunit_commands_user: ~
+phpunit_path: ~/bin/phpunit # OR /usr/local/bin/phpunit

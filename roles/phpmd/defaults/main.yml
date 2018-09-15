@@ -1,6 +1,8 @@
 ---
+phpmd_commands_group: ~
+phpmd_commands_user: ~
 phpmd_files_path: ../../files/phpmd/
-phpmd_path: /usr/local/bin/phpmd
+phpmd_path: ~/bin/phpmd # OR /usr/local/bin/phpmd
 phpmd_users: []
 #  - name: user
 #    group: group

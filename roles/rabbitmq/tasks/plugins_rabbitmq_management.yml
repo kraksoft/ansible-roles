@@ -18,9 +18,9 @@
 
 - name: allow everyone for execute
   file: >
-    group=root
+    group="{{ rabbitmq_commands_group }}"
     mode="0755"
-    owner=root
+    owner="{{ rabbitmq_commands_user }}"
     path="{{ rabbitmq_rabbitmqadmin_path }}"
 
 # @README: it has to be in this task, because THIS plugin contain 'bash completion script'

@@ -7,7 +7,7 @@
 
 - name: allow everyone for selfupdate
   file: >
-    group=root
+    group="{{ phpcbf_commands_group }}"
     mode="0777"
-    owner=root
+    owner="{{ phpcbf_commands_user }}"
     path="{{ phpcbf_path }}"

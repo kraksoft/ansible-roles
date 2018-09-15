@@ -1,3 +1,5 @@
 ---
-phpcbf_path: /usr/local/bin/phpcbf
+phpcbf_commands_group: ~
+phpcbf_commands_user: ~
+phpcbf_path: ~/bin/phpcbf # OR /usr/local/bin/phpcbf
 phpcbf_version: 2.1.0

@@ -1,2 +1,4 @@
 ---
-phpdcd_path: /usr/local/bin/phpdcd
+phpdcd_commands_group: ~
+phpdcd_commands_user: ~
+phpdcd_path: ~/bin/phpdcd # OR /usr/local/bin/phpdcd

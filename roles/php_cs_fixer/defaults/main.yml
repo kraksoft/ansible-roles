@@ -1,2 +1,4 @@
 ---
-php_cs_fixer_path: /usr/local/bin/php-cs-fixer
+php_cs_fixer_commands_group: ~
+php_cs_fixer_commands_user: ~
+php_cs_fixer_path: ~/bin/php-cs-fixer # OR /usr/local/bin/php-cs-fixer

@@ -16,8 +16,8 @@
 
 - name: allow everyone for execute
   file: >
-    group=root
+    group="{{ wkhtmltox_commands_group }}"
     mode="0755"
-    owner=root
+    owner="{{ wkhtmltox_commands_user }}"
     path="{{ wkhtmltox_wkhtmltopdf_path }}"
   when: wkhtmltox_url != false

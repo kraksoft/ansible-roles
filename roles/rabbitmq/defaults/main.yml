@@ -1,4 +1,6 @@
 ---
+rabbitmq_commands_group: ~
+rabbitmq_commands_user: ~
 rabbitmq_configs: []
 #  - rabbitmq.config
 rabbitmq_files_path: ../../files/rabbitmq/
@@ -7,7 +9,7 @@ rabbitmq_login_password: guest
 rabbitmq_login_user: guest
 rabbitmq_plugins: []
 #  - rabbitmq_management
-rabbitmq_rabbitmqadmin_path: /usr/local/bin/rabbitmqadmin
+rabbitmq_rabbitmqadmin_path: ~/bin/rabbitmqadmin # OR /usr/local/bin/rabbitmqadmin
 rabbitmq_vhosts: []
 #  - name: /
 #    users:

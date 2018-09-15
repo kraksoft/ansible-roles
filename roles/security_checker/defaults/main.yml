@@ -1,2 +1,4 @@
 ---
-security_checker_path: /usr/local/bin/security-checker
+security_checker_commands_group: ~
+security_checker_commands_user: ~
+security_checker_path: ~/bin/security-checker # OR /usr/local/bin/security-checker

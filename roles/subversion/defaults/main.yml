@@ -3,10 +3,10 @@ subversion_commands: []
 #  - diff3-wrap
 #  - diff-wrap
 #  - merge-wrap
-subversion_commands_group: root
-subversion_commands_user: root
+subversion_commands_group: ~
+subversion_commands_user: ~
 subversion_files_path: ../../files/subversion/
-subversion_remote_path: /usr/local/bin/
+subversion_remote_path: ~/bin/ # OR /usr/local/bin/
 subversion_users: []
 #  - name: user
 #    group: group

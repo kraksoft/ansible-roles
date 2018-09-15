@@ -1,2 +1,4 @@
 ---
-phploc_path: /usr/local/bin/phploc
+phploc_commands_group: ~
+phploc_commands_user: ~
+phploc_path: ~/bin/phploc # OR /usr/local/bin/phploc

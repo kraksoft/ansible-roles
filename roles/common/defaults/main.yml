@@ -8,8 +8,8 @@ common_commands: []
 #  - path-show
 #  - pp
 #  - ss
-common_commands_group: root
-common_commands_user: root
+common_commands_group: ~
+common_commands_user: ~
 common_files_path: ../../files/common/
 common_host_domain: .lan
 common_host_env: .dev

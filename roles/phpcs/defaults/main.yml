@@ -1,3 +1,5 @@
 ---
-phpcs_path: /usr/local/bin/phpcs
+phpcs_commands_group: ~
+phpcs_commands_user: ~
+phpcs_path: ~/bin/phpcs # OR /usr/local/bin/phpcs
 phpcs_version: 2.1.0

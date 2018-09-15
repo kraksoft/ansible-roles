@@ -7,7 +7,7 @@
 
 - name: allow everyone for selfupdate
   file: >
-    group=root
+    group="{{ phpdcd_commands_group }}"
     mode="0777"
-    owner=root
+    owner="{{ phpdcd_commands_user }}"
     path="{{ phpdcd_path }}"
