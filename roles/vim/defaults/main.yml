@@ -1,4 +1,6 @@
 ---
-vim_configs: []
-#  - vimrc.local
+vim_config_files: []
+#  - .vimrc
+vim_config_group: ~
+vim_config_user: ~
 vim_files_path: ../../files/vim/

@@ -1,10 +1,10 @@
 ---
 - name: copy configs
   template: >
-    dest="/etc/vim/{{ item }}"
+    dest="~/{{ item }}"
     force=yes
-    group=root
+    group="{{ vim_config_group }}"
     mode="0644"
-    owner=root
+    owner="{{ vim_config_user }}"
     src="{{ vim_files_path }}{{ item }}"
-  with_items: "{{ vim_configs }}"
+  with_items: "{{ vim_config_files }}"
